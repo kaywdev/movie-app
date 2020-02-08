@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router , Switch, Route } from 'react-router-dom';
 // import html components
 import Header from '../components/Header';
+import Search from '../components/Search';
 import Home from '../components/Home';
 import About from '../components/About';
 // import City from '../components/City';
@@ -16,7 +17,7 @@ const AppRouter = () => (
 		<div className="wrapper">
 			<div className="header-oneline">
 			<Header />
-		
+			<Search />
 			</div>
 			<Switch>
 				<Route path="/" exact><Home /></Route>
