@@ -1,0 +1,31 @@
+// Mixins
+
+// background-image
+@mixin bg-img{
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+// Mixin for clearing out
+// margins and padding and
+// setting the line-height to 1 
+// ...useful mainly on typographic elements
+@mixin flatten {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+// Media Query Mixin
+@mixin mq($w) {
+    @media (min-width: $w){
+        @content
+    }
+}
+
+
+
+
+

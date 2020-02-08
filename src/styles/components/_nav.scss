@@ -1,0 +1,61 @@
+header nav{   
+    display: none;    /*hiding menu items*/
+    width: 100%;
+    
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background: black;
+        
+        li{
+            border-top: 1px solid #858585;
+        }
+        li:last-child{
+            border-bottom: 1px solid #858585;
+        }
+    }
+    
+    a{
+        padding-left: 12px;
+        display: block;
+        line-height: 40px;
+        
+        text-decoration: none;
+        color: white;
+        
+    }
+    @include mq($phoneLandscape) {  
+        display:block;
+        ul{
+            display: flex;
+
+            li, li:last-child{
+                border:none;
+                padding: 0 20px;
+            }
+        }
+  }
+
+    
+    
+}
+.show header .mobile-header a,
+.show header .mobile-header button{
+    color: #ffffff;
+    text-shadow:none;
+}
+.show header nav, .show span.logo{
+    display: block;
+}
+
+.show header nav{
+    position: absolute;
+    z-index: 2;
+}
+.show header nav a:hover,
+.show header nav a:active,
+.show header nav a:focus{
+    background-color: $red;
+}
