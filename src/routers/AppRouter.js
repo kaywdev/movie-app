@@ -4,7 +4,6 @@ import React from 'react';
 import { BrowserRouter as Router , Switch, Route } from 'react-router-dom';
 // import html components
 import Header from '../components/Header';
-import Nav from '../components/Nav';
 import Home from '../components/Home';
 import About from '../components/About';
 // import City from '../components/City';
@@ -15,8 +14,10 @@ import Footer from '../components/Footer';
 const AppRouter = () => (
 	<Router>
 		<div className="wrapper">
+			<div className="header-oneline">
 			<Header />
-			{/* <Nav /> */}
+		
+			</div>
 			<Switch>
 				<Route path="/" exact><Home /></Route>
 				<Route path="/index.html" exact><Home /></Route>
