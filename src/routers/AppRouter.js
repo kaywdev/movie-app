@@ -28,8 +28,10 @@ const AppRouter = () => (
 				{/* <Route path="/your-cities/:city" component={City}><City /></Route> */}
 					
 			</Switch>
+			</div>
+			<hr/>
 			<Footer />
-		</div>
+		
 	</Router>	
 );
 

@@ -7,6 +7,7 @@ const Footer = () =>  {
     console.log(y);
 
     return (
+       
         <footer className="header">
             <div class="footer-logo"></div>
             <p>&copy; 2020 MVDB all rights reserved.</p>
