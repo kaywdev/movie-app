@@ -11,7 +11,7 @@ function filterWD(arr){
     return (
         arr.reduce((result, item, i) => {
             //if(i <21){
-                result.push({ date: item.release_date, poster: item.poster_path, title: item.title });
+                result.push({ date: item.release_date, poster: item.poster_path, title: item.title, overview: item.overview });
                 //result.push({ date: item.release_date, poster: item.poster_path, title: item.title, background: item.backdrop_path, rating: item.popularity });
             //} 
             return result;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
+import LogoImage from '../images/mvdb_logo.svg';
 
 const Header = () => (
 
@@ -21,7 +22,13 @@ const Header = () => (
 				</div>
 				<span className="text sr-only">Menu</span>
 			</button>
-    		<h1><Link to="/"><div className="logo" ></div></Link></h1>
+    		<h1>
+				<Link to="/">
+				<div className="logo" >
+				 <img src = {LogoImage} alt="logo"/>
+				</div>
+				</Link>
+			</h1>
     	</div>
 			<Nav />
 	</header>

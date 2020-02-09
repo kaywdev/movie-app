@@ -1,10 +1,12 @@
 import React from 'react';
+import ratingStar from '../images/star.png'
 
 const iconPath = 'https://image.tmdb.org/t/p/w1280';
 
 const movies = (md) => {
     return md.map((movie, i) => {
         return (
+        
             <div key={i} className={`movie-info movie-0${i+1}`}>
                 <figure>
                     <img src={iconPath + movie.poster} alt={movie.poster}/>
@@ -13,19 +15,19 @@ const movies = (md) => {
                     <h3>{movie.title}</h3>
                         <div className="rating">
                             <div className="star-img">
-                                <img src="../../images/star.png" alt="star"/>
+                                <img src= {ratingStar} alt="star"/>
                             </div>{/* end of rstar-img */}
                             <div className="star-img">
-                                <img src="../../images/star.png" alt="star"/>
+                                <img src={ratingStar} alt="star"/>
                             </div>{/* end of rstar-img */}
                             <div className="star-img">
-                                <img src="../../images/star.png" alt="star"/>
+                                <img src={ratingStar} alt="star"/>
                             </div>{/* end of rstar-img */}
                             <div className="star-img">
-                                <img src="../../images/star.png" alt="star"/>
+                                <img src={ratingStar} alt="star"/>
                             </div>{/* end of rstar-img */}
                             <div className="star-img">
-                                <img src="../../images/star.png" alt="star"/>
+                                <img src={ratingStar} alt="star"/>
                             </div>{/* end of rstar-img */}
                         </div>{/* end of rating */}
                         <div className="release-date">
@@ -44,7 +46,7 @@ const movies = (md) => {
 }
 
 const MovieGrid = (props) => (
-    <div className="five-movie-weather-grid">
+    <div className="movie-list">
         {movies(props.movieData)}
     </div>
 );
