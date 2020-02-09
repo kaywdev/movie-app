@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 
 const Header = () => (
+
+
+
+
 	<header>
     	{/* <h1><Link to="/">MVDB</Link></h1> */}
 		<div className="mobile-header">

@@ -54,25 +54,9 @@ const makeCityOptions = (cities, currentCity) => {
     return cities.map((cityGroup, i) => {  return (<option value={cityGroup}>{cityGroup}</option> )});
 }
 
-// const makeCityOptGroups = (cities, currentCity) => {
-//     return cities.map((cityGroup, i) => { 
-//         return (
-//             <optgroup key={i} label={cityGroup.country}>
-//                 {makeCityOptions(cityGroup, currentCity)}
-//             </optgroup>
-//         )
-//     });
-// }
 
 
 const Location = (props) => {
-    // this handleChangeCity is not the same as in Home.js
-    // this is local
-    // const handleChangeCity = (e) => {
-    //     e.preventDefault();
-    //     const loc = e.target.elements.selectCity.value.split(',');
-    //     props.handleChangeCity(loc[0],loc[1]);
-    // }
 
     const handleChangeCity = (e) => {
         e.preventDefault();
@@ -82,19 +66,21 @@ const Location = (props) => {
     }
 
     return (
-        <div className="location">
-            <h3>{props.city}
-            {/* , {props.country} */}
-            </h3>
-            <span className="divider">:</span>
-            <form onSubmit={handleChangeCity}>
-                <label htmlFor="select-city">City: </label>
-                <select name="selectCity" id="selectCity">
-                    {makeCityOptions(cities, props.city)}  
-                </select>
-                <button type="submit">Change Year</button>
-            </form>
+       
+        <div className="custom-select-wrapper">
+        <div className="sort-by choose-year">
+            <span className="choose-year-text">movie released in</span>
+             <div className="custom-select">
+                 <div className="custom-select__trigger"><span>{props.city}</span>
+                     <div className="arrow" onSubmit={handleChangeCity}></div>
+                 </div>
+                 <div className="custom-options">
+                     <span className="custom-option" data-value="popular">{makeCityOptions(cities, props.city)}  </span>
+                 </div>
+             </div>
+         </div>
         </div>
+       
     );
 
 };

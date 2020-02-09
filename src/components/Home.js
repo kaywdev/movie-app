@@ -45,7 +45,7 @@ const Home = (props) => {
             //const res2 = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&appid=dd25d2460a5c500a2ba6381b197c586a`);
             const res = await fetch(`https://api.themoviedb.org/3/movie/${country}?api_key=6bc37b6dd53eb4c2d3a0e11217b72415&language=en-US&page=1&primary_release_year=${city}`);
             console.log(`https://api.themoviedb.org/3/movie/${country}?api_key=6bc37b6dd53eb4c2d3a0e11217b72415&language=en-US&page=1&primary_release_year=${city}`);
-            let data = await res .json();
+            let data = await res.json();
             //let data2 = await res2 .json();
             console.log(data);
             console.log(city);
@@ -75,21 +75,20 @@ const Home = (props) => {
 
     return (
         <main>
-            <section>
-                <div className="page-info">
-                <h2>Movies</h2>
-                    <Location 
-                    city={city} 
-                    //country={country} 
-                    handleChangeCity={handleChangeCity}/>
-                    <Filter 
+            
+                <section className= "sort-movies">
+                <Filter 
                     country={country} 
                     handleChangeCountry={handleChangeCountry}/>
-                </div>       
-            </section>
-            <div className="five-day-forcast">
+
+                    <Location 
+                    city={city}  
+                    handleChangeCity={handleChangeCity}/>
+                </section>
+               
+                <section class="movie-lists">
                 {weatherData && <WeatherGrid weatherData={weatherData}/>}
-            </div> 
+                </section>
         </main>
     );
 }

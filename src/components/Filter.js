@@ -35,18 +35,19 @@ const Location = (props) => {
     }
 
     return (
-        <div className="location">
-            <h3>{props.city}
-            , {props.country}
-            </h3>
-            <span className="divider">:</span>
-            <form onSubmit={handleChangeCountry}>
-                <label htmlFor="select-city">Filter: </label>
-                <select name="selectCity" id="selectCity">
-                    {makeCityOptions(countries, props.country)}  
-                </select>
-                <button type="submit">Filter</button>
-            </form>
+        <div className="custom-select-wrapper">
+            <div className="sort-by">
+                <span className="sort-by-text">Show me</span>
+                <div class="custom-select">
+                    <div className="custom-select__trigger">
+                        <span>{props.country}</span>
+                        <div className="arrow" onSubmit={handleChangeCountry}></div>
+                    </div>
+                    <div className="custom-options">
+                        <span className="custom-option" data-value="popular">{makeCityOptions(countries, props.country)}  </span>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 
