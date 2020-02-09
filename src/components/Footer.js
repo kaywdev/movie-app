@@ -3,8 +3,7 @@ import React from 'react';
 const Footer = () =>  {
 
     const d = new Date();
-    const y = d.getFullYear()
-    console.log(y);
+    const y = d.getFullYear();
 
     return (
        
