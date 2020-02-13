@@ -34,7 +34,7 @@ const Home = (props) => {
     const [year, setYear] = useState(y);
     
     //setting popularity as initial topic of search
-    const [chart, setCountry] = useState('popular');
+    const [chart, setChart] = useState('popular');
 
     //[call back, when do we want the call back?]
     useEffect(() =>{
@@ -66,7 +66,7 @@ const Home = (props) => {
     }
 
     const handleChangeChart = (chart) => {
-        setCountry(chart);
+        setChart(chart);
     }
 
     return (

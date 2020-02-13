@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import ratingStar from '../images/star.png'
 
 const iconPath = 'https://image.tmdb.org/t/p/w1280';
@@ -37,8 +38,10 @@ const movies = (md) => {
                         <p>
                             {movie.overview}
                         </p>
-                    </div>{/** end of movie-summary */} 
+                    </div>{/** end of movie-summary */}
+                    <Link to='/movie'> 
                     <button>more info</button>
+                    </Link>
                 </div>{/** end of movie-text */} 
             </div>
         );

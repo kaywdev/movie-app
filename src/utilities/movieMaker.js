@@ -7,7 +7,7 @@
 //const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 
-function filterWD(arr){
+function filterMD(arr){
     return (
         arr.reduce((result, item, i) => {
             //if(i <21){
@@ -30,24 +30,24 @@ function setDate(obj){
 }
 
 
-function setImageAndWeather(obj){
+function setPosterImage(obj){
     obj.icon = obj.poster;
 }
 
 
-function setTemp(obj){
+function setTitle(obj){
     obj.title = obj.title;
 }
 
 
 function movieMaker(mdAPI){
 
-    mdAPI = filterWD(mdAPI);
+    mdAPI = filterMD(mdAPI);
 
     mdAPI.forEach((item, index) => {
         setDate(item);
-        setImageAndWeather(item);
-        setTemp(item);
+        setPosterImage(item);
+        setTitle(item);
         return mdAPI[index];        
     });
 
