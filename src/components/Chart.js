@@ -16,19 +16,18 @@ const Chart = (props) => {
 
     const handleChangeChart = (e) => {
         e.preventDefault();
-        const loc = e.target.elements.selectchart.value;
+        const loc = e.target.value;
         props.handleChangeChart(loc);
     }
 
     return (
         <div className="charts">
             <h3>{props.chart}</h3>
-            <form onSubmit={handleChangeChart}>
+            <form>
                 <label htmlFor="selectchart">Charts: </label>
-                <select name="selectchart" id="selectchart">
+                <select name="selectchart" id="selectchart" onChange={handleChangeChart}>
                     {makeChartOptions(charts, props.chart)}  
                 </select>
-                <button type="submit">Charts</button>
             </form>
         </div>
     );

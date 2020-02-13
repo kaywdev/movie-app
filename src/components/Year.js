@@ -18,19 +18,19 @@ const Year = (props) => {
 
     const handleChangeYear = (e) => {
         e.preventDefault();
-        const loc = e.target.elements.selectyear.value;
+        const loc = e.target.value;
         props.handleChangeYear(loc);
     }
 
     return (
         <div className="year">
             <h3>{props.year}</h3>
-            <form onSubmit={handleChangeYear}>
+            <form>
                 <label htmlFor="selectyear">year: </label>
-                <select name="selectyear" id="selectyear">
+                <select name="selectyear" id="selectyear" onChange={handleChangeYear}>
                     {makeYearOptions(years, props.year)}  
                 </select>
-                <button type="submit">Change Year</button>
+                
             </form>
         </div>
     );
