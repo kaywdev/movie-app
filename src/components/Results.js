@@ -3,7 +3,7 @@ import Result from './Result';
 
 const Results = ({ results }) => {
 
-    console.log(results);
+    //console.log(results);
 
     return (
         <section className="results">

@@ -4,8 +4,7 @@ const resultImgPath = 'https://image.tmdb.org/t/p/w1280';
 
 const Result = ({ result }) => {
 
-    console.log('See below for result...from Result Component..')
-    console.log(result);
+    //console.log('See these result...from Result Component.. ' + result);
 
     return (
 

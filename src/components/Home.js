@@ -30,7 +30,7 @@ const Home = (props) => {
     //const [query, setQuery] = useState('');
     const [result, setResult] = useState([]);
     
-    const [selected, setSelected] = useState({});
+    //const [selected, setSelected] = useState({});
 
     // set the variables that we want react to keep track of 
     const [movieData, setMovieData] = useState(null);
@@ -52,12 +52,12 @@ const Home = (props) => {
         const fetchMovies = async () => {
 
             const res = await fetch(`https://api.themoviedb.org/3/movie/${chart}?api_key=${key}&language=en-US&page=1&primary_release_year=${year}`);
-            console.log(`https://api.themoviedb.org/3/movie/${chart}?api_key=${key}&language=en-US&page=1&primary_release_year=${year}`);
+            //console.log(`https://api.themoviedb.org/3/movie/${chart}?api_key=${key}&language=en-US&page=1&primary_release_year=${year}`);
             let data = await res.json();
             
             const formattedmovieData = movieMaker(data.results);
             setMovieData(formattedmovieData);
-            console.log('formatted data in Home.js ' + formattedmovieData);
+            //console.log('formatted data in Home.js ' + formattedmovieData);
         }
 
         fetchMovies();
