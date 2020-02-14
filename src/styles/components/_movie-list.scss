@@ -46,6 +46,11 @@
         padding: 10px;
         padding-bottom: 25px;
 
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
         @include mq($tabletLandscape){
             padding-right: 30px;
         }

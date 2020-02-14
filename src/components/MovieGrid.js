@@ -11,12 +11,13 @@ const movies = (md) => {
         console.log('in MovieGrid star path: '+ `src/images/${movie.rateStars}`);
 
         return (
+            
             <div key={i} className={`movie-info movie-0${i+1}`}>
                 <figure>
-                    <img src={iconPath + movie.poster} alt={movie.poster}/>
+                <Link to='/movie'> <img src={iconPath + movie.poster} alt={movie.poster}/></Link>
                 </figure>
                 <div className="movie-text">
-                    <h3>{movie.title}</h3>
+                <h3><Link to='/movie'>{movie.title}</Link></h3>
                     <div className="rating">
                         <div className="star-img">
                             <img src={`${rateIconPath}${movie.rateStars}`}  alt="star"/>
@@ -30,15 +31,15 @@ const movies = (md) => {
                             {movie.overview}
                         </p>
                     </div>{/** end of movie-summary */}
-                    <Link to='/movie'> 
-                    <button>more info</button>
-                    </Link>
+                    <Link to='/movie'> <button>more info</button></Link>
                     <ul>
                         <li><a href="#0">Favourite</a></li>
                         <li><a href="#0">Watch Later</a></li>
                     </ul>
                 </div>{/** end of movie-text */} 
+                
             </div>
+            
         );
     })
 }
