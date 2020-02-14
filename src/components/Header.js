@@ -12,10 +12,7 @@ const Header = () => {
 
 	const[isMenuOpen, setIsMenuOpen]=useState(false);
 return(
-	<header isMenuOpen = {isMenuOpen}
-			onToggleMenu = {()=>setIsMenuOpen(!isMenuOpen)}
-			className={isMenuOpen && 'show'}
-			>
+	<header className={isMenuOpen ? 'show' : 'hide'}>
     	{/* <h1><Link to="/">MVDB</Link></h1> */}
 		<div className="mobile-header">
 			<button className="btn-menu" 
