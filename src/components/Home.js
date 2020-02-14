@@ -29,6 +29,7 @@ const Home = (props) => {
 
     //const [query, setQuery] = useState('');
     const [result, setResult] = useState([]);
+    
     const [selected, setSelected] = useState({});
 
     // set the variables that we want react to keep track of 
