@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 // Components
 import Year from './Year';
 import Chart from './Chart';
 import MovieGrid from './MovieGrid';
+import Search from './Search';
+import Results from './Results';
 import movieMaker from '../utilities/movieMaker';
 
 // Utilities
@@ -21,11 +24,40 @@ import movieMaker from '../utilities/movieMaker';
 
 const Home = (props) => { 
 
-    const key = "6bc37b6dd53eb4c2d3a0e11217b72415";
+    const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
+    const search_api = "https://api.themoviedb.org/3/search/movie?api_key=";
+    // const search_api = "https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher";
+
+    // set search input variable and function
+    // const [state, setState] = useState ({
+    //     s: "",
+    //     result: [],
+    //     selected: {},
+    // });
+
+    //const [query, setQuery] = useState('');
+    const [result, setResult] = useState([]);
+    const [selected, setSelected] = useState({});
+
+    // const search = (e) => {
+    //     if ( e.key === "Enter" ){
+    //         axios(search_api + key + "&query=" + s).then(({ data }) => {
+    //             let results = data.results;
+
+    //             setResult(results);
+
+    //             // setState(prevState => {
+    //             //     return { ...prevState, results: results }
+    //             // });
+    //             // console.log(data);
+    //             // console.log(state.s);
+    //         });
+    //     }
+    // }
 
     // set the variables that we want react to keep track of 
     const [movieData, setMovieData] = useState(null);
-    //movieData is the  variable and setMovieData is the function to update that variable
+    //movieData is the variable and setMovieData is the function to update that variable
     //const [year, setYear] = useState(props.year);
 
     //setting the current year as initial year
@@ -48,7 +80,7 @@ const Home = (props) => {
             let data = await res.json();
             
             console.log('home.js line 50: '+data);
-            console.log( 'home.js line 51: '+year);
+            console.log('home.js line 51: '+year);
             console.log('home.js line 52: '+chart);
             
             
@@ -69,21 +101,50 @@ const Home = (props) => {
         setChart(chart);
     }
 
+    // Handle Search Input
+    const handleSearch = (searchEnteredByUser) => {
+        //let s = e.target.value;
+
+        //setQuery(searchEnteredByUser);
+
+        // set(prevState => {
+        //     return { ...prevState, s:s }
+        // });
+
+        // console.log(state.s);
+
+        const s = searchEnteredByUser;
+
+        axios(search_api + key + "&query=" + s).then(({ data }) => {
+            //let results = data.results;
+
+            setResult(data.results);
+
+            // setState(prevState => {
+            //     return { ...prevState, results: results }
+            // });
+            // console.log(data);
+            // console.log(state.s);
+        });
+
+
+    }
+
     return (
         <main> 
-                <section className= "sort-movies">
-               <Chart 
-                    chart={chart} 
-                    handleChangeChart={handleChangeChart}/>
-
-                    <Year 
-                    year={year} 
-                    handleChangeYear={handleChangeYear}/>
-                </section>
-               
-                <section className="movie-lists">
-                {movieData && <MovieGrid movieData={movieData}/>}
-                </section> 
+            <Search handleSearch={handleSearch} search={null}/>
+            <Results results={result} />
+            <section className= "sort-movies">
+            <Chart 
+                chart={chart} 
+                handleChangeChart={handleChangeChart}/>
+            <Year 
+                year={year} 
+                handleChangeYear={handleChangeYear}/>
+            </section>
+            <section className="movie-lists">
+            {movieData && <MovieGrid movieData={movieData}/>}
+            </section> 
         </main>
     );
 }

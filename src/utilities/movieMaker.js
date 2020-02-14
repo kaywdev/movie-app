@@ -11,7 +11,7 @@ function filterMD(arr){
     return (
         arr.reduce((result, item, i) => {
             //if(i <21){
-                result.push({ date: item.release_date, poster: item.poster_path, title: item.title, overview: item.overview });
+                result.push({ date: item.release_date, poster: item.poster_path, title: item.title, overview: item.overview , id: item.id});
                 //result.push({ date: item.release_date, poster: item.poster_path, title: item.title, background: item.backdrop_path, rating: item.popularity });
             //} 
             return result;
@@ -39,6 +39,10 @@ function setTitle(obj){
     obj.title = obj.title;
 }
 
+function setId(obj){
+    obj.id = obj.id;
+}
+
 
 function movieMaker(mdAPI){
 
@@ -48,6 +52,7 @@ function movieMaker(mdAPI){
         setDate(item);
         setPosterImage(item);
         setTitle(item);
+        setId(item);
         return mdAPI[index];        
     });
 
