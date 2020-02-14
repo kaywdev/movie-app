@@ -1,12 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import ratingStar from '../images/star.png'
 
 const iconPath = 'https://image.tmdb.org/t/p/w1280';
+//const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
+const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 const movies = (md) => {
     return md.map((movie, i) => {
-        console.log('in MovieGrid: '+ movie.id + ' and ' + movie.rate)
+        console.log('in MovieGrid: '+ movie.id + ' and ' + movie.rate);
+        console.log('in MovieGrid star path: '+ `src/images/${movie.rateStars}`);
+
         return (
             <div key={i} className={`movie-info movie-0${i+1}`}>
                 <figure>
@@ -16,19 +19,7 @@ const movies = (md) => {
                     <h3>{movie.title}</h3>
                     <div className="rating">
                         <div className="star-img">
-                            <img src= {ratingStar} alt="star"/>
-                        </div>{/* end of rstar-img */}
-                        <div className="star-img">
-                            <img src={ratingStar} alt="star"/>
-                        </div>{/* end of rstar-img */}
-                        <div className="star-img">
-                            <img src={ratingStar} alt="star"/>
-                        </div>{/* end of rstar-img */}
-                        <div className="star-img">
-                            <img src={ratingStar} alt="star"/>
-                        </div>{/* end of rstar-img */}
-                        <div className="star-img">
-                            <img src={ratingStar} alt="star"/>
+                            <img src={`${rateIconPath}${movie.rateStars}`}  alt="star"/>
                         </div>{/* end of rstar-img */}
                     </div>{/* end of rating */}
                     <div className="release-date">
