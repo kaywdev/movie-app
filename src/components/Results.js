@@ -3,11 +3,13 @@ import Result from './Result';
 
 const Results = ({ results }) => {
 
+    console.log(results);
+
     return (
         <section className="results">
-            {results.map(result => {
-                <Result result={result} />
-            } )}
+            {(results !== undefined || results.length === 0) ? results.map(result => {
+                return <Result result={result} />
+            }) : <p>No search provided...Got back to search page...</p>}
         </section>     
     );
 

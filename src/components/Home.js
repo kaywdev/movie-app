@@ -29,25 +29,31 @@ const Home = (props) => {
     // const search_api = "https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher";
 
     // set search input variable and function
-    const [state, setState] = useState ({
-        s: "",
-        result: [],
-        selected: {},
-    });
+    // const [state, setState] = useState ({
+    //     s: "",
+    //     result: [],
+    //     selected: {},
+    // });
 
-    const search = (e) => {
-        if ( e.key === "Enter" ){
-            axios(search_api + key + "&query=" + state.s).then(({ data }) => {
-                let results = data.Search;
+    //const [query, setQuery] = useState('');
+    const [result, setResult] = useState([]);
+    const [selected, setSelected] = useState({});
 
-                setState(prevState => {
-                    return { ...prevState, results: results }
-                });
-                // console.log(data);
-                // console.log(state.s);
-            });
-        }
-    }
+    // const search = (e) => {
+    //     if ( e.key === "Enter" ){
+    //         axios(search_api + key + "&query=" + s).then(({ data }) => {
+    //             let results = data.results;
+
+    //             setResult(results);
+
+    //             // setState(prevState => {
+    //             //     return { ...prevState, results: results }
+    //             // });
+    //             // console.log(data);
+    //             // console.log(state.s);
+    //         });
+    //     }
+    // }
 
     // set the variables that we want react to keep track of 
     const [movieData, setMovieData] = useState(null);
@@ -96,20 +102,38 @@ const Home = (props) => {
     }
 
     // Handle Search Input
-    const handleInput = (e) => {
-        let s = e.target.value;
+    const handleSearch = (searchEnteredByUser) => {
+        //let s = e.target.value;
 
-        setState(prevState => {
-            return { ...prevState, s:s }
-        });
+        //setQuery(searchEnteredByUser);
+
+        // set(prevState => {
+        //     return { ...prevState, s:s }
+        // });
 
         // console.log(state.s);
+
+        const s = searchEnteredByUser;
+
+        axios(search_api + key + "&query=" + s).then(({ data }) => {
+            //let results = data.results;
+
+            setResult(data.results);
+
+            // setState(prevState => {
+            //     return { ...prevState, results: results }
+            // });
+            // console.log(data);
+            // console.log(state.s);
+        });
+
+
     }
 
     return (
         <main> 
-            <Search handleInput={handleInput} search={search}/>
-            <Results results={state.results} />
+            <Search handleSearch={handleSearch} search={null}/>
+            <Results results={result} />
             <section className= "sort-movies">
             <Chart 
                 chart={chart} 
