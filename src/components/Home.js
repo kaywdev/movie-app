@@ -26,14 +26,6 @@ const Home = (props) => {
 
     const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
     const search_api = "https://api.themoviedb.org/3/search/movie?api_key=";
-    // const search_api = "https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher";
-
-    // set search input variable and function
-    // const [state, setState] = useState ({
-    //     s: "",
-    //     result: [],
-    //     selected: {},
-    // });
 
     //const [query, setQuery] = useState('');
     const [result, setResult] = useState([]);
@@ -81,31 +73,10 @@ const Home = (props) => {
 
     // Handle Search Input
     const handleSearch = (searchEnteredByUser) => {
-        //let s = e.target.value;
-
-        //setQuery(searchEnteredByUser);
-
-        // set(prevState => {
-        //     return { ...prevState, s:s }
-        // });
-
-        // console.log(state.s);
-
         const s = searchEnteredByUser;
-
         axios(search_api + key + "&query=" + s).then(({ data }) => {
-            //let results = data.results;
-
             setResult(data.results);
-
-            // setState(prevState => {
-            //     return { ...prevState, results: results }
-            // });
-            // console.log(data);
-            // console.log(state.s);
         });
-
-
     }
 
     return (

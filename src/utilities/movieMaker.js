@@ -4,7 +4,7 @@
 
 // Days and Months
 //const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-//const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 
 function filterMD(arr){
@@ -57,35 +57,11 @@ function setRateImage(obj){
 }
 
 function setDate(obj){
-    // let strDate = obj.date //.split(' ')[0] + 'Z';
-    // let date = new Date(strDate);
-    // let dayName = days[date.getDay()];
-    // let monthName = months[date.getMonth()];
-    // let dayNumber = date.getDate();
-    // obj.date = `${dayName} ${monthName} ${dayNumber}`;
-    obj.date = obj.date;
+    let strDate = obj.date.split('-');
+    let monthIndex = strDate[1].split('');
+    let monthName = months[monthIndex[1]];
+    obj.date = `${monthName} ${strDate[2]}, ${strDate[0]}`;
 }
-
-
-function setPosterImage(obj){
-    obj.icon = obj.poster;
-}
-
-
-function setTitle(obj){
-    obj.title = obj.title;
-}
-
-function setId(obj){
-    obj.id = obj.id;
-}
-
-function setRate(obj){
-    obj.rate = obj.rate;
-}
-
-
-
 
 function movieMaker(mdAPI){
 
@@ -94,15 +70,10 @@ function movieMaker(mdAPI){
     mdAPI.forEach((item, index) => {
         setRateImage(item);
         setDate(item);
-        setPosterImage(item);
-        setTitle(item);
-        setId(item);
-        setRate(item);
         return mdAPI[index];        
     });
 
     return mdAPI;
-
 }
 
 export default movieMaker;

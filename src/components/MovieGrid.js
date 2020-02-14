@@ -7,8 +7,8 @@ const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 const movies = (md) => {
     return md.map((movie, i) => {
-        console.log('in MovieGrid: '+ movie.id + ' and ' + movie.rate);
-        console.log('in MovieGrid star path: '+ `src/images/${movie.rateStars}`);
+        //console.log('in MovieGrid: '+ movie.id + ' and ' + movie.rate);
+        //console.log('in MovieGrid star path: '+ `src/images/${movie.rateStars}`);
 
         return (
             
