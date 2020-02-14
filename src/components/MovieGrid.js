@@ -6,6 +6,7 @@ const iconPath = 'https://image.tmdb.org/t/p/w1280';
 
 const movies = (md) => {
     return md.map((movie, i) => {
+        console.log('in MovieGrid: '+ movie.id + ' and ' + movie.rate)
         return (
             <div key={i} className={`movie-info movie-0${i+1}`}>
                 <figure>

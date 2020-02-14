@@ -39,26 +39,9 @@ const Home = (props) => {
     const [result, setResult] = useState([]);
     const [selected, setSelected] = useState({});
 
-    // const search = (e) => {
-    //     if ( e.key === "Enter" ){
-    //         axios(search_api + key + "&query=" + s).then(({ data }) => {
-    //             let results = data.results;
-
-    //             setResult(results);
-
-    //             // setState(prevState => {
-    //             //     return { ...prevState, results: results }
-    //             // });
-    //             // console.log(data);
-    //             // console.log(state.s);
-    //         });
-    //     }
-    // }
-
     // set the variables that we want react to keep track of 
     const [movieData, setMovieData] = useState(null);
     //movieData is the variable and setMovieData is the function to update that variable
-    //const [year, setYear] = useState(props.year);
 
     //setting the current year as initial year
     const d = new Date();
@@ -70,23 +53,18 @@ const Home = (props) => {
 
     //[call back, when do we want the call back?]
     useEffect(() =>{
-        // fetch our weather data using fetch API (native JS)
+        // fetch our movie data using fetch API (native JS)
         // - setup an "async / await" to wait for the returned data
-        //from the openWeatherAPI
+        //from the movieAPI
         const fetchMovies = async () => {
 
             const res = await fetch(`https://api.themoviedb.org/3/movie/${chart}?api_key=${key}&language=en-US&page=1&primary_release_year=${year}`);
             console.log(`https://api.themoviedb.org/3/movie/${chart}?api_key=${key}&language=en-US&page=1&primary_release_year=${year}`);
             let data = await res.json();
             
-            console.log('home.js line 50: '+data);
-            console.log('home.js line 51: '+year);
-            console.log('home.js line 52: '+chart);
-            
-            
             const formattedmovieData = movieMaker(data.results);
             setMovieData(formattedmovieData);
-            console.log(formattedmovieData);
+            console.log('formatted data in Home.js ' + formattedmovieData);
         }
 
         fetchMovies();
