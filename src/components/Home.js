@@ -1,94 +1,89 @@
 import React, { useState, useEffect } from 'react';
 // Components
-import Location from './Location';
-import Filter from './Filter';
-import WeatherGrid from './WeatherGrid';
-import weatherMaker from '../utilities/movieMaker';
+import Year from './Year';
+import Chart from './Chart';
+import MovieGrid from './MovieGrid';
+import movieMaker from '../utilities/movieMaker';
 
 // Utilities
 
 /** 
  * 
- * Open Weather API Info
  * 
- * URL: https://openweathermap.org/
+ * URL: 
  * 
- * API Key: dd25d2460a5c500a2ba6381b197c586a
+ * API Key:
  * 
- * Base URL: https://api.openweathermap.org/data/2.5/forecast?q= 
+ * Base URL:
  * 
- * For Vancouver: https://api.openweathermap.org/data/2.5/forecast?q=vancouver,ca&units=metric&appid=dd25d2460a5c500a2ba6381b197c586a
  * 
 */
 
 const Home = (props) => { 
 
-    // set the state variables of state properties 
-    // that we want react to keep track of 
-    const [weatherData, setWeatherData] = useState(null);
-    //const [weatherData2, setWeatherData2] = useState(null);
-    //City city is the  var and setCity is the function
-    //to update that var
-    //const [city, setCity] = useState(props.city);
+    const key = "6bc37b6dd53eb4c2d3a0e11217b72415";
+
+    // set the variables that we want react to keep track of 
+    const [movieData, setMovieData] = useState(null);
+    //movieData is the  variable and setMovieData is the function to update that variable
+    //const [year, setYear] = useState(props.year);
+
+    //setting the current year as initial year
     const d = new Date();
-    const y = d.getFullYear()
-    const [city, setCity] = useState(y);
-    //country
-    const [country, setCountry] = useState('popular');
+    const y = d.getFullYear();
+    const [year, setYear] = useState(y);
+    
+    //setting popularity as initial topic of search
+    const [chart, setCountry] = useState('popular');
 
     //[call back, when do we want the call back?]
     useEffect(() =>{
         // fetch our weather data using fetch API (native JS)
         // - setup an "async / await" to wait for the returned data
         //from the openWeatherAPI
-        const fetchWeather = async () => {
-            //const res2 = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&appid=dd25d2460a5c500a2ba6381b197c586a`);
-            const res = await fetch(`https://api.themoviedb.org/3/movie/${country}?api_key=6bc37b6dd53eb4c2d3a0e11217b72415&language=en-US&page=1&primary_release_year=${city}`);
-            console.log(`https://api.themoviedb.org/3/movie/${country}?api_key=6bc37b6dd53eb4c2d3a0e11217b72415&language=en-US&page=1&primary_release_year=${city}`);
-            let data = await res .json();
-            //let data2 = await res2 .json();
-            console.log(data);
-            console.log(city);
-            console.log(country);
+        const fetchMovies = async () => {
+
+            const res = await fetch(`https://api.themoviedb.org/3/movie/${chart}?api_key=${key}&language=en-US&page=1&primary_release_year=${year}`);
+            console.log(`https://api.themoviedb.org/3/movie/${chart}?api_key=${key}&language=en-US&page=1&primary_release_year=${year}`);
+            let data = await res.json();
             
-            //const formattedWeatherData = weatherMaker(data.list);
-            const formattedWeatherData = weatherMaker(data.results);
-            //setWeatherData(formattedWeatherData);
-            setWeatherData(formattedWeatherData);
-            //console.log(formattedWeatherData);
-            console.log(formattedWeatherData);
+            console.log('home.js line 50: '+data);
+            console.log( 'home.js line 51: '+year);
+            console.log('home.js line 52: '+chart);
+            
+            
+            const formattedmovieData = movieMaker(data.results);
+            setMovieData(formattedmovieData);
+            console.log(formattedmovieData);
         }
 
-        fetchWeather();
-    }, [city, country]);
-    //}, [city]);
+        fetchMovies();
+    }, [year, chart]);
 
-    // State Change Method
-    const handleChangeCity = (city) => {
-        setCity(city);
-       // setCountry(country);
+    // State Change Methods
+    const handleChangeYear = (year) => {
+        setYear(year);
     }
-    const handleChangeCountry = (country) => {
-        //setCity(city);
-        setCountry(country);
+
+    const handleChangeChart = (chart) => {
+        setCountry(chart);
     }
 
     return (
         <main>
             <section>
                 <div className="page-info">
-                <h2>Movies</h2>
-                    <Location 
-                    city={city} 
-                    //country={country} 
-                    handleChangeCity={handleChangeCity}/>
-                    <Filter 
-                    country={country} 
-                    handleChangeCountry={handleChangeCountry}/>
+                    <h2>Movies</h2>
+                    <Year 
+                    year={year} 
+                    handleChangeYear={handleChangeYear}/>
+                    <Chart 
+                    chart={chart} 
+                    handleChangeChart={handleChangeChart}/>
                 </div>       
             </section>
-            <div className="five-day-forcast">
-                {weatherData && <WeatherGrid weatherData={weatherData}/>}
+            <div className="movie-grid">
+                {movieData && <MovieGrid movieData={movieData}/>}
             </div> 
         </main>
     );

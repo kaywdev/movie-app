@@ -254,7 +254,7 @@ footer {
       border-top: 0;
       background: black;
       transition: all 0.5s;
-      opacity: 0;
+      opayear: 0;
       visibility: hidden;
       pointer-events: none;
       z-index: 2; }
@@ -276,7 +276,7 @@ footer {
         background-color: #c74649;
         width: 100%; }
   .custom-select-wrapper .custom-select.open .custom-options {
-    opacity: 1;
+    opayear: 1;
     visibility: visible;
     pointer-events: all; }
   .custom-select-wrapper .custom-select.open .arrow::before {
@@ -392,7 +392,7 @@ footer {
       height: 2px;
       width: 100%;
       background: #ffffff;
-      opacity: 1;
+      opayear: 1;
       left: 0;
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
