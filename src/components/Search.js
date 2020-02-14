@@ -12,7 +12,8 @@ const Search = ({ handleSearch }) => {
         <section className="searchbox-wrap"> 
             <span className="search-icon"><img src={searchIcon} alt="search-icon"/></span>
             <form onSubmit={handleFormSubmit}>
-                <label htmlFor="search" className="sr-only">Search: </label>
+                {/* label sholud be hidden from HTML by CSS */}
+                <label htmlFor="search" className="sr-only">Search: </label> 
                 <input type="text"
                     id="search"
                     name="search"
