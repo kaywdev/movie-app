@@ -18,7 +18,7 @@ const AppRouter = () => (
 		<div className="wrapper">
 			<div className="header-oneline">
 			<Header />
-			<Search />
+			{/* <Search /> */}
 			</div>
 			<Switch>
 				<Route path="/" exact><Home /></Route>
