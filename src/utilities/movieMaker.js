@@ -39,6 +39,10 @@ function setTitle(obj){
     obj.title = obj.title;
 }
 
+function setId(obj){
+    obj.id = obj.id;
+}
+
 
 function movieMaker(mdAPI){
 
@@ -48,6 +52,7 @@ function movieMaker(mdAPI){
         setDate(item);
         setPosterImage(item);
         setTitle(item);
+        setId(item);
         return mdAPI[index];        
     });
 
