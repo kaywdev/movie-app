@@ -37,25 +37,5 @@ header nav{
             }
         }
   }
-
-    
-    
-}
-.show header .mobile-header a,
-.show header .mobile-header button{
-    color: #ffffff;
-    text-shadow:none;
-}
-.show header nav, .show span.logo{
-    display: block;
 }
 
-.show header nav{
-    position: absolute;
-    z-index: 2;
-}
-.show header nav a:hover,
-.show header nav a:active,
-.show header nav a:focus{
-    background-color: $red;
-}

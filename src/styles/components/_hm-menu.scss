@@ -10,8 +10,7 @@
     position: absolute;
     left: 20px;
 
-    
-
+  
     .icon{
         position: relative;
     }
@@ -60,31 +59,8 @@
              top:24px;
          }
     }
-    #nav-hm.open .hm-menu:nth-child(1){
-        top:18px;
-        width:0%;
-        left:50%;
-     }
-     #nav-hm.open .hm-menu:nth-child(2){
-        -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-     }
     
-     #nav-hm.open .hm-menu:nth-child(3) {
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        top: 12px;
-      }
-      
-      #nav-hm.open .hm-menu:nth-child(4) {
-        top: 18px;
-        width: 0%;
-        left: 50%;
-      }
+    
       
       @include mq($phoneLandscape){
         display: none;

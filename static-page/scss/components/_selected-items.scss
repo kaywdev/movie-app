@@ -97,7 +97,7 @@
         border-top: 0;
         background: black;
         transition: all 0.5s;
-        opayear: 0;
+        opacity: 0;
         visibility: hidden;
         pointer-events: none;
         z-index: 2;
@@ -128,7 +128,7 @@
    }
    
    .custom-select.open .custom-options {
-    opayear: 1;
+    opacity: 1;
     visibility: visible;
     pointer-events: all;
 

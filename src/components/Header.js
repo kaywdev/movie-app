@@ -1,17 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import LogoImage from '../images/mvdb_logo.svg';
 
-const Header = () => (
 
 
 
+const Header = () => {
 
-	<header>
+
+
+	const[isMenuOpen, setIsMenuOpen]=useState(false);
+return(
+	<header isMenuOpen = {isMenuOpen}
+			onToggleMenu = {()=>setIsMenuOpen(!isMenuOpen)}
+			className={isMenuOpen && 'show'}
+			>
     	{/* <h1><Link to="/">MVDB</Link></h1> */}
 		<div className="mobile-header">
-			<button className="btn-menu" id="btn-menu">
+			<button className="btn-menu" 
+					id="btn-menu" 
+					onClick={() => {setIsMenuOpen(!isMenuOpen)}}>
 				<div className="icon">
 					<div id="nav-hm">
 						<div className="hm-menu"></div>
@@ -30,9 +39,10 @@ const Header = () => (
 				</Link>
 			</h1>
     	</div>
-			<Nav />
+			<Nav/>
 	</header>
+	
 );
-
+}
 
 export default Header;
