@@ -7,9 +7,7 @@ import Header from '../components/Header';
 import Search from '../components/Search';
 import Home from '../components/Home';
 import About from '../components/About';
-import Movie from '../components/Movie';
-// import year from '../components/year';
-// import YourCities from '../components/YourCities';
+import SingleMovie from '../components/SingleMovie';
 import Footer from '../components/Footer';
 
 
@@ -25,9 +23,7 @@ const AppRouter = () => (
 				<Route path="/index.html" exact><Home /></Route>
 					{/* exact means only this one and does not overwrite */}
 				<Route path="/about" ><About /></Route>
-				<Route path="/movie" ><Movie /></Route>
-				{/* <Route path="/your-movies" exact ><YourCities /></Route> */}
-				{/* <Route path="/your-movies/:year" component={year}><year /></Route> */}
+				<Route path="/movie" ><SingleMovie /></Route>
 					
 			</Switch>
 			</div>
