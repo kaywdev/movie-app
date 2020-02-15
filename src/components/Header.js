@@ -1,12 +1,18 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
-import LogoImage from '../images/mvdb_logo.svg';
+import {useLocation} from 'react-router-dom';
+
 
 
 
 
 const Header = () => {
+
+	const iconPath = process.env.PUBLIC_URL + '/assets/images/';
+
+	let location = useLocation();
+	console.log(location);
 
 
 
@@ -31,7 +37,9 @@ return(
     		<h1>
 				<Link to="/">
 				<div className="logo" >
-				 <img src = {LogoImage} alt="logo"/>
+				 
+				{ location.pathname === "/" && <img src = {`${iconPath}mvdb_logo.svg`} alt="logo"/> }
+				{ location.pathname === "/about" && <img src = {`${iconPath}mvdb_logo_my-favourite.svg`} alt="logo"/> }
 				</div>
 				</Link>
 			</h1>

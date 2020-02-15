@@ -5,6 +5,8 @@ export const setStorage = (newItem, storageItem = 'favourites') => {
     localStorage.setItem(storageItem, newItem);
 }
 
+// setStorage(item)
+
 export const getStorage = (storageItem = 'favourites') => {
     let items = localStorage.getItem(storageItem);
     if(items){
