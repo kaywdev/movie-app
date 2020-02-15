@@ -10,7 +10,7 @@ const Result = ({ result }) => {
     return (
 
         <div className="result">
-            <img src={resultImgPath + result.poster_path}  alt={result.title} />
+            <img src={resultImgPath + result.poster}  alt={result.title} />
             <h3>{result.title}</h3>
         </div>
 
