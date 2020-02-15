@@ -10,7 +10,7 @@ import movieMaker from '../utilities/movieMaker';
 
 
 // Utility Import
-import { setStorage, getStorage } from '../utilities/storageMaker'; 
+// import { setStorage, getStorage } from '../utilities/storageMaker'; 
 
 
 // Utilities
@@ -79,7 +79,6 @@ const Home = (props) => {
             setResult(data.results);
         });
     }
-
 
     return (
         <main> 

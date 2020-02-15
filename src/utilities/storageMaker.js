@@ -9,6 +9,13 @@ export const getStorage = (storageItem = 'favourites') => {
     let items = localStorage.getItem(storageItem);
     if(items){
         items = JSON.parse(items);
+        // console.log('in storageMaker: ');
+        // console.log(items[0].date);
+        // console.log(items[0].title);
+        // console.log(items[0].overview);
+        // console.log(items[1].date);
+        // console.log(items[1].title);
+        // console.log(items[1].overview);
         return items;
     }else {
         items = JSON.stringify([]);
@@ -68,3 +75,9 @@ export const getStorageIndexNumber = (item, storageItem = 'favourites') => {
     const itemIndex = itemsFromStorage.findIndex(itemMatch);
     return itemIndex;
 }
+
+// function storageMaker(item){
+//     getStorage(item);
+// }
+
+export default getStorage;
