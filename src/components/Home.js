@@ -76,7 +76,7 @@ const Home = (props) => {
     const handleSearch = (searchEnteredByUser) => {
         const s = searchEnteredByUser;
         axios(search_api + key + "&query=" + s).then(({ data }) => {
-            setResult(data.results);
+            setResult(movieMaker(data.results));
         });
     }
 

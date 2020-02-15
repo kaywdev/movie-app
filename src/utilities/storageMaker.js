@@ -5,6 +5,8 @@ export const setStorage = (newItem, storageItem = 'favourites') => {
     localStorage.setItem(storageItem, newItem);
 }
 
+// setStorage(item)
+
 export const getStorage = (storageItem = 'favourites') => {
     let items = localStorage.getItem(storageItem);
     if(items){
@@ -28,7 +30,7 @@ export const removeItemFromStorage = (index, storageItem = 'favourites') => {
     let itemsFromStorage = getStorage(storageItem);
     itemsFromStorage.splice(index, 1);
     itemsFromStorage = JSON.stringify(itemsFromStorage);
-    setStorage(itemsFromStorage);
+    setStorage(itemsFromStorage, storageItem);
     return -1;
 }
 
