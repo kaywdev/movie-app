@@ -19,8 +19,8 @@ const SingleMovie =({movie})=>{
   console.log(movieId);
 
   const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
-  const iconPath = 'https://image.tmdb.org/t/p/w500';
-  const iconPath1280 = 'https://image.tmdb.org/t/p/w1280';
+  // const iconPath = 'https://image.tmdb.org/t/p/w500';
+  // const iconPath1280 = 'https://image.tmdb.org/t/p/w1280';
   const [ singleMovie, setSingleMovie ] = useState({});
 
   useEffect(() =>{
@@ -48,10 +48,10 @@ const SingleMovie =({movie})=>{
 
         <div className="smovie-img-wrap">
           <div className="smovie-poster">
-            <img src={iconPath + singleMovie.poster} alt={singleMovie.title} />
+            <img src={singleMovie.poster} alt={singleMovie.title} />
           </div>
           <div className="smovie-bgimg">
-            <img src={iconPath1280 + singleMovie.bgimg} alt={singleMovie.title} />
+            <img src={singleMovie.bgimg} alt={singleMovie.title} />
           </div>
         </div>{/* .smovie-img-wrap */}
 

@@ -5,7 +5,9 @@
 // Days and Months
 //const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
+const iconPath = 'https://image.tmdb.org/t/p/w500';
+const iconPath1280 = 'https://image.tmdb.org/t/p/w1280';
+const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 function filterMD(arr){
     return (
@@ -19,6 +21,7 @@ function filterMD(arr){
         }, [])
       )
 }
+
 
 function setRateImage(obj){
     const rate = obj.rate;
@@ -59,37 +62,57 @@ function setRateImage(obj){
 }
 
 function setDate(obj) {
-    let strDate = obj.date.split('-');
-    let monthIndex = strDate[1];
-    if(monthIndex === '01'){
-        monthIndex=0;
-    }else if(monthIndex === '02'){
-        monthIndex=1;
-    }else if(monthIndex === '03'){
-        monthIndex=2;
-    }else if(monthIndex === '04'){
-        monthIndex=3;
-    }else if(monthIndex === '05'){
-        monthIndex=4;
-    }else if(monthIndex === '06'){
-        monthIndex=5;
-    }else if(monthIndex === '07'){
-        monthIndex=6;
-    }else if(monthIndex === '08'){
-        monthIndex=7;
-    }else if(monthIndex === '09'){
-        monthIndex=8;
-    }else if(monthIndex === '10'){
-        monthIndex=9;
-    }else if(monthIndex === '11'){
-        monthIndex=10;
-    }else if(monthIndex === '12'){
-        monthIndex=11;
+    if(obj.date != null){
+        let strDate = obj.date.split('-');
+        let monthIndex = strDate[1];
+        if(monthIndex === '01'){
+            monthIndex=0;
+        }else if(monthIndex === '02'){
+            monthIndex=1;
+        }else if(monthIndex === '03'){
+            monthIndex=2;
+        }else if(monthIndex === '04'){
+            monthIndex=3;
+        }else if(monthIndex === '05'){
+            monthIndex=4;
+        }else if(monthIndex === '06'){
+            monthIndex=5;
+        }else if(monthIndex === '07'){
+            monthIndex=6;
+        }else if(monthIndex === '08'){
+            monthIndex=7;
+        }else if(monthIndex === '09'){
+            monthIndex=8;
+        }else if(monthIndex === '10'){
+            monthIndex=9;
+        }else if(monthIndex === '11'){
+            monthIndex=10;
+        }else if(monthIndex === '12'){
+            monthIndex=11;
+        }
+        //console.log(monthIndex);
+        let monthName = months[monthIndex];
+        //console.log(monthName);
+        obj.date = `${monthName} ${strDate[2]}, ${strDate[0]}`;
+    }else{
+        obj.date = ''
     }
-    //console.log(monthIndex);
-    let monthName = months[monthIndex];
-    //console.log(monthName);
-    obj.date = `${monthName} ${strDate[2]}, ${strDate[0]}`;
+}
+
+function setImage(obj) {
+    if(obj.bgimg === null && obj.poster != null){
+        obj.poster = iconPath + obj.poster;
+        obj.bgimg = obj.poster;
+    }else if(obj.bgimg != null && obj.poster === null){
+        obj.bgimg = iconPath1280 + obj.bgimg;
+        obj.poster = obj.bgimg;
+    }else if(obj.bgimg === null && obj.poster === null){
+        obj.poster = rateIconPath + 'zero-grey.png';
+        obj.bgimg = rateIconPath + 'zero-grey.png';
+    }else{
+        obj.poster = iconPath + obj.poster;
+        obj.bgimg = iconPath1280 + obj.bgimg;
+    }
 }
 
 
@@ -100,6 +123,7 @@ function movieMaker(mdAPI){
     mdAPI.forEach((item, index) => {
         setRateImage(item);
         setDate(item);
+        setImage(item);
         return mdAPI[index];        
     });
 

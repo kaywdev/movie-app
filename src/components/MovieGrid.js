@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import AddFavourite from './AddFavourite';
 // import SingleMovie from './SingleMovie';
 
-const iconPath = 'https://image.tmdb.org/t/p/w500';
+//const iconPath = 'https://image.tmdb.org/t/p/w500';
 const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 const movies = (md) => {
@@ -15,7 +15,7 @@ const movies = (md) => {
             
             <div key={i} className={`movie-info movie-0${i+1}`}>
                 <figure>
-                <Link to='/movie'> <img src={iconPath + movie.poster} alt={movie.poster}/></Link>
+                <Link to='/movie'> <img src={movie.poster} alt={movie.poster}/></Link>
                 </figure>
                 <div className="movie-text">
                 <h3><Link to={`/movie/${movie.id}`}>{movie.title}</Link></h3>
