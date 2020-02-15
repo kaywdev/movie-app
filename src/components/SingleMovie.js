@@ -3,6 +3,8 @@ import {useParams} from 'react-router-dom';
 import movieMaker from '../utilities/movieMaker';
 import AddFavourite from './AddFavourite';
 import AddWatchLater from './AddWatchLater';
+import Search from './Search';
+import Results from './Results';
 // Individual Movie Page
 // The movie poster
 // Movie title
@@ -16,29 +18,48 @@ const SingleMovie =({movie})=>{
   console.log(movieId);
 
   const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
-
-  const [singleMovie, setSingleMovie] = useState({});
+  const iconPath = 'https://image.tmdb.org/t/p/w500';
+  const iconPath1280 = 'https://image.tmdb.org/t/p/w1280';
+  const [ singleMovie, setSingleMovie ] = useState({});
 
   useEffect(() =>{
         
     const fetchMovies = async () => {
 
-        const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}`);
-        let data = await res.json();
+      const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}`);
+      let data = await res.json();
 
-         setSingleMovie(movieMaker([data])[0]);
-       console.log(data);
+      setSingleMovie(movieMaker([data])[0]);
+      console.log(data);
+
     }
 
     fetchMovies();
 }, []);
 
-  return (  
-    <div className="single-movie-wrap">
-     <div>{singleMovie.title}</div>
-     <div>{singleMovie.poster}</div>
-     <AddFavourite movie={singleMovie} />
-     <AddWatchLater movie={singleMovie} />
+  return (
+    <div className="smovie-wrap">
+      
+      <div className="smovie-poster">
+        <img src={iconPath + singleMovie.poster} alt={singleMovie.title} />
+      </div>
+      <div className="smovie-bgimg">
+        <img src={iconPath1280 + singleMovie.bgimg} alt={singleMovie.title} />
+      </div>
+    
+      <div className="smovie-content">
+        <h1 className="smovie-title">{singleMovie.title}</h1>
+        <AddFavourite movie={singleMovie} />
+        <AddWatchLater movie={singleMovie} />
+        <h3>Overview</h3>
+        <p>{singleMovie.overview}</p>
+        <h3>Released</h3>
+        <p>{singleMovie.date}</p>
+        <h3>Rate</h3>
+        <p>{singleMovie.rate * 10}%</p>
+        <h3>Genre</h3>
+        <p>{singleMovie.genres}</p>
+      </div>
     </div>
     );
 };
