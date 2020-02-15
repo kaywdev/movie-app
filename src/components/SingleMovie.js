@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import movieMaker from '../utilities/movieMaker';
+import AddFavourite from './AddFavourite';
+import AddWatchLater from './AddWatchLater';
 // Individual Movie Page
 // The movie poster
 // Movie title
@@ -35,6 +37,8 @@ const SingleMovie =({movie})=>{
     <div className="single-movie-wrap">
      <div>{singleMovie.title}</div>
      <div>{singleMovie.poster}</div>
+     <AddFavourite movie={singleMovie} />
+     <AddWatchLater movie={singleMovie} />
     </div>
     );
 };

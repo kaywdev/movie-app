@@ -21,7 +21,7 @@ export const removeItemFromStorage = (index, storageItem = 'favourites') => {
     let itemsFromStorage = getStorage(storageItem);
     itemsFromStorage.splice(index, 1);
     itemsFromStorage = JSON.stringify(itemsFromStorage);
-    setStorage(itemsFromStorage);
+    setStorage(itemsFromStorage, storageItem);
     return -1;
 }
 
