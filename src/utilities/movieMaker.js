@@ -20,11 +20,11 @@ function filterMD(arr){
 
 function setRateImage(obj){
     const rate = obj.rate;
-    if(rate ===0 ){
+    if(rate === 0 ){
         obj.rate = 'zero';
-        obj.rateStars = 'zero.png';
-    }else if(rate >0 && rate <1) {
-        obj.rate = 'one half';
+        obj.rateStars = 'zero-blue.png';
+    }else if(rate >=0 && rate <1) {
+        obj.rate = 'one-half';
         obj.rateStars = 'one-half.png';
     }else if(rate >= 1 && rate <2){
         obj.rate = 'one';
@@ -46,7 +46,7 @@ function setRateImage(obj){
         obj.rateStars = 'three-and-half.png';
     }else if(rate >= 7 && rate <8){
         obj.rate = 'four';
-        obj.rateStars = 'star.png';
+        obj.rateStars = 'four.png';
     }else if(rate >= 8 && rate <9){
         obj.rate = 'four and half';
         obj.rateStars = 'four-and-half.png';

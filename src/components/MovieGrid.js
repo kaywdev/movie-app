@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import ratingStar from '../images/star.png'
+import AddFavourite from './AddFavourite';
 
 const iconPath = 'https://image.tmdb.org/t/p/w1280';
 //const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
@@ -31,13 +33,12 @@ const movies = (md) => {
                             {movie.overview}
                         </p>
                     </div>{/** end of movie-summary */}
-                    <Link to='/movie'> <button>more info</button></Link>
-                    <ul>
-                        <li><a href="#0">Favourite</a></li>
-                        <li><a href="#0">Watch Later</a></li>
-                    </ul>
+                    <Link to='/movie'> 
+                    <button>more info</button>
+                    </Link>
                 </div>{/** end of movie-text */} 
-                
+                <AddFavourite movie={movie}  //updateItems={updateItems} 
+                />
             </div>
             
         );
