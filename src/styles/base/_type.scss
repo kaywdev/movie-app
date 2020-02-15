@@ -2,43 +2,58 @@
 /* Typography */
 
 @font-face {
-    font-family: 'Gotherm-Rounded-Book';
+    font-family: 'Gotham-Rounded-Book';
     font-style: normal;
     font-weight: normal;
-    src:url('../fonts/grbold.ttf') format('truetype');
+    src: url('../fonts/grbold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Gotherm-Rounded-Bold';
+    font-family: 'Gotham-Rounded-Bold';
     font-style: normal;
     font-weight: normal;
-    src:url('../fonts/grbook.ttf') format('truetype');
+    src: url('../fonts/grbook.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Gotherm-Rounded-Light';
+    font-family: 'Gotham-Rounded-Light';
     font-style: normal;
     font-weight: normal;
-    src:url('../fonts/grlight.ttf') format('truetype');
+    src: url('../fonts/grlight.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Gotherm-Rounded-Medium';
+    font-family: 'Gotham-Rounded-Medium';
     font-style: normal;
     font-weight: normal;
-    src:url('../fonts/grmedium.ttf') format('truetype');
+    src: url('../fonts/grmedium.ttf') format('truetype');
 }
 
 
-body, .movie-text h3 {
+body {
     font-family: $bodyFont;
-   
+    font-weight: 300;
+}
+
+.movie-text h3{
+    font-family: $bodyFont;
+    font-weight: 500;
+}
+
+.movie-list p {
+    font-size: 90%;
+    line-height: 1.4;
 }
 
 h1, h2, h3, h4 {
-    font-family: $headingFont;
+    // font-family: $headingFont;
+    font-family: $bodyFont;
 }
 
 h1, h2, h3, h4, p {
     margin-top: 0;
+}
+
+nav a {
+    font-family: $headingFontLight;
 }
