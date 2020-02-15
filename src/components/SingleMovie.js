@@ -5,6 +5,7 @@ import AddFavourite from './AddFavourite';
 import AddWatchLater from './AddWatchLater';
 import Search from './Search';
 import Results from './Results';
+import SearchBar from './SearchBar';
 // Individual Movie Page
 // The movie poster
 // Movie title
@@ -38,29 +39,38 @@ const SingleMovie =({movie})=>{
 }, []);
 
   return (
-    <div className="smovie-wrap">
-      
-      <div className="smovie-poster">
-        <img src={iconPath + singleMovie.poster} alt={singleMovie.title} />
-      </div>
-      <div className="smovie-bgimg">
-        <img src={iconPath1280 + singleMovie.bgimg} alt={singleMovie.title} />
-      </div>
-    
-      <div className="smovie-content">
-        <h1 className="smovie-title">{singleMovie.title}</h1>
-        <AddFavourite movie={singleMovie} />
-        <AddWatchLater movie={singleMovie} />
-        <h3>Overview</h3>
-        <p>{singleMovie.overview}</p>
-        <h3>Released</h3>
-        <p>{singleMovie.date}</p>
-        <h3>Rate</h3>
-        <p>{singleMovie.rate * 10}%</p>
-        <h3>Genre</h3>
-        <p>{singleMovie.genres}</p>
-      </div>
-    </div>
+    <main>
+      <SearchBar />
+      {/* <Search handleSearch={handleSearch} search={null} />
+      <Results results={result} /> */}
+
+      <div className="smovie-wrap">
+
+        <div className="smovie-img-wrap">
+          <div className="smovie-poster">
+            <img src={iconPath + singleMovie.poster} alt={singleMovie.title} />
+          </div>
+          <div className="smovie-bgimg">
+            <img src={iconPath1280 + singleMovie.bgimg} alt={singleMovie.title} />
+          </div>
+        </div>{/* .smovie-img-wrap */}
+
+
+        <div className="smovie-content">
+          <h1 className="smovie-title">{singleMovie.title}</h1>
+          <AddFavourite movie={singleMovie} />
+          <AddWatchLater movie={singleMovie} />
+          <h3>Overview</h3>
+          <p>{singleMovie.overview}</p>
+          <h3>Released</h3>
+          <p>{singleMovie.date}</p>
+          <h3>Rate</h3>
+          <p>{singleMovie.rate * 10}%</p>
+          <h3>Genre</h3>
+          <p>{singleMovie.genres}</p>
+        </div>
+      </div>{/* .smovie-wrap */}
+    </main>
     );
 };
 

@@ -34,7 +34,7 @@ const Home = (props) => {
     // const search_api = "https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher";
 
     const [result, setResult] = useState([]);
-    const [selected, setSelected] = useState({});
+    // const [selected, setSelected] = useState({});
 
     // set the variables that we want react to keep track of 
     const [movieData, setMovieData] = useState(null);
