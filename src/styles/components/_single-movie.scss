@@ -1,0 +1,28 @@
+// Style for Single Movie Page
+
+
+// Typography
+.smovie-wrap {
+    h1 {
+        font-size: 300%;
+    }
+}
+
+
+// Images
+.smovie-poster {
+    width: 230px;
+    margin: 0 auto;
+
+}
+
+.smovie-img-wrap {
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+
+.smovie-img-wrap:before {
+    filter: opacity(100) grayscale(100%) contrast(130%);
+}

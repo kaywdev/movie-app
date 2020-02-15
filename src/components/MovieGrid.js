@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import AddFavourite from './AddFavourite';
-import SingleMovie from './SingleMovie';
+// import SingleMovie from './SingleMovie';
 
-const iconPath = 'https://image.tmdb.org/t/p/w1280';
+const iconPath = 'https://image.tmdb.org/t/p/w500';
 const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 const movies = (md) => {
