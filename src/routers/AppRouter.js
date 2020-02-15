@@ -23,7 +23,7 @@ const AppRouter = () => (
 				<Route path="/index.html" exact><Home /></Route>
 					{/* exact means only this one and does not overwrite */}
 				<Route path="/about" ><About /></Route>
-				<Route path="/movie" ><SingleMovie /></Route>
+				<Route path="/movie/:movieId" ><SingleMovie /></Route>
 					
 			</Switch>
 			</div>

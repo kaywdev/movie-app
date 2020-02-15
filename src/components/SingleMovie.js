@@ -1,5 +1,6 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
+import movieMaker from '../utilities/movieMaker';
 // Individual Movie Page
 // The movie poster
 // Movie title
@@ -9,11 +10,31 @@ import React from 'react';
 // Fav/Unfav button
 
 const SingleMovie =({movie})=>{
-  console.log(movie);
+  let { movieId } = useParams();
+  console.log(movieId);
+
+  const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
+
+  const [singleMovie, setSingleMovie] = useState({});
+
+  useEffect(() =>{
+        
+    const fetchMovies = async () => {
+
+        const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}`);
+        let data = await res.json();
+
+         setSingleMovie(movieMaker([data])[0]);
+       console.log(data);
+    }
+
+    fetchMovies();
+}, []);
 
   return (  
     <div className="single-movie-wrap">
-     <h3>Hello</h3>
+     <div>{singleMovie.title}</div>
+     <div>{singleMovie.poster}</div>
     </div>
     );
 };
