@@ -37,14 +37,17 @@
             font-size: 18px;
             flex: 0 1 100px;
         }
-        .star-img{
-            width: 50px;
-            //flex: 0 0 50px;
-            justify-content: flex-end;
-        }
-        .release-date{
-            flex: 0 0 100px;
-            justify-content: flex-end;
+        .rate-starts{
+            margin-right: 15px;
+            .star-img{
+                width: 50px;
+                //flex: 0 0 50px;
+                //justify-content: flex-end;
+            }
+            .release-date{
+                flex: 0 0 100px;
+                //justify-content: flex-end;
+            }
         }
     }
 }
