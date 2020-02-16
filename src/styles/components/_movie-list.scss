@@ -1,3 +1,44 @@
+.results.movie-lists{
+    width: 70vw;
+    top: -30px;
+    left: 15vw;
+    padding: 0;
+    background-color: rgba(2, 54, 89, 0.742);
+    a{
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        // border: 2px solid red;
+    }
+
+}
+.movie-list-results{
+    .movie-results:hover{
+        background-color: rgba(51, 102, 136, 0.742);
+    }
+    
+    .movie-results{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100px;
+
+        figure{
+            width: 60px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        h3{
+            font-size: 18px;
+        }
+        .star-img{
+            width: 50px;
+        }
+    }
+}
 .movie-lists{
     padding: 50px 0px 20px;
 

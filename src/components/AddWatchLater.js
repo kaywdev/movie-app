@@ -9,14 +9,14 @@ const AddWatchLater = ({movie}) => {
     
 
     useEffect(()=> {
-        setWatchIndex( isItemInStorage(movie) );
+        setWatchIndex( isItemInStorage(movie, 'watchlater'));
     },[]);
 
     const [watchIndex, setWatchIndex] = useState(-1);
 
     const handleAddWatchLater = (movie) => {
         setWatchIndex(addToStorage(movie, 'watchlater'));
-        console.log('Index from Add watch Event: ', watchIndex);
+        //console.log('Index from Add watch Event: ', watchIndex);
     }
 
     const handleRemoveFromWatchLater = (movie) => {

@@ -9,6 +9,12 @@ const Search = ({ handleSearch }) => {
         e.preventDefault();
         handleSearch(e.target.value);
     }
+    const handleFormKeySubmit = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSearch(e.target.value);
+        }
+    }
     
     return (
         <section className={`searchbox-wrap ${isSearchBackgroundOn ? 'show' : 'hide'}`}> 
@@ -21,8 +27,9 @@ const Search = ({ handleSearch }) => {
                     name="search"
                     className="searchbox" 
                     placeholder="Search for a movie by title..."
-                    onChange={handleFormSubmit}
-                    onKeyDown={() => {setIsSearchBackgroundOn(!isSearchBackgroundOn)}} />
+                    onChange={handleFormSubmit} 
+                    onKeyPress={handleFormKeySubmit}
+                    />
             </form>
         </section> 
     );

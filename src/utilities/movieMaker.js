@@ -89,15 +89,31 @@ const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 function filterMD(arr){
     return (
-        arr.reduce((result, item, i) => {
+        arr.reduce((result, item) => {
             //if(i <21){
                 result.push({ date: item.release_date, poster: item.poster_path, title: item.title, 
-                    overview: item.overview , id: item.id, rate:item.vote_average, 
+                    excerpt: item.overview, overview: item.overview , id: item.id, rate:item.vote_average, 
                     bgimg: item.backdrop_path, genres: item.genre_ids, singleMovieGenres: item.genres });
             //} 
             return result;
         }, [])
       )
+}
+
+function setExcerpt(obj){
+    let fullOverview = obj.excerpt;
+    let brokenOverview = fullOverview.split(' ');
+    if(brokenOverview.length > 15){
+        let brokenOverviewIndex = 0;
+        let rebuildExcerpt = '';
+        while(brokenOverviewIndex < 15){
+        
+            rebuildExcerpt = rebuildExcerpt + brokenOverview[brokenOverviewIndex] + ' ';
+            brokenOverviewIndex +=1;
+        }
+        obj.excerpt = rebuildExcerpt + '...';
+        //console.log(obj.excerpt );
+    }
 }
 
 
@@ -110,7 +126,7 @@ function filterMD(arr){
             return (genresNames + genreName);
         });
 
-        console.log(genresNames);
+        //console.log(genresNames);
         obj.genres = genresNames;
 
     }else if(obj.singleMovieGenres){
@@ -121,7 +137,7 @@ function filterMD(arr){
             return (genresNames + genreName);
         });
 
-        console.log(genresNames);
+        //console.log(genresNames);
         obj.singleMovieGenres = genresNames;
     }
 }
@@ -211,8 +227,8 @@ function setImage(obj) {
         obj.bgimg = iconPath1280 + obj.bgimg;
         obj.poster = obj.bgimg;
     }else if(obj.bgimg === null && obj.poster === null){
-        obj.poster = rateIconPath + 'zero-grey.png';
-        obj.bgimg = rateIconPath + 'zero-grey.png';
+        obj.poster = rateIconPath + 'defaultPoster.png';
+        obj.bgimg = rateIconPath + 'defaultPoster.png';
     }else{
         obj.poster = iconPath + obj.poster;
         obj.bgimg = iconPath1280 + obj.bgimg;
@@ -223,12 +239,13 @@ function setImage(obj) {
 function movieMaker(mdAPI){
 
     mdAPI = filterMD(mdAPI);
-    console.log(mdAPI);
+    //console.log(mdAPI);
     mdAPI.forEach((item, index) => {
         setRateImage(item);
         setDate(item);
         setImage(item);
         setGenres(item);
+        setExcerpt(item);
         return mdAPI[index];        
     });
 

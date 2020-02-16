@@ -1,4 +1,4 @@
-export const setStorage = (newItem, storageItem = 'favourites') => {
+export const setStorage = (newItem, storageItem) => {
     if(Array.isArray(newItem)){
         newItem = JSON.stringify(newItem);
     }
@@ -7,7 +7,7 @@ export const setStorage = (newItem, storageItem = 'favourites') => {
 
 // setStorage(item)
 
-export const getStorage = (storageItem = 'favourites') => {
+export const getStorage = (storageItem) => {
     let items = localStorage.getItem(storageItem);
     if(items){
         items = JSON.parse(items);
@@ -26,7 +26,7 @@ export const getStorage = (storageItem = 'favourites') => {
     }
 }
 
-export const removeItemFromStorage = (index, storageItem = 'favourites') => {
+export const removeItemFromStorage = (index, storageItem) => {
     let itemsFromStorage = getStorage(storageItem);
     itemsFromStorage.splice(index, 1);
     itemsFromStorage = JSON.stringify(itemsFromStorage);
@@ -34,7 +34,7 @@ export const removeItemFromStorage = (index, storageItem = 'favourites') => {
     return -1;
 }
 
-export const isItemInStorage = (itemToTest, storageItem = 'favourites') => {
+export const isItemInStorage = (itemToTest, storageItem) => {
         
     const itemsFromStorage = getStorage(storageItem);
     // Test if item is in existing items array
@@ -53,9 +53,9 @@ export const isItemInStorage = (itemToTest, storageItem = 'favourites') => {
 
 }
 
-export const addToStorage = (newItem, storageItem = 'favourites') => {
+export const addToStorage = (newItem, storageItem) => {
 
-    let itemsFromStorage = getStorage();
+    let itemsFromStorage = getStorage(storageItem);
 
     itemsFromStorage.push(newItem);
 
@@ -71,7 +71,7 @@ export const addToStorage = (newItem, storageItem = 'favourites') => {
 
 }
 
-export const getStorageIndexNumber = (item, storageItem = 'favourites') => {
+export const getStorageIndexNumber = (item, storageItem) => {
     const itemsFromStorage = getStorage(storageItem);
     const itemMatch = (currentItem) => currentItem.title === item.title;
     const itemIndex = itemsFromStorage.findIndex(itemMatch);
