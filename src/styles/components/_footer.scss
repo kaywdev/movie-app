@@ -25,12 +25,15 @@ footer {
     }
 
     @include mq($phoneLandscape){
-        border-top: none;
         padding: 20px;
         display: flex;
         align-items: center;
         display: flex;
         justify-content: center;
+    }
+
+    @include mq($tabletLandscape){
+        border-top: none;
     }
 
 }
