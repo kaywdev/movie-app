@@ -9,8 +9,11 @@ const Footer = () =>  {
        
         <footer className="header">
             <div className="footer-logo"></div>
-            <p>&copy; 2020 MVDB all rights reserved.</p>
-            <p>Created by Zahra Fatemi, Kyungmi Moon, Kay Watanabe</p>
+            <div className="footer-text">
+                <p>&copy; 2020 MVDB all rights reserved.</p>
+                <p>Created by Zahra Fatemi, Kyungmi Moon, Kay Watanabe</p>
+            </div>
+
         </footer>
     );
 }
