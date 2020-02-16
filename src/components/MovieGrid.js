@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import AddFavourite from './AddFavourite';
-// import SingleMovie from './SingleMovie';
+import AddWatchLater from './AddWatchLater';
 
 //const iconPath = 'https://image.tmdb.org/t/p/w500';
 //const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
@@ -14,9 +14,17 @@ const movies = (md) => {
         return (
             
             <div key={i} className={`movie-info movie-0${i+1}`}>
-                <figure>
-                <Link to={`/movie/${movie.id}`}> <img src={movie.poster} alt={movie.poster}/></Link>
-                </figure>
+                <div className="movie-poster-wrap">
+                    <figure>
+                    <Link to={`/movie/${movie.id}`}> <img src={movie.poster} alt={movie.poster}/></Link>
+                    </figure>
+                    <div className="toggleFav">
+                        <AddFavourite movie={movie} />
+                    </div>
+                    <div className="toggleWatch">
+                        <AddWatchLater movie={movie} />
+                    </div>
+                </div>
                 <div className="movie-text">
                 <h3><Link to={`/movie/${movie.id}`}>{movie.title}</Link></h3>
                     <div className="rating">
@@ -36,10 +44,9 @@ const movies = (md) => {
                         </p>
                     </div>{/** end of movie-summary */}
                     <Link to={`/movie/${movie.id}`}> 
-                    <button>more info</button>
+                    <button classname="">more info</button>
                     </Link>
-                </div>{/** end of movie-text */} 
-                <AddFavourite movie={movie} />
+                </div>{/** end of movie-text */}
             </div>
             
         );

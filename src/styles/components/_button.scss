@@ -1,6 +1,6 @@
 //Buttons
 
-//front-page load-more Btn
+// front-page load-more Btn
 .load-more {
     text-align: center;
     padding: 40px 0px;
@@ -15,6 +15,79 @@
     width: 200px;
     }
 }
+
+// movie info favourite, watch later Btn
+.movie-list {
+
+    .movie-info {
+
+        button {
+            height: 40px;
+            width: 40px;
+            // position: absolute;
+        }
+
+        .favMovie {
+            // color: red;
+            border: none;
+            background:url('../../images/svg/btn-fillheart-circle.svg') no-repeat 5% center;
+            // background-color: blue;
+            background-size: 40px;
+            font-size: 0;
+            position: absolute;
+            top: 0%;
+            left: 10%;
+            transform: translate(0%, -50%);
+        }
+
+        .unfavMovie {
+            // color: red;
+            border: none;
+            background:url('../../images/svg/btn-lineheart-circle.svg') no-repeat 5% center;
+            // background-color: blue;
+            background-size: 40px;
+            font-size: 0;
+            position: absolute;
+            top: 0%;
+            left: 10%;
+            transform: translate(0%, -50%);
+        }
+
+        .watchMovie {
+            // color: red;
+            border: none;
+            background:url('../../images/svg/btn-fillplus-circle.svg') no-repeat 5% center;
+            // background-color: blue;
+            background-size: 40px;
+            font-size: 0;
+            position: absolute;
+            top: 0%;
+            left: 10%;
+            transform: translate(0%, 50%);
+        }
+
+        .unwatchMovie {
+            // color: red;
+            border: none;
+            background:url('../../images/svg/btn-lineplus-circle.svg') no-repeat 5% center;
+            // background-color: blue;
+            background-size: 40px;
+            font-size: 0;
+            position: absolute;
+            top: 0%;
+            left: 10%;
+            transform: translate(0%, 50%);
+        }
+
+    }
+
+    .movie-poster-wrap {
+        position: relative;
+    }
+
+}
+
+
 
 // singleMovie.js Btn
 .favbtn,
@@ -66,3 +139,4 @@
     display: flex;
     flex-wrap: wrap;
 }
+
