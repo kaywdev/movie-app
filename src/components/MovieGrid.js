@@ -44,7 +44,7 @@ const movies = (md) => {
                         </p>
                     </div>{/** end of movie-summary */}
                     <Link to={`/movie/${movie.id}`}> 
-                    <button classname="">more info</button>
+                    <button classname="moreinfo-btn">More info</button>
                     </Link>
                 </div>{/** end of movie-text */}
             </div>
