@@ -31,6 +31,9 @@ const movies = (md) => {
                         <div className="star-img">
                             <img src={movie.rateStars}  alt="star"/>
                         </div>{/* end of rstar-img */}
+                        <div className="rating-number">
+                            <p>{movie.rate * 10}%</p>
+                        </div>
                     </div>{/* end of rating */}
                     <div className="release-date">
                         <p> {movie.date}</p>

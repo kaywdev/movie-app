@@ -48,7 +48,9 @@
                 flex: 0 0 100px;
                 //justify-content: flex-end;
             }
+            
         }
+
     }
 }
 .movie-lists{
@@ -111,19 +113,47 @@
 
         h3{
             padding: 10px 0;
+            font-size: 140%;
+
+            @include mq($phoneLandscape){
+                font-size: 100%;
+            }
+
         }
     
         .rating {
             display: flex;
             padding-bottom: 10px;
         
-        .star-img{
-            img{
-                // height: 25px;
-                height: 20px;
+            .star-img{
+
+                img{
+                    height: 20px;
+
+                    @include mq($phoneLandscape){
+                        height: 17px;
+                    }
+                }
+        
             }
-    
-           }
+
+            .rating-number {
+                p {
+                    font-weight: bold;
+                    color: $blue;
+                    line-height: 1.13;
+                    font-size: 1.2em;
+
+                    &:before {
+                        content: "\00a0 \00a0";
+                    }
+
+                    @include mq($phoneLandscape){
+                        line-height: 1.1;
+                        font-size: 1em;
+                    }
+                }
+            }
         }
         .released-date{
             padding-bottom: 10px;
