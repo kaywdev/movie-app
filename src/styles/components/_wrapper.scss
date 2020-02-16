@@ -1,5 +1,6 @@
 .wrapper{
-    padding-bottom: 30px;
+    // padding-bottom: 30px;
+    padding-bottom: 20px;
 
     @include mq($phoneLandscape){
         padding-right: 20px;

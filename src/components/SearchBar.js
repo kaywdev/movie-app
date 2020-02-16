@@ -14,9 +14,13 @@ const SearchBar = () => {
     // Handle Search Input
     const handleSearch = (searchEnteredByUser) => {
         const s = searchEnteredByUser;
+        if(s !== ''){
         axios(search_api + key + "&query=" + s).then(({ data }) => {
             setResult(movieMaker(data.results));
         });
+    }else{
+        setResult([]);
+    }
     }
 
     return (

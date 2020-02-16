@@ -22,14 +22,16 @@ const Result = ({ result }) => {
                         {/* </Link> */}
                     </h3>
                 </div>
-                <div className="rating">
-                    <div className="star-img">
-                        <img src={result.rateStars}  alt="star"/>
-                    </div>{/* end of rstar-img */}
-                </div>{/* end of rating */}
-                <div className="release-date">
-                    <p> {result.date}</p>
-                </div> {/* end of release-date */}
+                <div className='rate-starts'>
+                    <div className="rating">
+                        <div className="star-img">
+                            <img src={result.rateStars}  alt="star"/>
+                        </div>{/* end of rstar-img */}
+                    </div>{/* end of rating */}
+                    <div className="release-date">
+                        <p> {result.date}</p>
+                    </div> {/* end of release-date */}
+                </div>
             </div>
         </Link>     
     );

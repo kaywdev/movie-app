@@ -6,10 +6,34 @@ footer {
     border-top: 2px solid $blue;
 
     .footer-logo{
-        width:40px;
+        width: 40px;
         height: 30px;
-        background-image: url('/images/mvdb_logo.svg'); 
+        background-image: url('../../images/mvdb_logo.svg'); 
         @include bg-img;
         margin: 15px auto;
+
+        @include mq($phoneLandscape){
+            margin: 5px;
+        }
     }
+
+    .footer-text {
+        @include mq($phoneLandscape){
+            text-align: left;
+            margin-left: 20px;
+        }
+    }
+
+    @include mq($phoneLandscape){
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    @include mq($tabletLandscape){
+        border-top: none;
+    }
+
 }
