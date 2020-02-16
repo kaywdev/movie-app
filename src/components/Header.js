@@ -37,9 +37,10 @@ return(
     		<h1>
 				<Link to="/">
 				<div className="logo" >
-
-				{ location.pathname === "/" && <img src = {`${iconPath}mvdb_logo.svg`} alt="logo"/> }
-				{ location.pathname === "/about" && <img src = {`${iconPath}mvdb_logo_my-favourite.svg`} alt="logo"/> }
+			
+				{ (location.pathname !== "/favourites" && location.pathname !== "/watch-later") && <img src = {`${iconPath}mvdb_logo.svg`} alt="logo"/> }
+				{ location.pathname === "/favourites" && <img src = {`${iconPath}mvdb_logo_my-favourite.svg`} alt="logo"/> }
+				{ location.pathname === "/watch-later" && <img src = {`${iconPath}mvdb_logo_watch-later.svg`} alt="logo"/> }
 				</div>
 				</Link>
 			</h1>

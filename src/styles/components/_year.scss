@@ -1,10 +1,20 @@
 .year{
     form{
-        padding: 10px;
+        padding: 10px 30px;
+        display: grid;
+        grid-template-columns: 40% 1fr;
+        align-items: center;
+        @include mq($phoneLandscape) { 
+            grid-template-columns: 69% 1fr;
+            padding-left: 0px;
+        }
 
         select{
             border: 2px solid $red;
             margin-left: 10px;
+            @include mq($phoneLandscape) { 
+                width:80px;
+            }
                 
         }
     }
