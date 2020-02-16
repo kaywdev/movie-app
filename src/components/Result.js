@@ -36,7 +36,7 @@ const Result = ({ result }) => {
                         </div>{/** end of movie-summary */}
                         <Link to={`/movie/${result.id}`}>  
                         <button>more info</button>
-                    </Link>
+                        </Link>
                 </div>
             </div>
            
