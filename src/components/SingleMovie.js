@@ -3,8 +3,8 @@ import {useParams} from 'react-router-dom';
 import movieMaker from '../utilities/movieMaker';
 import AddFavourite from './AddFavourite';
 import AddWatchLater from './AddWatchLater';
-import Search from './Search';
-import Results from './Results';
+// import Search from './Search';
+// import Results from './Results';
 import SearchBar from './SearchBar';
 // Individual Movie Page
 // The movie poster
@@ -51,7 +51,6 @@ const SingleMovie =({movie})=>{
             <img src={singleMovie.poster} alt={singleMovie.title} />
           </div>
         </div>{/* .smovie-img-wrap */}
-
 
         <div className="smovie-content">
           <div className="smovie-header">
