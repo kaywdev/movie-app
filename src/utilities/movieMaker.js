@@ -211,7 +211,7 @@ function setImage(obj) {
         obj.bgimg = iconPath1280 + obj.bgimg;
         obj.poster = obj.bgimg;
     }else if(obj.bgimg === null && obj.poster === null){
-        obj.poster = rateIconPath + 'zero-grey.png';
+        obj.poster = rateIconPath + 'defaultposter.png';
         obj.bgimg = rateIconPath + 'zero-grey.png';
     }else{
         obj.poster = iconPath + obj.poster;
