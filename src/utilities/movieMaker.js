@@ -92,12 +92,27 @@ function filterMD(arr){
         arr.reduce((result, item) => {
             //if(i <21){
                 result.push({ date: item.release_date, poster: item.poster_path, title: item.title, 
-                    overview: item.overview , id: item.id, rate:item.vote_average, 
+                    excerpt: item.overview, overview: item.overview , id: item.id, rate:item.vote_average, 
                     bgimg: item.backdrop_path, genres: item.genre_ids, singleMovieGenres: item.genres });
             //} 
             return result;
         }, [])
       )
+}
+
+function setExcerpt(obj){
+    let fullOverview = obj.excerpt;
+    let brokenOverview = fullOverview.split(' ');
+    if(brokenOverview.length > 15){
+        let brokenOverviewIndex = 0;
+        let rebuildExcerpt = '';
+        while(brokenOverviewIndex < 15){
+        
+            rebuildExcerpt = brokenOverview[brokenOverviewIndex] + rebuildExcerpt;
+
+        }
+        console.log(rebuildExcerpt);
+    }
 }
 
 
@@ -229,6 +244,7 @@ function movieMaker(mdAPI){
         setDate(item);
         setImage(item);
         setGenres(item);
+        setExcerpt(item);
         return mdAPI[index];        
     });
 
