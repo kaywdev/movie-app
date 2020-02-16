@@ -1,19 +1,16 @@
 import React from 'react';
 
-
 const charts = [ 'popular', 'top_rated', 'now_playing', 'upcoming'];
+const chartNames = ['Popular', 'Top Rated', 'Now Playing', 'Upcoming'];
 
 const makeChartOptions = (charts) => {
     return charts.map((chartGroup, i) => {  
         return (
-            <option key={i} value={chartGroup}>{chartGroup}</option>
+            <option key={i} value={chartGroup} >{chartNames[i]}</option>
             )});
 }
 
-
 const Chart = (props) => {
-    // this handleChangeChart is not the same as in Home.js
-    // this is local
     const handleChangeChart = (e) => {
         e.preventDefault();
         const loc = e.target.value;
@@ -21,8 +18,7 @@ const Chart = (props) => {
     }
 
     return (
-     <div className="charts">
-            {/* <h3>{props.chart}</h3> */}
+        <div className="charts">
             <form>
                 <label htmlFor="selectchart">Show me</label>
                 <select name="selectchart" 

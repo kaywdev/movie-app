@@ -1,12 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { isItemInStorage, removeItemFromStorage, addToStorage, getStorageIndexNumber} from '../utilities/storageMaker';
 
-// const favToggle = ['Favourite', 'Unfavourite'];
-
-
 const AddWatchLater = ({movie}) => {
-
-    
 
     useEffect(()=> {
         setWatchIndex( isItemInStorage(movie, 'watchlater'));
@@ -16,7 +11,6 @@ const AddWatchLater = ({movie}) => {
 
     const handleAddWatchLater = (movie) => {
         setWatchIndex(addToStorage(movie, 'watchlater'));
-        //console.log('Index from Add watch Event: ', watchIndex);
     }
 
     const handleRemoveFromWatchLater = (movie) => {
@@ -38,7 +32,6 @@ const AddWatchLater = ({movie}) => {
                 Add to Watch later</button> }
         </div>
     );
-
 }
 
 export default AddWatchLater;
