@@ -3,16 +3,8 @@ import {useParams} from 'react-router-dom';
 import movieMaker from '../utilities/movieMaker';
 import AddFavourite from './AddFavourite';
 import AddWatchLater from './AddWatchLater';
-// import Search from './Search';
-// import Results from './Results';
 import SearchBar from './SearchBar';
-// Individual Movie Page
-// The movie poster
-// Movie title
-// Release date
-// Rating
-// Short summary of the movie
-// Fav/Unfav button
+
 
 const SingleMovie =({movie})=>{
   let { movieId } = useParams();

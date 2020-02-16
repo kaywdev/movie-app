@@ -14,14 +14,16 @@ const movies = (md) => {
         return (
             
             <div key={i} className={`movie-info movie-0${i+1}`}>
-                <figure>
-                <Link to={`/movie/${movie.id}`}> <img src={movie.poster} alt={movie.poster}/></Link>
-                </figure>
-                <div className="toggleicon">
-                    <AddFavourite movie={movie} />
-                </div>
-                <div className="toggleicon">
-                    <AddWatchLater movie={movie} />
+                <div className="movie-poster-wrap">
+                    <figure>
+                    <Link to={`/movie/${movie.id}`}> <img src={movie.poster} alt={movie.poster}/></Link>
+                    </figure>
+                    <div className="toggleFav">
+                        <AddFavourite movie={movie} />
+                    </div>
+                    <div className="toggleWatch">
+                        <AddWatchLater movie={movie} />
+                    </div>
                 </div>
                 <div className="movie-text">
                 <h3><Link to={`/movie/${movie.id}`}>{movie.title}</Link></h3>
