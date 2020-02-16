@@ -4,7 +4,7 @@ import AddFavourite from './AddFavourite';
 // import SingleMovie from './SingleMovie';
 
 //const iconPath = 'https://image.tmdb.org/t/p/w500';
-const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
+//const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 const movies = (md) => {
     return md.map((movie, i) => {

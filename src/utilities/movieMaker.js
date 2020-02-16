@@ -89,7 +89,7 @@ const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 function filterMD(arr){
     return (
-        arr.reduce((result, item, i) => {
+        arr.reduce((result, item) => {
             //if(i <21){
                 result.push({ date: item.release_date, poster: item.poster_path, title: item.title, 
                     overview: item.overview , id: item.id, rate:item.vote_average, 

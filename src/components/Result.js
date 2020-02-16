@@ -1,6 +1,6 @@
 import React from 'react';
 
-const resultImgPath = 'https://image.tmdb.org/t/p/w1280';
+//const resultImgPath = 'https://image.tmdb.org/t/p/w1280';
 
 const Result = ({ result }) => {
 
