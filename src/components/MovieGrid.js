@@ -15,7 +15,7 @@ const movies = (md) => {
             
             <div key={i} className={`movie-info movie-0${i+1}`}>
                 <figure>
-                <Link to='/movie'> <img src={movie.poster} alt={movie.poster}/></Link>
+                <Link to={`/movie/${movie.id}`}> <img src={movie.poster} alt={movie.poster}/></Link>
                 </figure>
                 <div className="movie-text">
                 <h3><Link to={`/movie/${movie.id}`}>{movie.title}</Link></h3>
@@ -35,7 +35,7 @@ const movies = (md) => {
                             {movie.overview}
                         </p>
                     </div>{/** end of movie-summary */}
-                    <Link to='/movie'> 
+                    <Link to={`/movie/${movie.id}`}> 
                     <button>more info</button>
                     </Link>
                 </div>{/** end of movie-text */} 
