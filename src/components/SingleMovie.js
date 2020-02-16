@@ -67,7 +67,7 @@ const SingleMovie =({movie})=>{
           <h3>Rate</h3>
           <p>{singleMovie.rate * 10}%</p>
           <h3>Genre</h3>
-          <p>{singleMovie.genres}</p>
+          <p>{singleMovie.singleMovieGenres}</p>
         </div>
       </div>{/* .smovie-wrap */}
     </main>

@@ -29,6 +29,9 @@ const movies = (md) => {
                     </div> {/* end of release-date */}
                     <div className="movie-summary">
                         <p>
+                            {movie.genres}
+                        </p>
+                        <p>
                             {movie.overview}
                         </p>
                     </div>{/** end of movie-summary */}
