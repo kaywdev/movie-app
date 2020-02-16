@@ -17,38 +17,52 @@
 }
 
 // singleMovie.js Btn
-.favbtn {
+.favbtn,
+.watchbtn {
+
+    margin: 10px 10px 0px 0px;
 
     button {
-        height: 40px;
-        width: 200px;
+        height: 38px;
+        // width: 180px;
+        width: auto;
         font-size: 0.8em;
         border-radius: 20px;
-
+        padding: 5px 10px 5px 35px;
+        border: 0.5px solid white;
     }
 
-
 }
-
-// button {
-//     font-size: 1.03em;
-//     border-radius: 20px;
-// }
 
 .favMovie {
     background-color: transparent;
     color: white;
-        padding: 1px 6px 1px 6px;
-    &:before {
-        content: url('../../images/png/btn-lineheart.png'); 
-    }
+    background:url('../../images/svg/btn-fillheart.svg') no-repeat 5% center;
+    background-size: 20px;
 }
 
 .unfavMovie {
     background-color: transparent;
     color: white;
+    background:url('../../images/svg/btn-lineheart.svg') no-repeat 5% center; 
+    background-size: 20px;
+}
 
-    &:before {
-        content: url('../../images/png/btn-fillheart.png'); 
-    }
+.watchMovie {
+    background-color: transparent;
+    color: white;
+    background:url('../../images/svg/btn-fillplus.svg') no-repeat 5% center;
+    background-size: 20px;
+}
+
+.unwatchMovie {
+    background-color: transparent;
+    color: white;
+    background:url('../../images/svg/btn-lineplus.svg') no-repeat 5% center;
+    background-size: 20px;
+}
+
+.smovie-btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }

@@ -6,4 +6,8 @@ body {
 hr{
     margin: 0;
     border: 1px solid $red;
+
+    @include mq($tabletLandscape){
+        margin: 0 20px;
+    }
 }

@@ -5,6 +5,7 @@
 .smovie-wrap {
     h1 {
         font-size: 200%;
+        margin-right: 20px;
     }
 
     h3 {
@@ -27,11 +28,16 @@
     background-repeat: no-repeat;
     max-width: 100%;
     height: 60vh;
-    border-bottom: $blue 4px solid;
+    border-bottom: $blue 3.5px solid;
+    border-top: $blue 3.5px solid;
+
+    @include mq($tabletLandscape){
+        height: 78vh;
+    }
 }
 
 .bgposter {
-    background-color: rgba(0, 0, 0, 0.8); // Tint color
+    background-color: rgba(0, 0, 0, 0.85); // Tint color
     background-blend-mode: multiply;
 }
 
@@ -44,12 +50,29 @@
     left: 50%;
     transform: translate(-50%, -50%);
     filter: drop-shadow(5px 5px 10px black);
+
+    @include mq($tabletLandscape){
+        width: 220px;
+        top: 50%;
+        left: 20%;
+        transform: translate(0%, -50%);
+    }
+    
 }
 
 
 // Movie info content
 .smovie-content{
     margin: 30px;
+
+    @include mq($tabletLandscape){
+        position: absolute;
+        width: 40%;
+        top: 50%;
+        left: 48%;
+        transform: translate(0%, -50%);
+    }
+    
 }
 
 .smovie-text {
@@ -66,4 +89,29 @@
         margin-top: 10px;
     }
 }
+
+.smovie-header {
+    display: block;
+
+    @include mq($phoneLandscapeSmall){
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+// $tabletLandscape
+// @include mq($phoneLandscape){
+//     .header-oneline {
+//         display: grid;
+//         grid-template-columns: 60% 40%;
+//         align-items: center;
+
+//         header {
+//             display: grid;
+//             grid-template-columns: 30% 1fr;
+            
+//         }
+//     }
+// }
+
 

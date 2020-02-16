@@ -12,4 +12,9 @@ footer {
         @include bg-img;
         margin: 15px auto;
     }
+
+     @include mq($tabletLandscape){
+        border-top: none;
+        padding-bottom: 20px;
+    }
 }

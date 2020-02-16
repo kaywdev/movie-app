@@ -54,12 +54,16 @@ const SingleMovie =({movie})=>{
 
 
         <div className="smovie-content">
-          <h1 className="smovie-title">{singleMovie.title}</h1>
-          <div className="favbtn">
-            <AddFavourite movie={singleMovie} />
-          </div>
-          <div className="watchbtn">
-            <AddWatchLater movie={singleMovie} />
+          <div className="smovie-header">
+            <h1 className="smovie-title">{singleMovie.title}</h1>
+            <div className="smovie-btn-wrapper">
+              <div className="favbtn">
+                <AddFavourite movie={singleMovie} />
+              </div>
+              <div className="watchbtn">
+                <AddWatchLater movie={singleMovie} />
+              </div>
+            </div>
           </div>
           <div className="smovie-text">
             <div className="overview">

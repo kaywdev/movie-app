@@ -26,9 +26,15 @@ const AddWatchLater = ({movie}) => {
 
     return (
         <div>
-            { watchIndex >= 0 ? <button onClick={() => {handleRemoveFromWatchLater(movie) }}>
-                Delete from Watch Later</button> : 
-                <button className="watchLaterMovie" onClick={() => {handleAddWatchLater(movie)}}>
+            { watchIndex >= 0 ? 
+            <button 
+                className="watchMovie" 
+                onClick={() => {handleRemoveFromWatchLater(movie) }}>
+                Delete from Watch Later
+            </button> : 
+            <button 
+                className="unwatchMovie"
+                onClick={() => {handleAddWatchLater(movie)}}>
                 Add to Watch later</button> }
         </div>
     );
