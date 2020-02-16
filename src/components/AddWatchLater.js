@@ -16,7 +16,7 @@ const AddWatchLater = ({movie}) => {
 
     const handleAddWatchLater = (movie) => {
         setWatchIndex(addToStorage(movie, 'watchlater'));
-        console.log('Index from Add Fav Event: ', watchIndex);
+        console.log('Index from Add watch Event: ', watchIndex);
     }
 
     const handleRemoveFromWatchLater = (movie) => {
@@ -26,7 +26,10 @@ const AddWatchLater = ({movie}) => {
 
     return (
         <div>
-            { watchIndex >= 0 ? <button onClick={() => {handleRemoveFromWatchLater(movie) }}>Remove from Watch Later</button> : <button className="watchLaterMovie" onClick={() => {handleAddWatchLater(movie)}}>watch later</button> }
+            { watchIndex >= 0 ? <button onClick={() => {handleRemoveFromWatchLater(movie) }}>
+                Remove from Watch Later</button> : 
+                <button className="watchLaterMovie" onClick={() => {handleAddWatchLater(movie)}}>
+                    watch later</button> }
         </div>
     );
 

@@ -9,6 +9,7 @@ import About from '../components/About';
 import Favourites from '../components/Favourites';
 import SingleMovie from '../components/SingleMovie';
 import Footer from '../components/Footer';
+import WatchLater from '../components/WatchLater';
 
 
 const AppRouter = () => (
@@ -23,6 +24,7 @@ const AppRouter = () => (
 				<Route path="/index.html" exact><Home /></Route>
 				<Route path="/about" ><About /></Route>
 				<Route path="/favourites" ><Favourites /></Route>
+				<Route path="/watch-later" ><WatchLater /></Route>
 				<Route path="/movie/:movieId" ><SingleMovie /></Route>
 					
 			</Switch>
