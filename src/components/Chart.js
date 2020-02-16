@@ -1,11 +1,12 @@
 import React from 'react';
 
 const charts = [ 'popular', 'top_rated', 'now_playing', 'upcoming'];
+const chartNames = ['Popular', 'Top Rated', 'Now Playing', 'Upcoming'];
 
 const makeChartOptions = (charts) => {
     return charts.map((chartGroup, i) => {  
         return (
-            <option key={i} value={chartGroup} >{chartGroup}</option>
+            <option key={i} value={chartGroup} >{chartNames[i]}</option>
             )});
 }
 
