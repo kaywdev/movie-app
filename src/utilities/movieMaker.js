@@ -123,7 +123,7 @@ function setExcerpt(obj){
         genresNames = ''+ obj.genres.map((genre)=> {
             let genreName = genresList.find(x => x.id === genre).name;
             //console.log('in '+ genree);
-            return (genresNames + genreName);
+            return (genresNames + " " + genreName);
         });
 
         //console.log(genresNames);
@@ -134,7 +134,7 @@ function setExcerpt(obj){
         genresNames = ''+ obj.singleMovieGenres.map((genre)=> {
             let genreName = genre.name;
             //console.log('in '+ genree);
-            return (genresNames + genreName);
+            return (genresNames + " " + genreName);
         });
 
         //console.log(genresNames);
