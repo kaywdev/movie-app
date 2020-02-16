@@ -1,6 +1,6 @@
 import React from 'react';
 import searchIcon from '../images/search.svg';
-import Home from './Home';
+// import Home from './Home';
 
 const Search = ({ handleSearch }) => {
 

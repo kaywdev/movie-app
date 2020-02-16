@@ -12,8 +12,13 @@ header{
                 height: 52px;
                 background-image: url('/images/mvdb_logo.svg'); 
                 @include bg-img;
-
-                margin: 0 auto;   
+                margin: 0 auto; 
+                @include mq($phoneLandscape){
+                    margin: 0;
+                }
+            }
+            @include mq($phoneLandscape){
+                justify-items: start;
             }
         
         }
@@ -70,6 +75,14 @@ header.show #nav-hm .hm-menu:nth-child(1){
             align-items: center;
             
         }
+    }
+}
+
+.header-oneline {
+    @include mq($phoneLandscape){
+
+    width: 90%;
+    margin: 0 auto;
     }
 }
 

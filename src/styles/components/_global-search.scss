@@ -1,10 +1,15 @@
 .searchbox-wrap{
-    border-bottom: 1px solid #b5b5b5;
+    
     display:flex;
     align-items: center;
     padding-left: 10px;
     // commented out for sinlge movie page styling
     // margin-bottom: 30px;
+
+    @include mq($phoneLandscape){
+        width: 92%;
+        margin: 0 auto;
+    }
 
     .search-icon{
         width: 20px;
