@@ -10,13 +10,13 @@ const Result = ({ result }) => {
         
             <div className="movie-info">
                 <figure>
-                <img src={resultImgPath + result.poster}  alt={result.title} />
+                <img src={result.poster}  alt={result.title} />
                 </figure>
                 <div className="movie-text">
                 <h3>{result.title}</h3>
                 <div className="rating">
                             <div className="star-img">
-                                <img src={`${resultImgPath}${result.rateStars}`}  alt="star"/>
+                                <img src={result.rateStars}  alt="star"/>
                             </div>{/* end of rstar-img */}
                         </div>{/* end of rating */}
                         <div className="release-date">

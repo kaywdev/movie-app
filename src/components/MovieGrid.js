@@ -21,7 +21,7 @@ const movies = (md) => {
                 <h3><Link to={`/movie/${movie.id}`}>{movie.title}</Link></h3>
                     <div className="rating">
                         <div className="star-img">
-                            <img src={`${rateIconPath}${movie.rateStars}`}  alt="star"/>
+                            <img src={movie.rateStars}  alt="star"/>
                         </div>{/* end of rstar-img */}
                     </div>{/* end of rating */}
                     <div className="release-date">
