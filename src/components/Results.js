@@ -3,8 +3,6 @@ import Result from './Result';
 
 
 const Results = ({ results }) => {
-    // let { results } = useParams();
-    // console.log(results);
 
     return (
         <section className="results movie-lists">
