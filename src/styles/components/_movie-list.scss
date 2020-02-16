@@ -1,56 +1,107 @@
 .results.movie-lists{
     width: 70vw;
     top: 0;
-    left: 15vw;
+    left: 50%;
     padding: 0;
-    background-color: rgba(2, 54, 89, 0.742);
-    a{
-        text-decoration: none;
-        color: white;
-        width: 100%;
-        height: 100%;
-        // border: 2px solid red;
-    }
+    background-color: rgba(2, 54, 89, 0.95);
+    transform: translate(-50%);
 
-}
-.movie-list-results{
-    .movie-results:hover{
-        background-color: rgba(51, 102, 136, 0.742);
-    }
-    
-    .movie-results{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100px;
-
-        figure{
-            width: 60px;
-            //flex: 0 0 60px;
-            justify-content: flex-start;        
-        }
+    .movie-list-results{
         a{
             text-decoration: none;
             color: white;
+            width: 100%;
+            height: 100%;
+            // border: 2px solid red;
         }
-        h3{
-            font-size: 18px;
-            flex: 0 1 100px;
-        }
-        .rate-starts{
-            margin-right: 15px;
-            .star-img{
-                width: 50px;
-                //flex: 0 0 50px;
-                //justify-content: flex-end;
+        :hover,
+        :active,
+        :focus{
+            background-color: rgba(51, 102, 136, 0.742);
+        
+        } 
+        .movie-results{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            justify-items: center;
+            height: 100px;
+            @include mq($phoneLandscape){
+                height: 130px;
             }
-            .release-date{
-                flex: 0 0 100px;
-                //justify-content: flex-end;
+    
+            figure{
+                width: 60px;
+                margin: 0 10px;  
+                @include mq($phoneLandscape){
+                    width: 80px;
+                }   
+            }
+           .movie-text {
+            justify-self: start;
+            word-wrap: break-word;
+            width: 70PX;
+
+                h3{
+                    font-size: 0.8em;
+                    @include mq($phoneLandscapeSmall){
+                        font-size: 1em;
+                    }
+                    @include mq($tabletPortrait){
+                        font-size: 1.2em;
+                    }
+                }
+
+                @include mq($phoneLandscapeSmall){
+                    width: 150px;
+                }
+                @include mq($tabletLandscape){
+                    width: 280px;
+                }
+            }
+            .rate-starts{
+                margin: 0 3px;
+                justify-self: start;
+                @include mq($tabletLandscape){
+                    margin: 0 10px;
+                }
+                .star-img{
+                    img{
+                      height: 12px; 
+
+                      @include mq($phoneLandscapeSmall){
+                        height: 18px; 
+                     } 
+                     @include mq($phoneLandscape){
+                        height: 20px; 
+                     } 
+                    }
+                   
+                    
+                }
+                .release-date{
+                    padding-top: 5px;
+                    p{
+                        font-size: 0.75em;
+
+                        @include mq($phoneLandscapeSmall){
+                            font-size: 0.9em;
+                        }
+                        @include mq($tabletPortrait){
+                            font-size: 1.2em;
+                        }
+                    }
+                    // flex: 0 0 100px;
+                    //justify-content: flex-end;
+                }
             }
         }
-    }
+    }  
+        
 }
+
+    
+    
 .movie-lists{
     padding: 50px 0px 20px;
 
@@ -76,7 +127,7 @@
 
 .movie-info {
     display: grid;
-    grid-template-columns: 48% 1fr;
+    grid-template-columns: 1fr 1fr;
     position: relative;
     border: 1px solid $blue;
     justify-items: center;

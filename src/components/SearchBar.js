@@ -45,7 +45,7 @@ const SearchBar = () => {
     }
 
     return (
-        <div ref={node}>
+        <div ref={node} className ="search-result-wrapper">
             <Search handleSearch={handleSearch} search={null} />
             <div className="movielist-wrapper">
                 <Results results={result} />

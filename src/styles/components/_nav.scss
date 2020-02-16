@@ -30,6 +30,7 @@ header nav{
         display:block;
         ul{
             display: flex;
+            justify-content: flex-end;
 
             li, li:last-child{
                 border:none;

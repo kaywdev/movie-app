@@ -1,0 +1,8 @@
+.sort-movies{
+    padding-top: 20px;
+    @include mq($phoneLandscape) { 
+        display:flex;
+        
+    
+    }
+}

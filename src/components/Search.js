@@ -4,6 +4,8 @@ import Home from './Home';
 
 const Search = ({ handleSearch }) => {
 
+    
+
     const handleFormSubmit = (e) => {
             e.preventDefault();
             handleSearch(e.target.value);

@@ -44,6 +44,7 @@ const SingleMovie =({movie})=>{
           </div>
         </div>{/* .smovie-img-wrap */}
 
+
         <div className="smovie-content">
           <div className="smovie-header">
             <h1 className="smovie-title">{singleMovie.title}</h1>
