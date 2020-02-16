@@ -25,7 +25,10 @@ const Year = (props) => {
         {/* <h3>{props.year}</h3> */}
         <form>
             <label htmlFor="selectyear">movie released in</label>
-            <select name="selectyear" id="selectyear" onChange={handleChangeYear}>
+            <select name="selectyear"
+                    className="selection" 
+                    id="selectyear" 
+                    onChange={handleChangeYear}>
                 {makeYearOptions(years, props.year)}  
             </select>
             

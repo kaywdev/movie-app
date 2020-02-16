@@ -25,7 +25,10 @@ const Chart = (props) => {
             {/* <h3>{props.chart}</h3> */}
             <form>
                 <label htmlFor="selectchart">Show me</label>
-                <select name="selectchart" id="selectchart" onChange={handleChangeChart}>
+                <select name="selectchart" 
+                        id="selectchart" 
+                        className="selection"
+                        onChange={handleChangeChart}>
                     {makeChartOptions(charts, props.chart)}  
                 </select>
             </form>
