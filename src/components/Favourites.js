@@ -1,19 +1,20 @@
 import React from 'react';
-import FavouritesGrid from './FavouritesGrid';
+//import FavouritesGrid from './FavouritesGrid';
 import { getStorage } from '../utilities/storageMaker';
 import SearchBar from './SearchBar';
+import MovieGrid from './MovieGrid';
 
 const Favourites = () => {
-    let favFormattedData = getStorage('favourites');
+    let movieData = getStorage('favourites');
     //watchlater
-    console.log(favFormattedData);
+    console.log(movieData);
 
 
     return(
         <main>
             <SearchBar />
             <section className="movie-lists">
-                {favFormattedData && <FavouritesGrid favFormattedData={favFormattedData}/>}
+                {movieData && <MovieGrid movieData={movieData}/>}
             </section>
         </main>
     )
