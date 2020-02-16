@@ -20,12 +20,14 @@
     
     .movie-results{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         height: 100px;
 
         figure{
             width: 60px;
+            //flex: 0 0 60px;
+            justify-content: flex-start;        
         }
         a{
             text-decoration: none;
@@ -33,9 +35,16 @@
         }
         h3{
             font-size: 18px;
+            flex: 0 1 100px;
         }
         .star-img{
             width: 50px;
+            //flex: 0 0 50px;
+            justify-content: flex-end;
+        }
+        .release-date{
+            flex: 0 0 100px;
+            justify-content: flex-end;
         }
     }
 }
