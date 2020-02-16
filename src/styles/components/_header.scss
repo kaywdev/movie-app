@@ -12,8 +12,13 @@ header{
                 height: 52px;
                 background-image: url('/images/mvdb_logo.svg'); 
                 @include bg-img;
-
-                margin: 0 auto;   
+                margin: 0 auto; 
+                @include mq($phoneLandscape){
+                    margin: 0;
+                }
+            }
+            @include mq($phoneLandscape){
+                justify-items: start;
             }
         
         }
@@ -61,17 +66,23 @@ header.show #nav-hm .hm-menu:nth-child(1){
     left: 50%;
   }
 
-@include mq($phoneLandscape){
+@include mq($phoneLandscapeSmall){
     .header-oneline {
-        display: grid;
-        grid-template-columns: 60% 40%;
-        align-items: center;
 
         header {
             display: grid;
-            grid-template-columns: 30% 1fr;
+            grid-template-columns: 20% 1fr;
+            align-items: center;
             
         }
+    }
+}
+
+.header-oneline {
+    @include mq($phoneLandscape){
+
+    width: 90%;
+    margin: 0 auto;
     }
 }
 

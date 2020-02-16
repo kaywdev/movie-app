@@ -222,13 +222,13 @@ function setDate(obj) {
 function setImage(obj) {
     if(obj.bgimg === null && obj.poster != null){
         obj.poster = iconPath + obj.poster;
-        obj.bgimg = obj.poster;
+        obj.bgimg = rateIconPath + 'default-bgposter.png';
     }else if(obj.bgimg != null && obj.poster === null){
         obj.bgimg = iconPath1280 + obj.bgimg;
-        obj.poster = obj.bgimg;
+        obj.poster = rateIconPath + 'default-poster.png';
     }else if(obj.bgimg === null && obj.poster === null){
-        obj.poster = rateIconPath + 'defaultPoster.png';
-        obj.bgimg = rateIconPath + 'defaultPoster.png';
+        obj.poster = rateIconPath + 'default-poster.png';
+        obj.bgimg = rateIconPath + 'default-bgposter.png';
     }else{
         obj.poster = iconPath + obj.poster;
         obj.bgimg = iconPath1280 + obj.bgimg;

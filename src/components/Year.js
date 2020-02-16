@@ -4,8 +4,8 @@ const years = [ 2022,  2021,  2020, 2019, 2018, 2017, 2016,2015];
  
 const makeYearOptions = (years) => {
     return years.map((yearGroup, i) => {  
-        return (
-            <option key={i} value={yearGroup}>{yearGroup}</option> 
+        return (            
+                <option key={i} value={yearGroup} selected={yearGroup === "2020" ? true : false}>{yearGroup}</option>
             )});
 }
 

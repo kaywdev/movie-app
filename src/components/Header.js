@@ -13,7 +13,8 @@ const Header = () => {
 
 	let location = useLocation();
 	console.log(location);
-
+	let movieId = location.pathname.toString().slice(-6);
+	// console.log(movieId);
 
 
 	const[isMenuOpen, setIsMenuOpen]=useState(false);
@@ -37,9 +38,15 @@ return(
     		<h1>
 				<Link to="/">
 				<div className="logo" >
-
+			{/* {console.log(props.movieid)} */}
 				{ location.pathname === "/" && <img src = {`${iconPath}mvdb_logo.svg`} alt="logo"/> }
-				{ location.pathname === "/about" && <img src = {`${iconPath}mvdb_logo_my-favourite.svg`} alt="logo"/> }
+				{/* { (location.pathname !== "/favourites"&&location.pathname !== "/watch-later") && <img src = {`${iconPath}mvdb_logo.svg`} alt="logo"/> } */}
+				{ location.pathname === "/about" && <img src = {`${iconPath}mvdb_logo.svg`} alt="logo"/> }
+				{ location.pathname === "/favourites" && <img src = {`${iconPath}mvdb_logo_my-favourite.svg`} alt="logo"/> }
+				{ location.pathname === "/watch-later" && <img src = {`${iconPath}mvdb_logo_watch-later.svg`} alt="logo"/> }
+				{ location.pathname === `/movie/${movieId}` && <img src = {`${iconPath}mvdb_logo_404.svg`} alt="logo"/> }
+				
+				
 				</div>
 				</Link>
 			</h1>

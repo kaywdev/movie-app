@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import AddFavourite from './AddFavourite';
 import AddWatchLater from './AddWatchLater';
+// import SingleMovie from './SingleMovie';
 
 //const iconPath = 'https://image.tmdb.org/t/p/w500';
 //const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
@@ -49,7 +50,8 @@ const movies = (md) => {
                     <Link to={`/movie/${movie.id}`}> 
                     <button classname="moreinfo-btn">More info</button>
                     </Link>
-                </div>{/** end of movie-text */}
+                </div>{/** end of movie-text */} 
+              
             </div>
             
         );
