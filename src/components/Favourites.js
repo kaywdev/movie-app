@@ -1,6 +1,7 @@
 import React from 'react';
 import FavouritesGrid from './FavouritesGrid';
 import { getStorage } from '../utilities/storageMaker';
+import SearchBar from './SearchBar';
 
 const Favourites = () => {
     let favFormattedData = getStorage('favourites');
@@ -9,9 +10,12 @@ const Favourites = () => {
 
 
     return(
-        <section className="movie-lists">
-            {favFormattedData && <FavouritesGrid favFormattedData={favFormattedData}/>}
-        </section> 
+        <main>
+            <SearchBar />
+            <section className="movie-lists">
+                {favFormattedData && <FavouritesGrid favFormattedData={favFormattedData}/>}
+            </section>
+        </main>
     )
 }
 
