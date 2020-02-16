@@ -32,7 +32,7 @@
     border-top: $blue 3.5px solid;
 
     @include mq($tabletLandscape){
-        height: 78vh;
+        height: 72vh;
     }
 }
 
@@ -99,19 +99,4 @@
         align-items: center;
     }
 }
-// $tabletLandscape
-// @include mq($phoneLandscape){
-//     .header-oneline {
-//         display: grid;
-//         grid-template-columns: 60% 40%;
-//         align-items: center;
-
-//         header {
-//             display: grid;
-//             grid-template-columns: 30% 1fr;
-            
-//         }
-//     }
-// }
-
 
