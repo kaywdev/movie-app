@@ -1,6 +1,6 @@
 //Buttons
 
-//front-page load-more Btn
+// front-page load-more Btn
 .load-more {
     text-align: center;
     padding: 40px 0px;
@@ -15,6 +15,41 @@
     width: 200px;
     }
 }
+
+// movie info favourite, watch later Btn
+.movie-list {
+
+    .movie-info {
+
+        button {
+            height: 40px;
+            width: 40px;
+            position: absolute;
+        }
+
+        .favMovie {
+            color: red;
+            border: none;
+            background:url('../../images/svg/btn-fillheart-circle.svg') no-repeat 5% center;
+            background-color: blue;
+            background-size: 40px;
+            font-size: 0;
+        }
+
+        .unfavMovie {
+            color: red;
+            border: none;
+            background:url('../../images/svg/btn-lineheart-circle.svg') no-repeat 5% center;
+            background-color: blue;
+            background-size: 40px;
+            font-size: 0;
+        }
+
+    }
+
+}
+
+
 
 // singleMovie.js Btn
 .favbtn,
@@ -66,3 +101,4 @@
     display: flex;
     flex-wrap: wrap;
 }
+
