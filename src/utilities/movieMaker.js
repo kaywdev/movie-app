@@ -110,7 +110,7 @@ function filterMD(arr){
             return (genresNames + genreName);
         });
 
-        console.log(genresNames);
+        //console.log(genresNames);
         obj.genres = genresNames;
 
     }else if(obj.singleMovieGenres){
@@ -121,7 +121,7 @@ function filterMD(arr){
             return (genresNames + genreName);
         });
 
-        console.log(genresNames);
+        //console.log(genresNames);
         obj.singleMovieGenres = genresNames;
     }
 }
