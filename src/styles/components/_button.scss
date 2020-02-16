@@ -15,3 +15,40 @@
     width: 200px;
     }
 }
+
+// singleMovie.js Btn
+.favbtn {
+
+    button {
+        height: 40px;
+        width: 200px;
+        font-size: 0.8em;
+        border-radius: 20px;
+
+    }
+
+
+}
+
+// button {
+//     font-size: 1.03em;
+//     border-radius: 20px;
+// }
+
+.favMovie {
+    background-color: transparent;
+    color: white;
+        padding: 1px 6px 1px 6px;
+    &:before {
+        content: url('../../images/png/btn-lineheart.png'); 
+    }
+}
+
+.unfavMovie {
+    background-color: transparent;
+    color: white;
+
+    &:before {
+        content: url('../../images/png/btn-fillheart.png'); 
+    }
+}

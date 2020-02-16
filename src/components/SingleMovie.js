@@ -46,28 +46,39 @@ const SingleMovie =({movie})=>{
 
       <div className="smovie-wrap">
 
-        <div className="smovie-img-wrap">
-          <div className="smovie-poster">
+        <div className="smovie-img-wrap bgposter" style={{ backgroundImage: `url("${singleMovie.bgimg}")` }} >
+          <div className="smovie-poster poster">
             <img src={singleMovie.poster} alt={singleMovie.title} />
-          </div>
-          <div className="smovie-bgimg">
-            <img src={singleMovie.bgimg} alt={singleMovie.title} />
           </div>
         </div>{/* .smovie-img-wrap */}
 
 
         <div className="smovie-content">
           <h1 className="smovie-title">{singleMovie.title}</h1>
-          <AddFavourite movie={singleMovie} />
-          <AddWatchLater movie={singleMovie} />
-          <h3>Overview</h3>
-          <p>{singleMovie.overview}</p>
-          <h3>Released</h3>
-          <p>{singleMovie.date}</p>
-          <h3>Rate</h3>
-          <p>{singleMovie.rate * 10}%</p>
-          <h3>Genre</h3>
-          <p>{singleMovie.singleMovieGenres}</p>
+          <div className="favbtn">
+            <AddFavourite movie={singleMovie} />
+          </div>
+          <div className="watchbtn">
+            <AddWatchLater movie={singleMovie} />
+          </div>
+          <div className="smovie-text">
+            <div className="overview">
+              <h3>Overview</h3>
+              <p>{singleMovie.overview}</p>
+            </div>
+            <div className="released">
+              <h3>Released</h3>
+              <p>{singleMovie.date}</p>
+            </div>
+            <div className="rate">
+              <h3>Rate</h3>
+              <p>{singleMovie.rate * 10}%</p>
+            </div>
+            <div className="genre">
+              <h3>Genre</h3>
+              <p>{singleMovie.singleMovieGenres}</p>
+            </div>
+          </div>
         </div>
       </div>{/* .smovie-wrap */}
     </main>

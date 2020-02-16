@@ -26,7 +26,17 @@ const AddFavourite = ({movie}) => {
 
     return (
         <div>
-            { favIndex >= 0 ? <button onClick={() => {handleRemoveFromFavourites(movie) }}>Remove Favourite</button> : <button className="favMovie" onClick={() => {handleAddFavourite(movie)}}>favourite</button> }
+            { favIndex >= 0 ? 
+            <button 
+                className="favMovie" 
+                onClick={() => {handleRemoveFromFavourites(movie) }}>
+                    Unfavourite this movie
+            </button> : 
+            <button 
+                className="unfavMovie" 
+                onClick={() => {handleAddFavourite(movie)}}>
+                    Favourite this movie
+            </button> }
         </div>
     );
 
