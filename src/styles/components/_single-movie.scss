@@ -58,6 +58,13 @@
         transform: translate(0%, -50%);
     }
     
+    @include mq($desktopsmall){
+        width: 300px;
+    }
+
+    @include mq($desktopsmall){
+        width: 350px;
+    }
 }
 
 
@@ -70,9 +77,13 @@
         width: 40%;
         top: 50%;
         left: 48%;
-        transform: translate(0%, -50%);
+        transform: translate(0%, -60%);
     }
-    
+
+    @include mq($desktopsmall){
+        width: 35%;
+    }
+
 }
 
 .smovie-text {
