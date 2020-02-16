@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 //const resultImgPath = 'https://image.tmdb.org/t/p/w1280';
 
@@ -10,10 +11,16 @@ const Result = ({ result }) => {
         
             <div className="movie-info">
                 <figure>
+                <Link to={`/movie/${result.id}`}>
                 <img src={result.poster}  alt={result.title} />
+                </Link>
                 </figure>
                 <div className="movie-text">
-                <h3>{result.title}</h3>
+                <h3>
+                <Link to={`/movie/${result.id}`}>
+                    {result.title}
+                </Link>
+                </h3>
                 <div className="rating">
                             <div className="star-img">
                                 <img src={result.rateStars}  alt="star"/>
@@ -27,9 +34,9 @@ const Result = ({ result }) => {
                                 {result.overview}
                             </p>
                         </div>{/** end of movie-summary */}
-                        
+                        <Link to={`/movie/${result.id}`}>  
                         <button>more info</button>
-                    
+                    </Link>
                 </div>
             </div>
            
