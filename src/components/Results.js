@@ -6,7 +6,7 @@ const Results = ({ results }) => {
 
     return (
         <section className="results movie-lists">
-            <div className="movie-list">
+            <div className="movie-list-results">
             {(results !== undefined || results.length === 0) ? results.map(result => {
                 return <Result result={result} />
             }) : <p>No search provided...Got back to search page...</p>}

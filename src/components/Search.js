@@ -26,7 +26,8 @@ const Search = ({ handleSearch }) => {
                     className="searchbox" 
                     placeholder="Search for a movie by title..."
                     onChange={handleFormSubmit} 
-                    onKeyPress={handleFormKeySubmit}/>
+                    onKeyPress={handleFormKeySubmit}
+                    />
             </form>
         </section> 
     );

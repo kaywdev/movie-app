@@ -22,7 +22,9 @@ const SearchBar = () => {
     return (
         <div>
             <Search handleSearch={handleSearch} search={null} />
-            <Results results={result} />
+            <div className="movielist-wrapper">
+                <Results results={result} />
+            </div>
         </div>
 
     );

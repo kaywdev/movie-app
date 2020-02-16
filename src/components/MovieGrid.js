@@ -32,7 +32,7 @@ const movies = (md) => {
                             {movie.genres}
                         </p>
                         <p>
-                            {movie.overview}
+                            {movie.excerpt}
                         </p>
                     </div>{/** end of movie-summary */}
                     <Link to={`/movie/${movie.id}`}> 

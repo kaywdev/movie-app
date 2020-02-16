@@ -5,36 +5,22 @@ import Year from './Year';
 import Chart from './Chart';
 import MovieGrid from './MovieGrid';
 import Search from './Search';
+import SearchBar from './SearchBar';
 import Results from './Results';
 import movieMaker from '../utilities/movieMaker';
 
-
-// Utility Import
-// import { setStorage, getStorage } from '../utilities/storageMaker'; 
-
-
-// Utilities
-
 /** 
- * 
- * 
  * URL: 
- * 
  * API Key:
- * 
  * Base URL:
- * 
- * 
 */
 
 const Home = (props) => { 
-
+    
     const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
     const search_api = "https://api.themoviedb.org/3/search/movie?api_key=";
-    // const search_api = "https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher";
 
     const [result, setResult] = useState([]);
-    // const [selected, setSelected] = useState({});
 
     // set the variables that we want react to keep track of 
     const [movieData, setMovieData] = useState(null);
@@ -81,21 +67,22 @@ const Home = (props) => {
 
     return (
         <main> 
-            <Search handleSearch={handleSearch} search={null}/>
+            <SearchBar />
+            {/* <Search handleSearch={handleSearch} search={null}/>
             <div className="movielist-wrapper">
-            <Results results={result} />
-            <section className= "sort-movies">
-            <Chart 
-                chart={chart} 
-                handleChangeChart={handleChangeChart}/>
-            <Year 
-                year={year} 
-                handleChangeYear={handleChangeYear}/>
-            </section>
-            <section className="movie-lists">
-            {movieData && <MovieGrid movieData={movieData}/>}
-            </section>
-            </div> 
+                <Results results={result} /> */}
+                <section className= "sort-movies">
+                    <Chart 
+                        chart={chart} 
+                        handleChangeChart={handleChangeChart}/>
+                    <Year 
+                        year={year} 
+                        handleChangeYear={handleChangeYear}/>
+                </section>
+                <section className="movie-lists">
+                    {movieData && <MovieGrid movieData={movieData}/>}
+                </section>
+            {/* </div>  */}
         </main>
     );
 }

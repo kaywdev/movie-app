@@ -108,10 +108,11 @@ function setExcerpt(obj){
         let rebuildExcerpt = '';
         while(brokenOverviewIndex < 15){
         
-            rebuildExcerpt = brokenOverview[brokenOverviewIndex] + rebuildExcerpt;
-
+            rebuildExcerpt = rebuildExcerpt + brokenOverview[brokenOverviewIndex] + ' ';
+            brokenOverviewIndex +=1;
         }
-        console.log(rebuildExcerpt);
+        obj.excerpt = rebuildExcerpt + '...';
+        //console.log(obj.excerpt );
     }
 }
 
@@ -238,7 +239,7 @@ function setImage(obj) {
 function movieMaker(mdAPI){
 
     mdAPI = filterMD(mdAPI);
-    console.log(mdAPI);
+    //console.log(mdAPI);
     mdAPI.forEach((item, index) => {
         setRateImage(item);
         setDate(item);
