@@ -131,6 +131,7 @@
 }
 
 .movie-info {
+
     display: grid;
     grid-template-columns: 48% 52%;
     position: relative;
@@ -240,6 +241,15 @@
            color: $red;
         }
     }
+}
+.background-red{
+    border: 1px solid $red;
+}
+.background-blue{
+    border: 1px solid $blue;
+}
+.background-purple{
+    border: 1px solid $purple;
 }
 .movie-info:not(:last-child){
     margin-bottom: 50px;

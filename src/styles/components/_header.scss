@@ -26,46 +26,7 @@ header{
     }
     
 }
-header.show nav, header.show span.logo {
-    display: block;
-}
 
-header.show nav{
-    position: absolute;
-    z-index: 2;
-}
-header.show nav a:hover,
-header.show nav a:active,
-header.show nav a:focus{
-    background-color: $red;
-}
-
-header.show #nav-hm .hm-menu:nth-child(1){
-    top:18px;
-    width:0%;
-    left:50%;
- }
-
- header.show #nav-hm .hm-menu:nth-child(2){
-    -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
- }
-
- header.show #nav-hm .hm-menu:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 12px;
-  }
-  
-  header.show #nav-hm .hm-menu:nth-child(4) {
-    top: 18px;
-    width: 0%;
-    left: 50%;
-  }
 
 @include mq($phoneLandscapeSmall){
     .header-oneline {
@@ -73,7 +34,7 @@ header.show #nav-hm .hm-menu:nth-child(1){
         header {
             display: grid;
             grid-template-columns: 20% 1fr;
-            align-items: center;
+            
             
         }
     }
@@ -81,7 +42,7 @@ header.show #nav-hm .hm-menu:nth-child(1){
 
 .header-oneline {
     @include mq($phoneLandscape){
-
+    position: relative;
     width: 90%;
     margin: 0 auto;
     }

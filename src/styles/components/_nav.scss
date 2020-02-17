@@ -1,4 +1,4 @@
-header nav{   
+nav{   
     display: none;    /*hiding menu items*/
     width: 100%;
     
@@ -26,8 +26,8 @@ header nav{
         color: white;
 
         &:hover,
-        :active,
-        :focus{
+        &:active,
+        &:focus{
             color: $red;
             cursor: pointer;
             // text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
@@ -47,4 +47,42 @@ header nav{
         }
   }
 }
+.show nav, 
+.show span.logo {
+    display: block;
+}
 
+.show nav{
+    position: absolute;
+    z-index: 2;
+}
+.show nav ul{
+    align-items: center;
+}
+
+.show #nav-hm .hm-menu:nth-child(1){
+    top:18px;
+    width:0%;
+    left:50%;
+ }
+
+.show #nav-hm .hm-menu:nth-child(2){
+    -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+ }
+
+.show #nav-hm .hm-menu:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 12px;
+  }
+  
+  .show #nav-hm .hm-menu:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
