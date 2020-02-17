@@ -24,7 +24,7 @@ const Year = (props) => {
         <div className="year">
         {/* <h3>{props.year}</h3> */}
         <form>
-            <label htmlFor="selectyear">movie released in</label>
+            <label htmlFor="selectyear">movies released in</label>
             <select name="selectyear"
                     className="selection" 
                     id="selectyear" 

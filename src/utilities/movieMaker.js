@@ -103,10 +103,10 @@ function filterMD(arr){
 function setExcerpt(obj){
     let fullOverview = obj.excerpt;
     let brokenOverview = fullOverview.split(' ');
-    if(brokenOverview.length > 15){
+    if(brokenOverview.length > 12){
         let brokenOverviewIndex = 0;
         let rebuildExcerpt = '';
-        while(brokenOverviewIndex < 15){
+        while(brokenOverviewIndex < 12){
         
             rebuildExcerpt = rebuildExcerpt + brokenOverview[brokenOverviewIndex] + ' ';
             brokenOverviewIndex +=1;
@@ -123,7 +123,7 @@ function setExcerpt(obj){
         genresNames = ''+ obj.genres.map((genre)=> {
             let genreName = genresList.find(x => x.id === genre).name;
             //console.log('in '+ genree);
-            return (genresNames + genreName);
+            return (genresNames + " " + genreName);
         });
 
         //console.log(genresNames);
@@ -134,7 +134,7 @@ function setExcerpt(obj){
         genresNames = ''+ obj.singleMovieGenres.map((genre)=> {
             let genreName = genre.name;
             //console.log('in '+ genree);
-            return (genresNames + genreName);
+            return (genresNames + " " + genreName);
         });
 
         //console.log(genresNames);

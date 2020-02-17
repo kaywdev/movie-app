@@ -1,30 +1,34 @@
 //Buttons
 
-//front-page load-more Btn
-.load-more {
-    text-align: center;
-    padding: 40px 0px;
+// front-page load-more Btn
+// .load-more {
+//     text-align: center;
+//     padding: 40px 0px;
 
-    button{
-    background-color: $red;
-    color:white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1em;
-    padding: 10px;
-    width: 200px;
-    }
-}
+//     button{
+//         background-color: $red;
+//         color:white;
+//         border: none;
+//         border-radius: 50px;
+//         font-size: 1em;
+//         padding: 10px;
+//         width: 200px;
+//     }
+// }
 
 // movie info favourite, watch later Btn
 .movie-list {
 
     .movie-info {
 
-        button {
-            height: 40px;
-            width: 40px;
-            // position: absolute;
+        .toggleFav,
+        .toggleWatch {
+
+            button {
+                height: 40px;
+                width: 40px;
+            }
+
         }
 
         .favMovie {

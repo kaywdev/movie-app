@@ -7,7 +7,7 @@ const Footer = () =>  {
 
     return (
        
-        <footer className="header">
+        <footer className="footer">
             <div className="footer-logo"></div>
             <div className="footer-text">
                 <p>&copy; 2020 MVDB all rights reserved.</p>
