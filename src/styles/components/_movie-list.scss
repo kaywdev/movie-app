@@ -193,13 +193,26 @@
                         height: 17px;
                     }
                 }
+                .star-red{
+                    filter: hue-rotate(145deg);
+                }
+                .star-purple{
+                    
+                    filter: hue-rotate(60deg);
+                    
+                }
+                .star-blue{
+                    
+                    filter: hue-rotate(0deg);
+                    
+                }
         
             }
 
             .rating-number {
                 p {
                     font-weight: bold;
-                    color: $blue;
+                    
                     line-height: 1.13;
                     font-size: 1.2em;
 
@@ -211,6 +224,15 @@
                         line-height: 1.1;
                         font-size: 1em;
                     }
+                } 
+                .text-red{
+                    color:$red;
+                }
+                .text-purple{  
+                    color:$purple;   
+                }
+                .text-blue{    
+                    color: $blue; 
                 }
             }
         }
@@ -254,3 +276,4 @@
 .movie-info:not(:last-child){
     margin-bottom: 50px;
 }
+
