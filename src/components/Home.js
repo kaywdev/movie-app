@@ -71,7 +71,7 @@ const Home = (props) => {
             {/* <Search handleSearch={handleSearch} search={null}/>
             <div className="movielist-wrapper">
                 <Results results={result} /> */}
-            <div className="wrapper">
+           
                 <section className= "sort-movies">
                     <Chart 
                         chart={chart} 
@@ -84,7 +84,7 @@ const Home = (props) => {
                     {movieData && <MovieGrid movieData={movieData}/>}
                 </section>
             {/* </div>  */}
-            </div>
+         
         </main>
     );
 }

@@ -104,6 +104,7 @@
     
 .movie-lists{
     padding: 50px 0px 20px;
+    
 
     h2 {
         padding-bottom: 50px;
@@ -113,8 +114,11 @@
     @include mq($phoneLandscape){
         .movie-list {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 48% 52%;
             grid-gap: 20px;
+            width: 90%;
+            margin: 0 auto;
+        
         }
     }
 
@@ -127,7 +131,7 @@
 
 .movie-info {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 48% 52%;
     position: relative;
     border: 1px solid $blue;
     justify-items: center;

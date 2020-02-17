@@ -34,7 +34,7 @@ header nav{
         }
         
     }
-    @include mq($phoneLandscape) {  
+    @include mq($phoneLandscapeSmall) {  
         display:block;
         ul{
             display: flex;
