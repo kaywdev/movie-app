@@ -8,13 +8,20 @@ import AddWatchLater from './AddWatchLater';
 //const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 const movies = (md) => {
+   
     return md.map((movie, i) => {
         //console.log('in MovieGrid: '+ movie.id + ' and ' + movie.rate);
         //console.log('in MovieGrid star path: '+ `src/images/${movie.rateStars}`);
-
+    
+        
+       const isBackgroundBlue =true;
+        
         return (
-            
-            <div key={i} className={`movie-info movie-0${i+1}`}>
+        <div key={i} className={`movie-info movie-0${i+1}`}>
+            {/* <div key={i} className={`movie-info movie-0${i+1} 
+            ${movie.rate>=0&& movie.rate<4 ? 'background-red'
+            :movie.rate>=4&& movie.rate<8 ? 'background-blue'
+            :'background-purple'}`}> */}
                 <div className="movie-poster-wrap">
                     <figure>
                     <Link to={`/movie/${movie.id}`}> <img src={movie.poster} alt={movie.poster}/></Link>
