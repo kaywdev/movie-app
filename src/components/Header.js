@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import {useLocation} from 'react-router-dom';
@@ -18,6 +18,9 @@ const Header = () => {
 
 
 	const[isMenuOpen, setIsMenuOpen]=useState(false);
+	// const node = useRef();
+	// // useOnClickOutside(node, ()=>setIsMenuOpen(false));
+	
 return(
 	<header className={isMenuOpen ? 'show' : 'hide'}>
     	{/* <h1><Link to="/">MVDB</Link></h1> */}

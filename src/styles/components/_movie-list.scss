@@ -123,9 +123,9 @@
         }
     }
 
-    @include mq($desktopsmall){
+    @include mq($desktopextrasmall){
         .movie-list{
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 34% 33% 33%;
         }
     }
 }
@@ -149,6 +149,10 @@
 
         @include mq($tabletLandscape){
             width:200px;
+        }
+        @include mq($desktopextrasmall){
+                width:168px;
+    
         }
     }
     .movie-text{
