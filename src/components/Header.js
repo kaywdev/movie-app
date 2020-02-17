@@ -41,10 +41,10 @@ return(
 			{/* {console.log(props.movieid)} */}
 				{ location.pathname === "/" && <img src = {`${iconPath}mvdb_logo.svg`} alt="logo"/> }
 				{/* { (location.pathname !== "/favourites"&&location.pathname !== "/watch-later") && <img src = {`${iconPath}mvdb_logo.svg`} alt="logo"/> } */}
-				{ location.pathname === "/about" && <img src = {`${iconPath}mvdb_logo.svg`} alt="logo"/> }
+				{ location.pathname === "/about" && <img src = {`${iconPath}mvdb_logo_about.svg`} alt="logo"/> }
 				{ location.pathname === "/favourites" && <img src = {`${iconPath}mvdb_logo_my-favourite.svg`} alt="logo"/> }
 				{ location.pathname === "/watch-later" && <img src = {`${iconPath}mvdb_logo_watch-later.svg`} alt="logo"/> }
-				{ location.pathname === `/movie/${movieId}` && <img src = {`${iconPath}mvdb_logo_404.svg`} alt="logo"/> }
+				{ location.pathname === `/movie/${movieId}` && <img src = {`${iconPath}mvdb_logo_single.svg`} alt="logo"/> }
 				
 				
 				</div>
