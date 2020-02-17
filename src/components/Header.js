@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import {useLocation} from 'react-router-dom';
@@ -18,11 +18,9 @@ const Header = () => {
 
 
 	const[isMenuOpen, setIsMenuOpen]=useState(false);
-	// const node = useRef();
-	// // useOnClickOutside(node, ()=>setIsMenuOpen(false));
-	
+
 return(
-	<header className={isMenuOpen ? 'show' : 'hide'}>
+	<header className={isMenuOpen ? 'show' : ''}>
     	{/* <h1><Link to="/">MVDB</Link></h1> */}
 		<div className="mobile-header">
 			<button className="btn-menu" 
@@ -54,7 +52,11 @@ return(
 				</Link>
 			</h1>
     	</div>
+		<nav onClick={() => {setIsMenuOpen(!isMenuOpen)}}>
+       
 			<Nav/>
+			
+		</nav>
 	</header>
 	
 );
