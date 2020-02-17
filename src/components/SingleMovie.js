@@ -23,12 +23,16 @@ const SingleMovie =({movie})=>{
       let data = await res.json();
 
       setSingleMovie(movieMaker([data])[0]);
-      console.log(data);
+      // console.log(data);
 
     }
 
     fetchMovies();
 }, []);
+
+useEffect(() => {
+  window.scrollTo(0, 0)
+}, [])
 
   return (
     <main>

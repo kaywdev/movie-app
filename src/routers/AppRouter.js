@@ -14,11 +14,12 @@ import WatchLater from '../components/WatchLater';
 
 const AppRouter = () => (
 	<Router>
-		<div className="wrapper">
+		
 			<div className="header-oneline">
 			<Header />
 			{/* <Search /> */}
 			</div>
+		
 			<Switch>
 				<Route path="/" exact><Home /></Route>
 				<Route path="/index.html" exact><Home /></Route>
@@ -28,7 +29,7 @@ const AppRouter = () => (
 				<Route path="/movie/:movieId" ><SingleMovie /></Route>
 					
 			</Switch>
-			</div>
+		
 			<hr/>
 			<Footer />
 		

@@ -5,7 +5,7 @@ const years = [ 2022,  2021,  2020, 2019, 2018, 2017, 2016,2015];
 const makeYearOptions = (years) => {
     return years.map((yearGroup, i) => {  
         return (            
-                <option key={i} value={yearGroup} selected={yearGroup == "2020" ? true : false}>{yearGroup}</option>
+                <option key={i} value={yearGroup} selected={yearGroup === "2020" ? true : false}>{yearGroup}</option>
             )});
 }
 
@@ -24,7 +24,7 @@ const Year = (props) => {
         <div className="year">
         {/* <h3>{props.year}</h3> */}
         <form>
-            <label htmlFor="selectyear">movie released in</label>
+            <label htmlFor="selectyear">movies released in</label>
             <select name="selectyear"
                     className="selection" 
                     id="selectyear" 

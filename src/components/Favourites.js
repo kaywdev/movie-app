@@ -13,9 +13,11 @@ const Favourites = () => {
     return(
         <main>
             <SearchBar />
-            <section className="movie-lists">
-                {movieData && <MovieGrid movieData={movieData}/>}
-            </section>
+            <div className="wrapper">
+                <section className="movie-lists">
+                    {movieData && <MovieGrid movieData={movieData} />}
+                </section>
+            </div>
         </main>
     )
 }

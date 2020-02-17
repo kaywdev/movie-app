@@ -33,6 +33,9 @@ const movies = (md) => {
                         <div className="star-img">
                             <img src={movie.rateStars}  alt="star"/>
                         </div>{/* end of rstar-img */}
+                        <div className="rating-number">
+                            <p>{movie.rate * 10}%</p>
+                        </div>
                     </div>{/* end of rating */}
                     <div className="release-date">
                         <p> {movie.date}</p>
@@ -46,10 +49,10 @@ const movies = (md) => {
                         </p>
                     </div>{/** end of movie-summary */}
                     <Link to={`/movie/${movie.id}`}> 
-                    <button>more info</button>
+                    <button classname="moreinfo-btn">More info</button>
                     </Link>
                 </div>{/** end of movie-text */} 
-                {/* <AddFavourite movie={movie} /> */}
+              
             </div>
             
         );
