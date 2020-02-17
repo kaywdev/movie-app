@@ -7,8 +7,9 @@
     // margin-bottom: 30px;
 
     @include mq($phoneLandscape){
-        width: 92%;
+        width: 90%;
         margin: 0 auto;
+        padding: 0;
     }
 
     .search-icon{

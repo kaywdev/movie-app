@@ -14,7 +14,7 @@ import WatchLater from '../components/WatchLater';
 
 const AppRouter = () => (
 	<Router>
-		
+	 <div className="wrapper">	
 			<div className="header-oneline">
 			<Header />
 			{/* <Search /> */}
@@ -32,7 +32,7 @@ const AppRouter = () => (
 		
 			<hr/>
 			<Footer />
-		
+		</div>
 	</Router>	
 );
 
