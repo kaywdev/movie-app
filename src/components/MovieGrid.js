@@ -49,7 +49,7 @@ const movies = (md) => {
                     <button>more info</button>
                     </Link>
                 </div>{/** end of movie-text */} 
-                <AddFavourite movie={movie} />
+                {/* <AddFavourite movie={movie} /> */}
             </div>
             
         );
