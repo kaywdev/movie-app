@@ -17,6 +17,7 @@ const movies = (md) => {
         
         return (
         // <div key={i} className={`movie-info movie-0${i+1}`}>
+        
          <div key={i} className={`movie-info movie-0${i+1} 
             ${movie.rate===0 ? 'background-grey':movie.rate>0&& movie.rate<4 ? 'background-red'
             :movie.rate>=4&& movie.rate<7 ? 'background-purple'
