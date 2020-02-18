@@ -1,5 +1,5 @@
 import React from 'react';
-import { getStorage } from '../utilities/storageMaker';
+//import { getStorage } from '../utilities/storageMaker';
 import SearchBar from './SearchBar';
 
 // import wiAllIcons from '../images/wi-all-icons.jpg';

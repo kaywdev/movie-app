@@ -59,7 +59,7 @@ export const addToStorage = (newItem, storageItem) => {
 
     itemsFromStorage.push(newItem);
 
-    console.log(newItem);
+    //console.log(newItem);
 
     const index = itemsFromStorage.length - 1;
 

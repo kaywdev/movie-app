@@ -8,8 +8,8 @@ import MovieGrid from './MovieGrid';
 const WatchLater = () => {
     let movieData = getStorage('watchlater');
     //watchlater
-    console.log(movieData);
-    console.log(movieData.length);
+    //console.log(movieData);
+    //console.log(movieData.length);
 
 
     return(

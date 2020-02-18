@@ -12,9 +12,9 @@ const Header = () => {
 	const iconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 	let location = useLocation();
-	console.log(location);
+	//console.log(location);
 	let movieId = location.pathname.toString().slice(7);
-	console.log(movieId);
+	//console.log(movieId);
 
 
 	const[isMenuOpen, setIsMenuOpen]=useState(false);

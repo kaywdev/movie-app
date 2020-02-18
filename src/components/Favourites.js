@@ -7,7 +7,7 @@ import MovieGrid from './MovieGrid';
 const Favourites = () => {
     let movieData = getStorage('favourites');
     //watchlater
-    console.log(movieData);
+    //console.log(movieData);
 
 
     return(

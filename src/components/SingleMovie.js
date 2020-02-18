@@ -7,15 +7,15 @@ import SearchBar from './SearchBar';
 
 
 const SingleMovie =({movie})=>{
-  let { movieId } = useParams();
-  console.log('first '+movieId);
+    let { movieId } = useParams();
+    //console.log('first '+movieId);
 
-  const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
-  // const iconPath = 'https://image.tmdb.org/t/p/w500';
-  // const iconPath1280 = 'https://image.tmdb.org/t/p/w1280';
-  const [ singleMovie, setSingleMovie ] = useState({});
+    const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
+    // const iconPath = 'https://image.tmdb.org/t/p/w500';
+    // const iconPath1280 = 'https://image.tmdb.org/t/p/w1280';
+    const [ singleMovie, setSingleMovie ] = useState({});
 
-  useEffect(() =>{
+    useEffect(() =>{
         
     const fetchMovies = async () => {
 
@@ -38,7 +38,7 @@ useEffect(() => {
   window.scrollTo(0, 0)
 }, [])
 
-console.log('5th here in single movie: ' + singleMovie.title);
+//console.log('5th here in single movie: ' + singleMovie.title);
   return (
     <main>
       <SearchBar />
