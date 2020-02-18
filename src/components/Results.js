@@ -3,18 +3,9 @@ import Result from './Result';
 
 
 const Results = ({ results }) => {
-
-   
-    console.log('after sort' + results.title + ' ' + results.rate + ' '+ results.date);
-    // function compareRate(a, b) {
-    //     return b.rate - a.rate;
-    //   }
-    // results.sort(compareRate);
+    
     results.sort((a,b)=>{return b.rate-a.rate});
     results.sort((a,b)=>{return b.date.substring(8)-a.date.substring(8)});
-
-    console.log(results);
-    console.log('after sort' + results.title + ' ' + results.rate + ' '+ results.date);
 
     return (
         <section className="results movie-lists">
@@ -25,7 +16,6 @@ const Results = ({ results }) => {
             </div>
         </section>     
     );
-
 }
 
 export default Results;

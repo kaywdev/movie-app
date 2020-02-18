@@ -1,23 +1,25 @@
-nav{   
-    display: none;    /*hiding menu items*/
-    width: 100%;
-    
+// Navigation Style
 
-    ul{
+nav {   
+    display: none;
+    width: 100%;
+
+    ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
         background: black;
         
-        li{
+        li {
             border-top: 1px solid #858585;
         }
-        li:last-child{
+
+        li:last-child {
             border-bottom: 1px solid #858585;
         }
     }
     
-    a{
+    a {
         padding-left: 12px;
         display: block;
         line-height: 40px;
@@ -30,55 +32,55 @@ nav{
         &:focus{
             color: $red;
             cursor: pointer;
-
         }
 
         @include mq($tabletPortrait) {  
             font-size: 1em;
         }
-
-        
     }
+
     @include mq($mq620) {  
         display:block;
-        ul{
+
+        ul {
             display: flex;
             justify-content: flex-end;
 
-            li, li:last-child{
+            li, li:last-child {
                 border:none;
                 padding: 0 20px;
             }
         }
     }
     
-
 }
+
 .show nav, 
 .show span.logo {
     display: block;
 }
 
-.show nav{
+.show nav {
     position: absolute;
     z-index: 2;
 }
-.show nav ul{
+
+.show nav ul {
     align-items: center;
 }
 
-.show #nav-hm .hm-menu:nth-child(1){
+.show #nav-hm .hm-menu:nth-child(1) {
     top:18px;
     width:0%;
     left:50%;
- }
+}
 
-.show #nav-hm .hm-menu:nth-child(2){
+.show #nav-hm .hm-menu:nth-child(2) {
     -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
- }
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
 
 .show #nav-hm .hm-menu:nth-child(3) {
     -webkit-transform: rotate(-45deg);
@@ -86,10 +88,10 @@ nav{
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
     top: 12px;
-  }
+}
   
-  .show #nav-hm .hm-menu:nth-child(4) {
+.show #nav-hm .hm-menu:nth-child(4) {
     top: 18px;
     width: 0%;
     left: 50%;
-  }
+}

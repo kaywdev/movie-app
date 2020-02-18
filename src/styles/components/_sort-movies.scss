@@ -1,10 +1,77 @@
-.sort-movies{
+// Drop down menu "sort-movies" 
+
+.sort-movies {
     padding-top: 20px;
     
     @include mq($phoneLandscape) { 
         display:flex;
         width: 90%;
         margin: 0 auto;
-    
+    }
+}
+
+.selection {
+    background-color: transparent;
+    color: white;
+    font-size: 1em;
+    height: 40px;
+}
+
+// Chart drop down selection
+.charts {
+    form {
+        padding: 10px 30px;
+        display: grid;
+        grid-template-columns: 30% 1fr;
+        align-items: center;
+
+        @include mq($phoneLandscape) { 
+            grid-template-columns: 35% 1fr;
+            padding-left: 0px;
+        }
+        
+        select {
+            border: 2px solid $red;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url(../../images/down-arrow.png) right center / 20px no-repeat;
+            background-position: calc(100% - 5px) center !important;
+            padding-left: 10px;
+
+            @include mq($phoneLandscape) { 
+                width: 150px;
+            }  
+        }
+    }
+}
+
+// Year drop down selection
+.year {
+    form {
+        padding: 10px 30px;
+        display: grid;
+        grid-template-columns: 40% 1fr;
+        align-items: center;
+
+        @include mq($phoneLandscape) { 
+            grid-template-columns: 69% 1fr;
+            padding-left: 0px;
+        }
+
+        select {
+            border: 2px solid $red;
+            margin-left: 10px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url(../../images/down-arrow.png) right center / 20px no-repeat;
+            background-position: calc(100% - 5px) center !important;
+            padding-left: 10px;
+
+            @include mq($phoneLandscape) { 
+                width:80px;
+            }    
+        }
     }
 }

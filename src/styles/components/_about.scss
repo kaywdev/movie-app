@@ -77,9 +77,7 @@
             width: 47%;
         }
     }
-
 }
-
 
 .tmdb-logo {
     width: 160px;
@@ -91,7 +89,6 @@
     @include mq($phonePortraitLarge){
             margin-bottom: 0;
     }
-
 }
 
 .team-icons {
@@ -116,7 +113,7 @@
     }
 
     .moon {
-         width: 90px;
+        width: 90px;
         height: 90px;
         background-repeat: no-repeat;
         background-image: url('../../images/team-icon-moon.svg'); 
@@ -128,5 +125,4 @@
         background-repeat: no-repeat;
         background-image: url('../../images/team-icon-kay.svg'); 
     }
-
 }

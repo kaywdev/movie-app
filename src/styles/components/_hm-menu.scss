@@ -14,6 +14,7 @@
     .icon{
         position: relative;
     }
+
     #nav-hm {
         width: 28px;
         height: 28px;
@@ -28,7 +29,6 @@
         -o-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
         cursor: pointer;
-       
 
         .hm-menu {
             display: block;
@@ -48,31 +48,22 @@
             -o-transition: .25s ease-in-out;
             transition: .25s ease-in-out;
         }
+
         .hm-menu:nth-child(1){
-              top:0px;
-          }
-        
-          .hm-menu:nth-child(2), .nav-hm .hm-menu:nth-child(3){
+            top:0px;
+        }
+    
+        .hm-menu:nth-child(2), .nav-hm .hm-menu:nth-child(3){
             top:12px;
         }
+
         .hm-menu:nth-child(4){
-             top:24px;
-         }
+            top:24px;
+        }
     }
-    
-    
       
-      @include mq($mq620){
+    @include mq($mq620){
         display: none;
     }
-      
-    
 }
-
-  
-
-  
-
-
- 
   

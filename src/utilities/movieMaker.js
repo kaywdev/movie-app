@@ -2,8 +2,6 @@
 
 // Convert the API data into a format usable by our application
 
-// Days and Months
-//const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const genresList = [
       {
         "id": 28,
@@ -82,6 +80,7 @@ const genresList = [
         "name": "Western"
       }
     ];
+
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const iconPath = 'https://image.tmdb.org/t/p/w500';
 const iconPath1280 = 'https://image.tmdb.org/t/p/w1280';
@@ -90,11 +89,9 @@ const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 function filterMD(arr){
     return (
         arr.reduce((result, item) => {
-            //if(i <21){
-                result.push({ date: item.release_date, poster: item.poster_path, title: item.title, 
-                    excerpt: item.overview, overview: item.overview , id: item.id, rate:item.vote_average, 
-                    bgimg: item.backdrop_path, genres: item.genre_ids, singleMovieGenres: item.genres });
-            //} 
+            result.push({ date: item.release_date, poster: item.poster_path, title: item.title, 
+                excerpt: item.overview, overview: item.overview , id: item.id, rate:item.vote_average, 
+                bgimg: item.backdrop_path, genres: item.genre_ids, singleMovieGenres: item.genres });
             return result;
         }, [])
       )
@@ -108,77 +105,58 @@ function setExcerpt(obj){
             let brokenOverviewIndex = 0;
             let rebuildExcerpt = '';
             while(brokenOverviewIndex < 12){
-            
                 rebuildExcerpt = rebuildExcerpt + brokenOverview[brokenOverviewIndex] + ' ';
                 brokenOverviewIndex +=1;
             }
             obj.excerpt = rebuildExcerpt + '...';
-            //console.log(obj.excerpt );
         }
     }
 }
-
 
  function setGenres(obj){
      if(obj.genres){
         let genresNames = '';
         genresNames = ''+ obj.genres.map((genre)=> {
             let genreName = genresList.find(x => x.id === genre).name;
-            //console.log('in '+ genree);
             return (genresNames + " " + genreName);
         });
 
-        //console.log(genresNames);
         obj.genres = genresNames;
 
     }else if(obj.singleMovieGenres){
-        let genresNames = '';
-        genresNames = ''+ obj.singleMovieGenres.map((genre)=> {
+            let genresNames = '';
+            genresNames = ''+ obj.singleMovieGenres.map((genre)=> {
             let genreName = genre.name;
-            //console.log('in '+ genree);
             return (genresNames + " " + genreName);
         });
 
-        //console.log(genresNames);
         obj.singleMovieGenres = genresNames;
     }
 }
 
-
 function setRateImage(obj){
     const rate = obj.rate;
     if(rate === 0 ){
-        // obj.rate = 'zero';
         obj.rateStars = rateIconPath + 'zero-blue.png';
     }else if(rate >=0 && rate <1) {
-        // obj.rate = 'one-half';
         obj.rateStars = rateIconPath+'one-half.png';
     }else if(rate >= 1 && rate <2){
-        // obj.rate = 'one';
         obj.rateStars = rateIconPath+'one.png';
     }else if(rate >= 2 && rate <3){
-        // obj.rate = 'one and half';
         obj.rateStars = rateIconPath + 'one-and-half.png';
     }else if(rate >= 3 && rate <4){
-        // obj.rate = 'two';
         obj.rateStars = rateIconPath + 'two.png';
     }else if(rate >= 4 && rate <5){
-        // obj.rate = 'two and half';
         obj.rateStars = rateIconPath + 'two-and-half.png';
     }else if(rate >= 5 && rate <6){
-        // obj.rate = 'three';
         obj.rateStars = rateIconPath + 'three.png';
     }else if(rate >= 6 && rate <7){
-        // obj.rate = 'three and half';
         obj.rateStars = rateIconPath + 'three-and-half.png';
     }else if(rate >= 7 && rate <8){
-        // obj.rate = 'four';
         obj.rateStars = rateIconPath + 'four.png';
     }else if(rate >= 8 && rate <9){
-        // obj.rate = 'four and half';
         obj.rateStars = rateIconPath + 'four-and-half.png';
     }else{
-        // obj.rate = 'five';
         obj.rateStars = rateIconPath + 'five.png';
     }
 }
@@ -212,10 +190,10 @@ function setDate(obj) {
         }else if(monthIndex === '12'){
             monthIndex=11;
         }
-        //console.log(monthIndex);
+
         let monthName = months[monthIndex];
-        //console.log(monthName);
         obj.date = `${monthName} ${strDate[2]}, ${strDate[0]}`;
+
     }else{
         obj.date = ''
     }
@@ -237,11 +215,9 @@ function setImage(obj) {
     }
 }
 
-
 function movieMaker(mdAPI){
 
     mdAPI = filterMD(mdAPI);
-    //console.log(mdAPI);
     mdAPI.forEach((item, index) => {
         setRateImage(item);
         setDate(item);

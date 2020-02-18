@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { isItemInStorage, removeItemFromStorage, addToStorage, getStorageIndexNumber} from '../utilities/storageMaker';
 
 const AddWatchLater = ({movie}) => {
-    //console.log('here in add watch : ' + movie.title);
 
     useEffect(()=> {
         setWatchIndex( isItemInStorage(movie, 'watchlater'));
@@ -15,7 +14,7 @@ const AddWatchLater = ({movie}) => {
     }
 
     const handleRemoveFromWatchLater = (movie) => {
-        removeItemFromStorage( getStorageIndexNumber(movie, 'watchlater'),'watchlater'  );
+        removeItemFromStorage( getStorageIndexNumber(movie, 'watchlater'),'watchlater');
         setWatchIndex(-1);
     }
 
