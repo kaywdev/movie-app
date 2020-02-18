@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { isItemInStorage, removeItemFromStorage, addToStorage, getStorageIndexNumber} from '../utilities/storageMaker';
 
 const AddFavourite = ({movie}) => {
+    console.log('here in add fav : ' + movie);
 
     useEffect(()=> {
         setFavIndex( isItemInStorage(movie, 'favourites'));

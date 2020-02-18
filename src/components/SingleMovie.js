@@ -34,6 +34,7 @@ useEffect(() => {
   window.scrollTo(0, 0)
 }, [])
 
+console.log('here in single movie: ' + singleMovie);
   return (
     <main>
       <SearchBar />
