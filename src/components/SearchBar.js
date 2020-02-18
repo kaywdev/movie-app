@@ -38,6 +38,7 @@ const SearchBar = () => {
         const s = searchEnteredByUser;
         if(s !== ''){
             axios(search_api + key + "&query=" + s).then(({ data }) => {
+                //https://api.themoviedb.org/3/search/movie?api_key=65a9ed7abe7e75b3c0bf9250934f2b49&query=
                 setResult(movieMaker(data.results));
             });
         }else{
