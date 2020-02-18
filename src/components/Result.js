@@ -9,7 +9,7 @@ const Result = ({ result }) => {
     //console.log('See these result...from Result Component.. ' + result);
 
     return (
-        <Link to={`/movie/${result.id}`} >
+        <Link to={`/movie/${result.id}`}>
             <div className="movie-results">
                 <figure>
                     {/* <Link to={`/movie/${result.id}`}> */}

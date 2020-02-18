@@ -29,6 +29,7 @@ const SearchBar = () => {
         // outside click 
         setResult([]);
     };
+    
 
     const [result, setResult] = useState([]);
 
@@ -48,7 +49,7 @@ const SearchBar = () => {
         <div ref={node} className ="search-result-wrapper">
             <Search handleSearch={handleSearch} search={null} />
             <div className="movielist-wrapper">
-                <Results results={result} />
+                <Results results={result} onClick={()=>handleClick}/>
             </div>
         </div>
 
