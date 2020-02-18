@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import { isItemInStorage, removeItemFromStorage, addToStorage, getStorageIndexNumber} from '../utilities/storageMaker';
 
 const AddWatchLater = ({movie}) => {
+    console.log('here in add watch : ' + movie.title);
 
     useEffect(()=> {
         setWatchIndex( isItemInStorage(movie, 'watchlater'));
-    },[]);
+    },[movie]);
 
     const [watchIndex, setWatchIndex] = useState(-1);
 

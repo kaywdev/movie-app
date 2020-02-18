@@ -8,7 +8,7 @@ const SearchBar = () => {
 
     const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
     const search_api = "https://api.themoviedb.org/3/search/movie?api_key=";
-    let outClick =false;
+    //let outClick =false;
 
     const node = useRef();
     useEffect(() => {
@@ -18,10 +18,10 @@ const SearchBar = () => {
         return () => {
           document.removeEventListener("mousedown", handleClick);
         };
-      }, []);
+    }, []);
 
 
-      const handleClick = e => {
+    const handleClick = e => {
         if (node.current.contains(e.target)) {
           // inside click
           return;

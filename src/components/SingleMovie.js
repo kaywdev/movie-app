@@ -19,23 +19,21 @@ const SingleMovie =({movie})=>{
         
     const fetchMovies = async () => {
 
-      const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}`);
-      let data = await res.json();
+        const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}`);
+        let data = await res.json();
 
-      setSingleMovie(movieMaker([data])[0]);
-      // console.log(data);
-      console.log('second '+singleMovie.title);
-
-
+        setSingleMovie(movieMaker([data])[0]);
+        // console.log(data);
+        //console.log('second '+singleMovie.title);
     }
 
     fetchMovies();
-    console.log('third '+singleMovie.title);
+    //console.log('third '+singleMovie.title);
 
-}, []);
+}, [movieId]);
 
 useEffect(() => {
-  console.log('furth '+singleMovie.title);
+  //console.log('furth '+singleMovie.title);
 
   window.scrollTo(0, 0)
 }, [])

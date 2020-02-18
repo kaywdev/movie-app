@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 // Components
 import Year from './Year';
 import Chart from './Chart';
@@ -18,9 +18,9 @@ import movieMaker from '../utilities/movieMaker';
 const Home = (props) => { 
     
     const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
-    const search_api = "https://api.themoviedb.org/3/search/movie?api_key=";
+    //const search_api = "https://api.themoviedb.org/3/search/movie?api_key=";
 
-    const [result, setResult] = useState([]);
+    //const [result, setResult] = useState([]);
 
     // set the variables that we want react to keep track of 
     const [movieData, setMovieData] = useState(null);
@@ -58,12 +58,12 @@ const Home = (props) => {
     }
 
     // Handle Search Input
-    const handleSearch = (searchEnteredByUser) => {
-        const s = searchEnteredByUser;
-        axios(search_api + key + "&query=" + s).then(({ data }) => {
-            setResult(movieMaker(data.results));
-        });
-    }
+    // const handleSearch = (searchEnteredByUser) => {
+    //     const s = searchEnteredByUser;
+    //     axios(search_api + key + "&query=" + s).then(({ data }) => {
+    //         setResult(movieMaker(data.results));
+    //     });
+    // }
 
     return (
         <main> 

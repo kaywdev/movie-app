@@ -6,7 +6,7 @@ const AddFavourite = ({movie}) => {
 
     useEffect(()=> {
         setFavIndex( isItemInStorage(movie, 'favourites'));
-    },[]);
+    },[movie]);
 
     const [favIndex, setFavIndex] = useState(-1);
 

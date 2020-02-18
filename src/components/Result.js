@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 //const resultImgPath = 'https://image.tmdb.org/t/p/w1280';
 
 const Result = ({ result }) => {
-    console.log('here in result: '+result.id);
+    //console.log('here in result: '+result.id);
 
     //console.log('See these result...from Result Component.. ' + result);
 
