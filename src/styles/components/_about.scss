@@ -1,0 +1,132 @@
+.about {
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    .red {
+        color: $red;
+    }
+    .blue {
+        color: $blue;
+    }
+    .green {
+        color: $green;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover, &:focus, &:active {
+            text-decoration: underline;
+            text-decoration-color: $purple;
+        }
+    }
+
+}
+
+.about-project {
+    span {
+        color: $green;
+    }
+}
+
+.about-wrapper {
+    padding: 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h2 {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    @include mq($phonePortrait){
+        padding: 40px 35px;
+    }
+
+    @include mq($phonePortraitLarge){
+        padding: 40px 40px;
+    }
+
+    @include mq($phonePortraitLarge){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    @include mq($phoneLandscape){
+        padding: 50px 60px;
+    }
+
+    @include mq($desktopmini){
+        padding-top: 100px;
+    }
+
+    @include mq($desktopsmall){
+        padding-bottom: 100px;
+    }
+
+    .about-project,
+    .about-team {
+        @include mq($phonePortraitLarge){
+            width: 47%;
+        }
+    }
+
+}
+
+
+.tmdb-logo {
+    width: 160px;
+    height: 60px;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+    background-image: url('../../images/tmdb_poweredby_r.svg');
+
+    @include mq($phonePortraitLarge){
+            margin-bottom: 0;
+    }
+
+}
+
+.team-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+
+    @include mq($phonePortraitLarge){
+        justify-content: left;
+    }
+
+    @include mq($phoneLandscape){
+        margin-top: 70px;
+    }
+
+    .zahra {
+        width: 90px;
+        height: 90px;
+        background-repeat: no-repeat;
+        background-image: url('../../images/team-icon-zahra.svg'); 
+    }
+
+    .moon {
+         width: 90px;
+        height: 90px;
+        background-repeat: no-repeat;
+        background-image: url('../../images/team-icon-moon.svg'); 
+    }
+
+    .kay {
+        width: 90px;
+        height: 90px;
+        background-repeat: no-repeat;
+        background-image: url('../../images/team-icon-kay.svg'); 
+    }
+
+}

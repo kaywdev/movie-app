@@ -26,7 +26,8 @@ const Result = ({ result }) => {
                 <div className='rate-starts'>
                     <div className="rating">
                         <div className="star-img">
-                            <img src={result.rateStars}  alt="star"/>
+                            <img src={result.rateStars}  alt="star" className={`star-img ${result.rate===0 ? 'star-grey':result.rate>0&& result.rate<4 ? 'star-red'
+            :result.rate>=4&& result.rate<7 ? 'star-purple':'star-blue'}`}/>
                         </div>{/* end of rstar-img */}
                     </div>{/* end of rating */}
                     <div className="release-date">

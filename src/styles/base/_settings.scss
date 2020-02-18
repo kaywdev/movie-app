@@ -4,6 +4,7 @@
 $red: #c74649;
 $blue: #0098ff;
 $purple: #ac3ad9;
+$green: #01d277;
 
 // Type
 $bodyFont:'Lato', sans-serif;
@@ -17,9 +18,13 @@ $section-padding: em(16) em(20);
 $desktoplarge:em(1920);
 $desktopsmall:em(1600);
 $desktopextrasmall:em(1300);
+$desktopmini:em(1400);
 $tabletLandscape: em(1024);
+$tabletPortraitLarge: em(1000);
 $tabletPortrait: em(850);
 $phoneLandscape: em(670);
+$mq620: em(620);
 $phoneLandscapeSmall: em(615);
+$phonePortraitLarge: em(500);
 $phonePortrait: em(420);
 

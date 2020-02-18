@@ -18,6 +18,16 @@
         line-height: 1.5;
     }
 }
+.text-grey{
+    h3{
+    color:rgb(108, 108, 108);
+    }
+    .smovie-img-wrap {
+        border-bottom: rgb(108, 108, 108) 3.5px solid;
+        border-top: rgb(108, 108, 108) 3.5px solid;
+    }
+
+}
 .text-red{
     h3{
     color:$red;
@@ -135,6 +145,10 @@
 .smovie-text {
     display: flex;
     flex-wrap: wrap;
+}
+
+.overview {
+    width: 100%;
 }
 
 .released, .rate {

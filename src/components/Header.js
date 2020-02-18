@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 import {useLocation} from 'react-router-dom';
@@ -13,13 +13,33 @@ const Header = () => {
 
 	let location = useLocation();
 	console.log(location);
-	let movieId = location.pathname.toString().slice(-6);
-	// console.log(movieId);
+	let movieId = location.pathname.toString().slice(7);
+	console.log(movieId);
 
 
 	const[isMenuOpen, setIsMenuOpen]=useState(false);
 
+	const node = useRef();
+	useEffect(() => {
+		// add when mounted
+		document.addEventListener("mousedown", handleClick);
+		// return function to be called when unmounted
+		return () => {
+		  document.removeEventListener("mousedown", handleClick);
+		};
+	  }, []);
+
+	  const handleClick = e => {
+		if (node.current.contains(e.target)) {
+		  // inside click
+		  return;
+		}
+		// outside click 
+		setIsMenuOpen(isMenuOpen);
+	}
+
 return(
+	<div ref={node}>
 	<header className={isMenuOpen ? 'show' : ''}>
     	{/* <h1><Link to="/">MVDB</Link></h1> */}
 		<div className="mobile-header">
@@ -58,7 +78,7 @@ return(
 			
 		</nav>
 	</header>
-	
+	</div>
 );
 }
 
