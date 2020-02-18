@@ -13,6 +13,10 @@ const Favourites = () => {
     return(
         <main>
             <SearchBar />
+            <div className={movieData.length > 0 ? 'favExist' : 'favNotExist'}>
+                <p>No movies yet in the Favourite Movie List!</p>
+                <p>Create your Favourite list by clicking the <span className="red">&#9829;</span> button on each movie.</p>
+            </div>
             <div className="wrapper">
                 <section className="movie-lists">
                     {movieData && <MovieGrid movieData={movieData} />}

@@ -36,13 +36,17 @@
 }
 
 .about-wrapper {
-    padding: 40px 25px;
+    padding: 40px 30px;
     max-width: 1200px;
     margin: 0 auto;
 
     h2 {
         width: 100%;
         margin-bottom: 40px;
+    }
+
+    @include mq($phonePortrait){
+        padding: 40px 35px;
     }
 
     @include mq($phonePortraitLarge){
@@ -67,11 +71,6 @@
         padding-bottom: 100px;
     }
 
-
-    // @include mq($tabletPortraitLarge){
-    //     padding: 50px 80px;
-    // }
-
     .about-project,
     .about-team {
         @include mq($phonePortraitLarge){
@@ -94,7 +93,6 @@
     }
 
 }
-
 
 .team-icons {
     display: flex;
@@ -132,5 +130,3 @@
     }
 
 }
-
-
