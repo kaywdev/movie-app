@@ -8,7 +8,7 @@ import SearchBar from './SearchBar';
 
 const SingleMovie =({movie})=>{
   let { movieId } = useParams();
-  console.log(movieId);
+  console.log('first '+movieId);
 
   const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
   // const iconPath = 'https://image.tmdb.org/t/p/w500';
@@ -24,17 +24,23 @@ const SingleMovie =({movie})=>{
 
       setSingleMovie(movieMaker([data])[0]);
       // console.log(data);
+      console.log('second '+singleMovie.title);
+
 
     }
 
     fetchMovies();
+    console.log('third '+singleMovie.title);
+
 }, []);
 
 useEffect(() => {
+  console.log('furth '+singleMovie.title);
+
   window.scrollTo(0, 0)
 }, [])
 
-console.log('here in single movie: ' + singleMovie);
+console.log('5th here in single movie: ' + singleMovie.title);
   return (
     <main>
       <SearchBar />

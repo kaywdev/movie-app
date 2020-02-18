@@ -4,9 +4,9 @@ import axios from 'axios';
 import Year from './Year';
 import Chart from './Chart';
 import MovieGrid from './MovieGrid';
-import Search from './Search';
+//import Search from './Search';
 import SearchBar from './SearchBar';
-import Results from './Results';
+//import Results from './Results';
 import movieMaker from '../utilities/movieMaker';
 
 /** 

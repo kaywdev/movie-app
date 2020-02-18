@@ -101,18 +101,20 @@ function filterMD(arr){
 }
 
 function setExcerpt(obj){
-    let fullOverview = obj.excerpt;
-    let brokenOverview = fullOverview.split(' ');
-    if(brokenOverview.length > 12){
-        let brokenOverviewIndex = 0;
-        let rebuildExcerpt = '';
-        while(brokenOverviewIndex < 12){
-        
-            rebuildExcerpt = rebuildExcerpt + brokenOverview[brokenOverviewIndex] + ' ';
-            brokenOverviewIndex +=1;
+    if(obj.excerpt){
+        const fullOverview = obj.excerpt;
+        let brokenOverview = fullOverview.split(' ');
+        if(brokenOverview.length > 12){
+            let brokenOverviewIndex = 0;
+            let rebuildExcerpt = '';
+            while(brokenOverviewIndex < 12){
+            
+                rebuildExcerpt = rebuildExcerpt + brokenOverview[brokenOverviewIndex] + ' ';
+                brokenOverviewIndex +=1;
+            }
+            obj.excerpt = rebuildExcerpt + '...';
+            //console.log(obj.excerpt );
         }
-        obj.excerpt = rebuildExcerpt + '...';
-        //console.log(obj.excerpt );
     }
 }
 
