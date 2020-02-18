@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 const Result = ({ result }) => {
     //console.log('here in result: '+result.id);
 
-    //console.log('See these result...from Result Component.. ' + result);
+    console.log('See these result...from Result Component..' + result.date.substring(8));
 
     return (
         <Link to={`/movie/${result.id}`}>
