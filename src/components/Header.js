@@ -18,8 +18,9 @@ const Header = () => {
 
 
 	const[isMenuOpen, setIsMenuOpen]=useState(false);
+
 return(
-	<header className={isMenuOpen ? 'show' : 'hide'}>
+	<header className={isMenuOpen ? 'show' : ''}>
     	{/* <h1><Link to="/">MVDB</Link></h1> */}
 		<div className="mobile-header">
 			<button className="btn-menu" 
@@ -51,7 +52,11 @@ return(
 				</Link>
 			</h1>
     	</div>
+		<nav onClick={() => {setIsMenuOpen(!isMenuOpen)}}>
+       
 			<Nav/>
+			
+		</nav>
 	</header>
 	
 );

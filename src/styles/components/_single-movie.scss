@@ -9,7 +9,7 @@
     }
 
     h3 {
-        color: $blue;
+        // color: $blue;
         line-height: 2.8;
     }
 
@@ -17,6 +17,35 @@
         font-size: 95%;
         line-height: 1.5;
     }
+}
+.text-red{
+    h3{
+    color:$red;
+    }
+    .smovie-img-wrap {
+        border-bottom: $red 3.5px solid;
+        border-top: $red 3.5px solid;
+    }
+
+}
+.text-purple{ 
+    h3{ 
+    color:$purple; 
+    } 
+    .smovie-img-wrap {
+        border-bottom: $purple 3.5px solid;
+        border-top: $purple 3.5px solid;
+    } 
+}
+.text-blue{ 
+    h3{   
+    color: $blue;
+    } 
+    .smovie-img-wrap {
+        border-bottom: $blue 3.5px solid;
+        border-top: $blue 3.5px solid;
+    } 
+    
 }
 
 
@@ -28,8 +57,8 @@
     background-repeat: no-repeat;
     max-width: 100%;
     height: 60vh;
-    border-bottom: $blue 3.5px solid;
-    border-top: $blue 3.5px solid;
+    // border-bottom: $blue 3.5px solid;
+    // border-top: $blue 3.5px solid;
 
     @include mq($tabletLandscape){
         height: 72vh;
