@@ -1,5 +1,4 @@
-// Type
-/* Typography */
+// Typography
 
 @font-face {
     font-family: 'Gotham-Rounded-Book';
@@ -29,7 +28,6 @@
     src: url('../fonts/grmedium.ttf') format('truetype');
 }
 
-
 body {
     font-family: $bodyFont;
     font-weight: 300;
@@ -46,7 +44,6 @@ body {
 }
 
 h1, h2, h3, h4 {
-    // font-family: $headingFont;
     font-family: $bodyFont;
 }
 
@@ -59,7 +56,7 @@ nav a {
 }
 
 .about {
-
+    
     h2 {
         font-size: 200%;
         margin-bottom: 20px;

@@ -8,87 +8,64 @@ import SearchBar from './SearchBar';
 
 const SingleMovie =({movie})=>{
     let { movieId } = useParams();
-    //console.log('first '+movieId);
-
     const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
-    // const iconPath = 'https://image.tmdb.org/t/p/w500';
-    // const iconPath1280 = 'https://image.tmdb.org/t/p/w1280';
     const [ singleMovie, setSingleMovie ] = useState({});
 
     useEffect(() =>{
-        
-    const fetchMovies = async () => {
 
+    const fetchMovies = async () => {
         const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}`);
         let data = await res.json();
-
         setSingleMovie(movieMaker([data])[0]);
-        // console.log(data);
-        //console.log('second '+singleMovie.title);
+
     }
 
     fetchMovies();
-    //console.log('third '+singleMovie.title);
 
 }, [movieId]);
 
 useEffect(() => {
-  //console.log('furth '+singleMovie.title);
 
   window.scrollTo(0, 0)
+
 }, [])
 
-//console.log('5th here in single movie: ' + singleMovie.title);
-  return (
-    <main>
-      <SearchBar />
-      {/* <Search handleSearch={handleSearch} search={null} />
-      <Results results={result} /> */}
-
-      <div className={`smovie-wrap ${singleMovie.rate===0 ? 'text-grey':singleMovie.rate>0&& singleMovie.rate<4 ? 'text-red'
-            :singleMovie.rate>=4&& singleMovie.rate<7 ? 'text-purple':'text-blue'}`}>
-
-        <div className="smovie-img-wrap bgposter" style={{ backgroundImage: `url("${singleMovie.bgimg}")` }} >
-          <div className="smovie-poster poster">
-            <img src={singleMovie.poster} alt={singleMovie.title} />
-          </div>
-        </div>{/* .smovie-img-wrap */}
-
-
-        <div className="smovie-content">
-          <div className="smovie-header">
-            <h1 className="smovie-title">{singleMovie.title}</h1>
-            <div className="smovie-btn-wrapper">
-              <div className="favbtn">
-                <AddFavourite movie={singleMovie} />
-              </div>
-              <div className="watchbtn">
-                <AddWatchLater movie={singleMovie} />
-              </div>
-            </div>
-          </div>
-          <div className="smovie-text">
-            <div className="overview">
-              <h3>Overview</h3>
-              <p>{singleMovie.overview}</p>
-            </div>
-            <div className="released">
-              <h3>Released</h3>
-              <p>{singleMovie.date}</p>
-            </div>
-            <div className="rate">
-              <h3>Rate</h3>
-              <p>{singleMovie.rate * 10}%</p>
-            </div>
-            <div className="genre">
-              <h3>Genre</h3>
-              <p>{singleMovie.singleMovieGenres}</p>
-            </div>
-          </div>
+return (
+  <main>
+    <SearchBar />
+    <div className={`smovie-wrap ${singleMovie.rate===0 ? 'text-grey':singleMovie.rate>0&& singleMovie.rate<4 ? 'text-red'
+        :singleMovie.rate>=4&& singleMovie.rate<7 ? 'text-purple':'text-blue'}`}>
+      <div className="smovie-img-wrap bgposter" style={{ backgroundImage: `url("${singleMovie.bgimg}")` }} >
+        <div className="smovie-poster poster">
+          <img src={singleMovie.poster} alt={singleMovie.title} />
         </div>
-      </div>{/* .smovie-wrap */}
-    </main>
-    );
+      </div>{/* .smovie-img-wrap */}
+      <div className="smovie-content">
+        <div className="smovie-header">
+          <h1 className="smovie-title">{singleMovie.title}</h1>
+          <div className="smovie-btn-wrapper">
+            <div className="favbtn"><AddFavourite movie={singleMovie} /></div>
+            <div className="watchbtn"><AddWatchLater movie={singleMovie} /></div>
+          </div>{/* .smovie-btn-wrapper */}
+        </div>{/* .smovie-header */}
+        <div className="smovie-text">
+          <div className="overview">
+            <h3>Overview</h3><p>{singleMovie.overview}</p>
+          </div>
+          <div className="released">
+            <h3>Released</h3><p>{singleMovie.date}</p>
+          </div>
+          <div className="rate">
+            <h3>Rate</h3><p>{singleMovie.rate * 10}%</p>
+          </div>
+          <div className="genre">
+            <h3>Genre</h3><p>{singleMovie.singleMovieGenres}</p>
+          </div>
+        </div>{/* .smovie-text */}
+      </div>{/* .smovie-content */}
+    </div>{/* .smovie-wrap */}
+  </main>
+  );
 };
 
 export default SingleMovie;
