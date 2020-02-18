@@ -1,23 +1,19 @@
+// Local storage functions for favourite, watch later
+
 export const setStorage = (newItem, storageItem) => {
+
     if(Array.isArray(newItem)){
         newItem = JSON.stringify(newItem);
     }
     localStorage.setItem(storageItem, newItem);
 }
 
-// setStorage(item)
 
 export const getStorage = (storageItem) => {
     let items = localStorage.getItem(storageItem);
+
     if(items){
         items = JSON.parse(items);
-        // console.log('in storageMaker: ');
-        // console.log(items[0].date);
-        // console.log(items[0].title);
-        // console.log(items[0].overview);
-        // console.log(items[1].date);
-        // console.log(items[1].title);
-        // console.log(items[1].overview);
         return items;
     }else {
         items = JSON.stringify([]);
@@ -37,9 +33,11 @@ export const removeItemFromStorage = (index, storageItem) => {
 export const isItemInStorage = (itemToTest, storageItem) => {
         
     const itemsFromStorage = getStorage(storageItem);
+
     // Test if item is in existing items array
     // Match test
     const itemMatch = (currentItem) => currentItem.title === itemToTest.title;
+    
     // Use findIndex to get the index number of the item 
     // (if it is in the items array)
     const itemIndex = itemsFromStorage.findIndex(itemMatch);
@@ -50,7 +48,6 @@ export const isItemInStorage = (itemToTest, storageItem) => {
     }else {
         return itemIndex;
     }
-
 }
 
 export const addToStorage = (newItem, storageItem) => {
@@ -59,8 +56,6 @@ export const addToStorage = (newItem, storageItem) => {
 
     itemsFromStorage.push(newItem);
 
-    //console.log(newItem);
-
     const index = itemsFromStorage.length - 1;
 
     itemsFromStorage = JSON.stringify(itemsFromStorage);
@@ -68,7 +63,6 @@ export const addToStorage = (newItem, storageItem) => {
     setStorage(itemsFromStorage, storageItem);
 
     return index;
-
 }
 
 export const getStorageIndexNumber = (item, storageItem) => {
@@ -77,9 +71,5 @@ export const getStorageIndexNumber = (item, storageItem) => {
     const itemIndex = itemsFromStorage.findIndex(itemMatch);
     return itemIndex;
 }
-
-// function storageMaker(item){
-//     getStorage(item);
-// }
 
 export default getStorage;
