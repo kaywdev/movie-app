@@ -21,7 +21,7 @@ nav{
         padding-left: 12px;
         display: block;
         line-height: 40px;
-        
+        font-size: 0.95em;
         text-decoration: none;
         color: white;
 
@@ -32,6 +32,11 @@ nav{
             cursor: pointer;
 
         }
+
+        @include mq($tabletPortrait) {  
+            font-size: 1em;
+        }
+
         
     }
     @include mq($mq620) {  
@@ -45,7 +50,9 @@ nav{
                 padding: 0 20px;
             }
         }
-  }
+    }
+    
+
 }
 .show nav, 
 .show span.logo {

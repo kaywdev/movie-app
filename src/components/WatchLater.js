@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 //import FavouritesGrid from './FavouritesGrid';
 import { getStorage } from '../utilities/storageMaker';
@@ -7,10 +7,6 @@ import MovieGrid from './MovieGrid';
 
 const WatchLater = () => {
     let movieData = getStorage('watchlater');
-    //watchlater
-    //console.log(movieData);
-    //console.log(movieData.length);
-
 
     return(
         <main>
