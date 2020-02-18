@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 //import FavouritesGrid from './FavouritesGrid';
 import { getStorage } from '../utilities/storageMaker';

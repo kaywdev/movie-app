@@ -4,9 +4,6 @@ import Nav from '../components/Nav';
 import {useLocation} from 'react-router-dom';
 
 
-
-
-
 const Header = () => {
 
 	const iconPath = process.env.PUBLIC_URL + '/assets/images/';
@@ -35,7 +32,7 @@ const Header = () => {
 		  return;
 		}
 		// outside click 
-		setIsMenuOpen(isMenuOpen);
+		setIsMenuOpen(false);
 	}
 
 return(

@@ -21,7 +21,7 @@ const About = () => (
 		
 		<section className="about about-team">
 			<h3>Meet the team</h3>
-				<p>MVDB is a React JS project proudly created by <a href="https://www.zahrafetami.com" target="_blank"><span className="red">Zahra</span></a>, <a href="https://www.moonk.ca" target="_blank"><span className="blue">Moon</span></a>, and <a href="https://www.kaywdev.com" target="_blank"><span className="green">Kay</span></a>. We are an ambitious web development team who love coding, designing best user experience, and challenging!</p>
+				<p>MVDB is a React JS project proudly created by <a href="https://www.zahrafetami.com" target="_blank" rel="noopener noreferrer"><span className="red">Zahra</span></a>, <a href="https://www.moonk.ca" target="_blank" rel="noopener noreferrer"><span className="blue">Moon</span></a>, and <a href="https://www.kaywdev.com" target="_blank" rel="noopener noreferrer"><span className="green">Kay</span></a>. We are an ambitious web development team who love coding, designing best user experience, and challenging!</p>
 			<div className="about team-icons">
 				<div className="zahra"></div>
 				<div className="moon"></div>
