@@ -1,11 +1,10 @@
 // Mixins
 
 // background-image
-@mixin bg-img{
-    background-position:center;
+@mixin bg-img {
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 // Mixin for clearing out
@@ -24,8 +23,3 @@
         @content
     }
 }
-
-
-
-
-

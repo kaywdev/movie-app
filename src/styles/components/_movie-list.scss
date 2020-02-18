@@ -1,301 +1,171 @@
-.results.movie-lists{
-    width: 70vw;
-    top: 0;
-    left: 50%;
-    padding: 0;
-    background-color: rgba(2, 54, 89, 0.95);
-    transform: translate(-50%);
-
-    .movie-list-results{
-        a{
-            text-decoration: none;
-            color: white;
-            width: 100%;
-            height: 100%;
-            // border: 2px solid red;
-        
-        } 
-        
-        .movie-results{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            align-items: center;
-            justify-items: center;
-            height: 100px;
-            @include mq($phoneLandscape){
-                height: 130px;
-            }
-    
-            figure{
-                width: 60px;
-                margin: 0 10px;  
-                @include mq($phoneLandscape){
-                    width: 80px;
-                }   
-            }
-           .movie-text {
-            justify-self: start;
-            word-wrap: break-word;
-            width: 70PX;
-
-                h3{
-                    font-size: 0.8em;
-                    @include mq($phoneLandscapeSmall){
-                        font-size: 1em;
-                    }
-                    @include mq($tabletPortrait){
-                        font-size: 1.2em;
-                    }
-                }
-
-                @include mq($phoneLandscapeSmall){
-                    width: 150px;
-                }
-                @include mq($tabletLandscape){
-                    width: 280px;
-                }
-            }
-            .rate-starts{
-                margin: 0 3px;
-                justify-self: start;
-                @include mq($tabletLandscape){
-                    margin: 0 10px;
-                }
-                .star-img{
-                    img{
-                      height: 12px; 
-
-                      @include mq($phoneLandscapeSmall){
-                        height: 18px; 
-                     } 
-                     @include mq($phoneLandscape){
-                        height: 20px; 
-                     } 
-                    }
-                    // .star-grey{
-                    //     filter: hue-rotate(222deg);
-                    // }
-                    .star-red{
-                        filter: hue-rotate(145deg);
-                    }
-                    .star-purple{
-                        
-                        filter: hue-rotate(60deg);
-                        
-                    }
-                    .star-blue{
-                        
-                        filter: hue-rotate(0deg);
-                        
-                    }    
-                }
-                .release-date{
-                    padding-top: 5px;
-                    p{
-                        font-size: 0.75em;
-
-                        @include mq($phoneLandscapeSmall){
-                            font-size: 0.9em;
-                        }
-                        @include mq($tabletPortrait){
-                            font-size: 1.2em;
-                        }
-                    }
-                    // flex: 0 0 100px;
-                    //justify-content: flex-end;
-                }
-            }
-            &:hover,
-            &:active,
-            &:focus{
-                background-color: rgba(51, 102, 136, 0.742);
-            } 
-        } 
-    }
-    
-}
-
-
-    
+// Movie Grid Style
     
 .movie-lists{
     padding: 50px 0px 20px;
     
-
     h2 {
         padding-bottom: 50px;
         color: $red;
     }
 
-    @include mq($phoneLandscape){
-        .movie-list {
+    .movie-list {
+        @include mq($phoneLandscape){
             display: grid;
             grid-template-columns: 48% 52%;
             grid-gap: 20px;
             width: 90%;
             margin: 0 auto;
-        
         }
-    }
 
-    @include mq($desktopextrasmall){
-        .movie-list{
+        @include mq($desktopextrasmall){
             grid-template-columns: 34% 33% 33%;
         }
-    }
-}
 
-.movie-info {
-
-    display: grid;
-    grid-template-columns: 48% 52%;
-    position: relative;
-    border: 1px solid $blue;
-    justify-items: center;
-
-    @include mq($phoneLandscape){
-        height: 335px;
-    }
-    
-
-    figure{
-        margin: 5px;
-        position: relative;
-        top: -40px;
-
-        @include mq($tabletLandscape){
-            width:200px;
-        }
-        @include mq($desktopextrasmall){
-                width:168px;
-    
-        }
-    }
-    .movie-text{
-        padding: 10px;
-        // padding-bottom: 25px;
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
-
-        @include mq($tabletLandscape){
-            padding-right: 30px;
-        }
-
-
-        h3{
-            padding: 10px 0;
-            font-size: 140%;
+        .movie-info {
+            display: grid;
+            grid-template-columns: 48% 52%;
+            position: relative;
+            border: 1px solid $blue;
+            justify-items: center;
 
             @include mq($phoneLandscape){
-                font-size: 100%;
+                height: 335px;
             }
 
-        }
-    
-        .rating {
-            display: flex;
-            padding-bottom: 10px;
-        
-            .star-img{
+            figure{
+                margin: 5px;
+                position: relative;
+                top: -40px;
 
-                img{
-                    height: 20px;
+                @include mq($tabletLandscape){
+                    width:200px;
+                }
+                @include mq($desktopextrasmall){
+                        width:168px;
+                }
+            }
+
+            .movie-text{
+                padding: 10px;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+
+                @include mq($tabletLandscape){
+                    padding-right: 30px;
+                }
+
+                h3{
+                    padding: 10px 0;
+                    font-size: 140%;
 
                     @include mq($phoneLandscape){
-                        height: 17px;
+                        font-size: 100%;
                     }
                 }
-                .star-grey{
-                    filter: hue-rotate(210deg);
-                }
-                .star-red{
-                    filter: hue-rotate(145deg);
-                }
-                .star-purple{
-                    
-                    filter: hue-rotate(60deg);
-                    
-                }
-                .star-blue{
-                    
-                    filter: hue-rotate(0deg);
-                    
-                }
-        
-            }
-
-            .rating-number {
-                p {
-                    font-weight: bold;
-                    
-                    line-height: 1.13;
-                    font-size: 1.2em;
-
-                    &:before {
-                        content: "\00a0 \00a0";
-                    }
-
-                    @include mq($phoneLandscape){
-                        line-height: 1.1;
-                        font-size: 1em;
-                    }
-                } 
-                .text-grey{
-                    color:rgb(108, 108, 108);
-                }
-                .text-red{
-                    color:$red;
-                }
-                .text-purple{  
-                    color:$purple;   
-                }
-                .text-blue{    
-                    color: $blue; 
-                }
-            }
-        }
-        .released-date{
-            padding-bottom: 10px;
-        }
-        .movie-summary{
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-            display: block;
-           
-        }
-        button {
-            color: white;
-            border: 0.75px solid white;
-            background: transparent;
-            padding: 5px;
-            width: 100%;
             
-            &:hover {
-               
-                   border: 0.75px solid $red;
-                   color: $red;
-                }
-        }
+                .rating {
+                    display: flex;
+                    padding-bottom: 10px;
+                
+                    .star-img{
+                        img{
+                            height: 20px;
 
-        
+                            @include mq($phoneLandscape){
+                                height: 17px;
+                            }
+                        }
+
+                        .star-grey {
+                            filter: hue-rotate(210deg);
+                        }
+                        .star-red {
+                            filter: hue-rotate(145deg);
+                        }
+                        .star-purple {
+                            filter: hue-rotate(60deg);
+                        }
+                        .star-blue {
+                            filter: hue-rotate(0deg); 
+                        }
+                    }
+
+                    .rating-number {
+                        p {
+                            font-weight: bold;
+                            line-height: 1.13;
+                            font-size: 1.2em;
+
+                            &:before {
+                                content: "\00a0 \00a0";
+                            }
+
+                            @include mq($phoneLandscape){
+                                line-height: 1.1;
+                                font-size: 1em;
+                            }
+                        }
+
+                        .text-grey {
+                            color:rgb(108, 108, 108);
+                        }
+
+                        .text-red {
+                            color:$red;
+                        }
+
+                        .text-purple {  
+                            color:$purple;   
+                        }
+
+                        .text-blue {    
+                            color: $blue; 
+                        }
+                    }
+                }
+
+                .released-date {
+                    padding-bottom: 10px;
+                }
+
+                .movie-summary {
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                    display: block;
+                }
+
+                button {
+                    color: white;
+                    border: 0.75px solid white;
+                    background: transparent;
+                    padding: 5px;
+                    width: 100%;
+                    
+                    &:hover {
+                        border: 0.75px solid $red;
+                        color: $red;
+                    }
+                }
+            }
+        }
+        // Movie grid border color style
+        .background-grey {
+            border: 1px solid rgb(108, 108, 108);
+        }
+        .background-red {
+            border: 1px solid $red;
+        }
+        .background-blue {
+            border: 1px solid $blue;
+        }
+        .background-purple {
+            border: 1px solid $purple;
+        }
+        .movie-info:not(:last-child) {
+            margin-bottom: 50px;
+        }
     }
 }
-.background-grey{
-    border: 1px solid rgb(108, 108, 108);
-}
-.background-red{
-    border: 1px solid $red;
-}
-.background-blue{
-    border: 1px solid $blue;
-}
-.background-purple{
-    border: 1px solid $purple;
-}
-.movie-info:not(:last-child){
-    margin-bottom: 50px;
-}
-

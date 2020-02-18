@@ -4,8 +4,6 @@ import Result from './Result';
 
 const Results = ({ results }) => {
 
-   
-
     return (
         <section className="results movie-lists">
             <div className="movie-list-results">
@@ -15,7 +13,6 @@ const Results = ({ results }) => {
             </div>
         </section>     
     );
-
 }
 
 export default Results;

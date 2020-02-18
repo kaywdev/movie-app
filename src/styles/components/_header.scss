@@ -1,51 +1,43 @@
-header{
-    padding-top: 1.5em;
-    
-    .mobile-header {
+// Header Style
+
+.header-oneline{
+
+    @include mq ($phoneLandscape) {
         position: relative;
-        padding-bottom: 20px;
-        z-index: 3;
-
-        h1{
-            margin: 0;
-            .logo{
-                width:70px;
-                height: 52px;
-                background-image: url('/images/mvdb_logo.svg'); 
-                @include bg-img;
-                margin: 0 auto; 
-                @include mq($phoneLandscape){
-                    margin: 0;
-                }
-            }
-            @include mq($phoneLandscape){
-                justify-items: start;
-            }
-        
-        }
+        width: 90%;
+        margin: 0 auto;
     }
-    
-}
 
+    header {
+        padding-top: 1.5em;
 
-@include mq($mq620){
-    .header-oneline {
-
-        header {
+        @include mq($mq620) {
             display: grid;
             grid-template-columns: 20% 1fr;
-            
-            
         }
+
+        .mobile-header {
+            position: relative;
+            padding-bottom: 20px;
+            z-index: 3;
+
+            h1 {
+                margin: 0;
+                .logo {
+                    width:70px;
+                    height: 52px;
+                    background-image: url('/images/mvdb_logo.svg'); 
+                    margin: 0 auto; 
+                    @include bg-img;
+                    @include mq($phoneLandscape) {
+                        margin: 0;
+                    }
+                }
+                @include mq($phoneLandscape) {
+                    justify-items: start;
+                }
+            
+            }
+        }  
     }
 }
-
-.header-oneline {
-    @include mq($phoneLandscape){
-    position: relative;
-    width: 90%;
-    margin: 0 auto;
-    }
-}
-
-

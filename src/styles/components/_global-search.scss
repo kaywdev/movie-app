@@ -1,24 +1,23 @@
-.searchbox-wrap{
-    
-    display:flex;
+// Global Search input Style
+
+.searchbox-wrap {
+    display: flex;
     align-items: center;
     padding-left: 10px;
-    // commented out for sinlge movie page styling
-    // margin-bottom: 30px;
 
-    @include mq($phoneLandscape){
+    @include mq($phoneLandscape) {
         width: 90%;
         margin: 0 auto;
         padding: 0;
     }
 
-    .search-icon{
+    .search-icon {
         width: 20px;
         height: 20px;
-        filter:  brightness(0) invert(1);
+        filter: brightness(0) invert(1);
     }
 
-    form{
+    form {
         width: 100%;
         margin: 0 10px;
     }
@@ -27,11 +26,9 @@
         width: 100%;
         background: transparent;
         border: none;
-        // border-bottom: 1px solid #b5b5b5;
         line-height: 3;
         padding: 0 10px;
         font-size: 15px;
         color: white;
     }
 }
-
