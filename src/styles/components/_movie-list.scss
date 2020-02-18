@@ -11,14 +11,14 @@
     .movie-list {
         @include mq($phoneLandscape){
             display: grid;
-            grid-template-columns: 48% 52%;
+            grid-template-columns: 49% 49%;
             grid-gap: 20px;
             width: 90%;
             margin: 0 auto;
         }
 
         @include mq($desktopextrasmall){
-            grid-template-columns: 34% 33% 33%;
+            grid-template-columns: 32.3% 32.3% 32.3%;
         }
 
         .movie-info {
