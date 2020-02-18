@@ -43,7 +43,7 @@ useEffect(() => {
       <Results results={result} /> */}
 
       <div className={`smovie-wrap ${singleMovie.rate===0 ? 'text-grey':singleMovie.rate>0&& singleMovie.rate<4 ? 'text-red'
-            :singleMovie.rate>=4&& singleMovie.rate<8 ? 'text-purple':'text-blue'}`}>
+            :singleMovie.rate>=4&& singleMovie.rate<7 ? 'text-purple':'text-blue'}`}>
 
         <div className="smovie-img-wrap bgposter" style={{ backgroundImage: `url("${singleMovie.bgimg}")` }} >
           <div className="smovie-poster poster">
