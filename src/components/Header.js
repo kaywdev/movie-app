@@ -13,8 +13,8 @@ const Header = () => {
 
 	let location = useLocation();
 	console.log(location);
-	let movieId = location.pathname.toString().slice(-6);
-	// console.log(movieId);
+	let movieId = location.pathname.toString().slice(7);
+	console.log(movieId);
 
 
 	const[isMenuOpen, setIsMenuOpen]=useState(false);
