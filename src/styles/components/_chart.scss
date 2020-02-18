@@ -15,6 +15,7 @@
             appearance: none;
             background: url(../../images/down-arrow.png) right center / 20px no-repeat;
             background-position: calc(100% - 5px) center !important;
+            padding-left: 10px;
             @include mq($phoneLandscape) { 
               width:150px;
             }  
