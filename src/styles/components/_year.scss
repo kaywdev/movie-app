@@ -12,6 +12,11 @@
         select{
             border: 2px solid $red;
             margin-left: 10px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url(../../images/down-arrow.png) right center / 20px no-repeat;
+            background-position: calc(100% - 5px) center !important;
             @include mq($phoneLandscape) { 
                 width:80px;
             }

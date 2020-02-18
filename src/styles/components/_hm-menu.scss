@@ -62,7 +62,7 @@
     
     
       
-      @include mq($phoneLandscapeSmall){
+      @include mq($mq620){
         display: none;
     }
       

@@ -34,7 +34,7 @@ nav{
         }
         
     }
-    @include mq($phoneLandscapeSmall) {  
+    @include mq($mq620) {  
         display:block;
         ul{
             display: flex;

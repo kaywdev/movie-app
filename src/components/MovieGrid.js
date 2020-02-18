@@ -18,7 +18,7 @@ const movies = (md) => {
         return (
         // <div key={i} className={`movie-info movie-0${i+1}`}>
          <div key={i} className={`movie-info movie-0${i+1} 
-            ${movie.rate>=0&& movie.rate<4 ? 'background-red'
+            ${movie.rate===0 ? 'background-grey':movie.rate>0&& movie.rate<4 ? 'background-red'
             :movie.rate>=4&& movie.rate<7 ? 'background-purple'
             :'background-blue'}`}>
                 <div className="movie-poster-wrap">
@@ -36,11 +36,11 @@ const movies = (md) => {
                 <h3><Link to={`/movie/${movie.id}`}>{movie.title}</Link></h3>
                     <div className="rating">
                         <div className="star-img">
-                            <img src={movie.rateStars}  alt="star" className ={`${movie.rate>=0&& movie.rate<4 ? 'star-red'
+                            <img src={movie.rateStars}  alt="star" className ={`${movie.rate===0 ? 'star-grey':movie.rate>0&& movie.rate<4 ? 'star-red'
             :movie.rate>=4&& movie.rate<7 ? 'star-purple':'star-blue'}`}/>
                         </div>{/* end of rstar-img */}
                         <div className="rating-number">
-                            <p className ={`${movie.rate>=0&& movie.rate<4 ? 'text-red'
+                            <p className ={`${movie.rate===0 ? 'text-grey': movie.rate>0&& movie.rate<4 ? 'text-red'
             :movie.rate>=4&& movie.rate< 7 ? 'text-purple':'text-blue'}`}>{movie.rate * 10}%</p>
                         </div>
                     </div>{/* end of rating */}

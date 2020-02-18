@@ -28,7 +28,7 @@ header{
 }
 
 
-@include mq($phoneLandscapeSmall){
+@include mq($mq620){
     .header-oneline {
 
         header {
