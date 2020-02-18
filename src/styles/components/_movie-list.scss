@@ -261,8 +261,6 @@
             padding-bottom: 10px;
         }
         .movie-summary{
-            // max-height: 120px;
-            // overflow: hidden;
             padding-bottom: 10px;
             margin-bottom: 10px;
             display: block;
@@ -274,14 +272,15 @@
             background: transparent;
             padding: 5px;
             width: 100%;
-            // border-radius: 20px;
+            
+            &:hover {
+               
+                   border: 0.75px solid $red;
+                   color: $red;
+                }
         }
 
-        button:hover {
-        //    background-color: $red;
-           border: 0.75px solid $red;
-           color: $red;
-        }
+        
     }
 }
 .background-grey{
