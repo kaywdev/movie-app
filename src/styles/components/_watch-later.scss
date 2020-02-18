@@ -1,0 +1,21 @@
+.watchExist {
+
+    display: none;
+
+}
+
+.watchNotExist {
+
+    display: block;
+    padding: 90px 50px 0px 50px;
+
+    p {
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    span {
+        color: $blue;
+        font-weight: bold;
+    }
+}

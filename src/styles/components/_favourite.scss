@@ -1,0 +1,21 @@
+.favExist {
+
+    display: none;
+
+}
+
+.favNotExist {
+
+    display: block;
+    padding: 90px 50px 0px 50px;
+
+    p {
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    span {
+        color: $red;
+        font-weight: bold;
+    }
+}
