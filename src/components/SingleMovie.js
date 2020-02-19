@@ -8,7 +8,7 @@ import SearchBar from './SearchBar';
 
 const SingleMovie =({movie})=>{
     let { movieId } = useParams();
-    const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
+    const key = "6bc37b6dd53eb4c2d3a0e11217b72415";
     const [ singleMovie, setSingleMovie ] = useState({});
     const [isDataGood, setisDataGood] = useState(true);
     useEffect(() =>{
