@@ -2,10 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 
-const Result = ({ result }) => {
+const Result = ({ result, handleClick }) => {
 
     return (
-        <Link to={`/movie/${result.id}`}>
+        <Link to={`/movie/${result.id}`} onClick={handleClick}>
             <div className="movie-results">
                 <figure>
                     <img src={result.poster} alt={result.title} />
