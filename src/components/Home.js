@@ -10,7 +10,7 @@ import movieMaker from '../utilities/movieMaker';
 
 const Home = (props) => { 
     
-    const key = "65a9ed7abe7e75b3c0bf9250934f2b49";
+    const key = "105647a8db946c3ade8946461fb52b94";
     //const search_api = "https://api.themoviedb.org/3/search/movie?api_key=";
 
     // set the variables that we want react to keep track of 
