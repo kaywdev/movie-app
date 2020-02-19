@@ -1,0 +1,25 @@
+// 404 Page not found page
+
+.page-not-found-wrap {
+    text-align: center;
+    padding: 80px 70px;
+}
+
+.page-not-found-logo{
+    width: 140px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.page-not-found-text{
+    a {
+        color: $blue;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $red;
+        }
+    }
+}

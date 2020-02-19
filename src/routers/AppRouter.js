@@ -10,16 +10,15 @@ import Favourites from '../components/Favourites';
 import SingleMovie from '../components/SingleMovie';
 import Footer from '../components/Footer';
 import WatchLater from '../components/WatchLater';
+import PageNotFound from '../components/PageNotFound';
 
 
 const AppRouter = () => (
-	<Router>
+	<Router basename={'/movie-app'}>
 	 <div className="wrapper">	
 			<div className="header-oneline">
-			<Header />
-			{/* <Search /> */}
-			</div>
-		
+				<Header />
+			</div>		
 			<Switch>
 				<Route path="/" exact><Home /></Route>
 				<Route path="/index.html" exact><Home /></Route>
@@ -27,10 +26,9 @@ const AppRouter = () => (
 				<Route path="/favourites" ><Favourites /></Route>
 				<Route path="/watch-later" ><WatchLater /></Route>
 				<Route path="/movie" exact/>
-				<Route path="/movie/:movieId" component={SingleMovie}><SingleMovie /></Route>
-					
+				<Route path="/movie/:movieId" exact component={SingleMovie}><SingleMovie /></Route>
+				<Route><PageNotFound/></Route>
 			</Switch>
-		
 			<hr/>
 			<Footer />
 		</div>
