@@ -84,7 +84,7 @@ const genresList = [
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const iconPath = 'https://image.tmdb.org/t/p/w500';
 const iconPath1280 = 'https://image.tmdb.org/t/p/w1280';
-const rateIconPath = process.env.PUBLIC_URL + '../assets/images/';
+const rateIconPath = process.env.PUBLIC_URL + '/assets/images/';
 
 function filterMD(arr){
     return (
