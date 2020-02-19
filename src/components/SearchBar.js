@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import movieMaker from '../utilities/movieMaker';
 import Search from './Search';
@@ -10,28 +10,14 @@ const SearchBar = () => {
     const search_api = "https://api.themoviedb.org/3/search/movie?api_key=";
     const node = useRef();
 
-    useEffect(() => {
-        // add when mounted
-        document.addEventListener("mousedown", handleClick);
+    const handleClick = () => {
 
-        // return function to be called when unmounted
-        return () => {
-          document.removeEventListener("mousedown", handleClick);
-        };
-
-    }, []);
-
-    const handleClick = e => {
-        if (node.current.contains(e.target)) {
-          // inside click
-          return;
-        }
-
-        // outside click 
+        setisOpen(false);
         setResult([]);
     };
 
     const [result, setResult] = useState([]);
+    const [isOpen, setisOpen] = useState(false);
 
     // Handle Search Input
     const handleSearch = (searchEnteredByUser) => {
@@ -40,6 +26,7 @@ const SearchBar = () => {
             axios(search_api + key + "&query=" + s).then(({ data }) => {
                 //https://api.themoviedb.org/3/search/movie?api_key=65a9ed7abe7e75b3c0bf9250934f2b49&query=
                 setResult(movieMaker(data.results));
+                setisOpen(true);
             });
         }else{
             setResult([]);
@@ -49,9 +36,9 @@ const SearchBar = () => {
     return (
         <div ref={node} className ="search-result-wrapper">
             <Search handleSearch={handleSearch} search={null} />
-            <div className="movielist-wrapper">
-                <Results results={result} onClick={()=>handleClick}/>
-            </div>
+            {isOpen && <div className="movielist-wrapper"> 
+                <Results results={result} handleClick={handleClick}/>
+            </div>}
         </div>
     );
 }
