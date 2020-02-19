@@ -26,6 +26,7 @@ const AppRouter = () => (
 				<Route path="/favourites" ><Favourites /></Route>
 				<Route path="/watch-later" ><WatchLater /></Route>
 				<Route path="/movie" exact/>
+				<Route path="" component={PageNotFound} />
 				<Route path="/movie/:movieId" exact component={SingleMovie}><SingleMovie /></Route>
 				<Route><PageNotFound/></Route>
 			</Switch>
