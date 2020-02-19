@@ -55,7 +55,7 @@ const Header = () => {
 							{location.pathname === "/about" && <img src={`${iconPath}mvdb_logo_about.svg`} alt="MVDB logo"/> }
 							{location.pathname === "/favourites" && <img src={`${iconPath}mvdb_logo_my-favourite.svg`} alt="MVDB logo"/> }
 							{location.pathname === "/watch-later" && <img src={`${iconPath}mvdb_logo_watch-later.svg`} alt="MVDB logo"/> }
-							{location.pathname === `/movie/${movieId}` && <img src={`../${iconPath}mvdb_logo_single.svg`} alt="MVDB logo"/> }
+							{location.pathname === `/movie/${movieId}` && <img src={`${iconPath}mvdb_logo_single.svg`} alt="MVDB logo"/> }
 						</div>
 						</Link>
 					</h1>
